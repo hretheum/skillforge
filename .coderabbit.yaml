@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+#
+# CodeRabbit configuration for skillforge — a composable skill engine (Node.js 22, ESM,
+# zero runtime deps beyond @modelcontextprotocol/sdk). Free CodeRabbit Pro for public OSS repos.
+#
+# Scope note: CodeRabbit complements, does not replace, the CI gates in .github/workflows/ci.yml
+# (deterministic test suite + the gate families: determinism, skills-ref, registry-lint,
+# secret-scan, cleanroom, genericity, residency). CodeRabbit adds human-readable review on top of
+# those machine gates; it must not re-litigate what the gates already enforce.
+
+language: "en-US"
+
+tone_instructions: >-
+  Be concise and direct. Prioritize correctness, security, and clean-room provenance over style nits.
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  review_status: true
+  poem: false
+  collapse_walkthrough: true
+  changed_files_summary: true
+  sequence_diagrams: false
+
+  # Exclude generated, vendored, and third-party content from review.
+  path_filters:
+    - "!node_modules/**"
+    - "!package-lock.json"
+    - "!export/**"
+    - "!**/*.snap"
+    # 3rd-party skill content — vendored, not authored here; do not review.
+    - "!packages/ecc-bundle/skills/**"
+    # Test suite is verified by the deterministic CI suite; skip line-by-line bot review.
+    - "!test/**"
+
+  path_instructions:
+    - path: "src/**/*.js"
+      instructions: >-
+        This is the generic engine. Enforce: ES module syntax only (import/export, never
+        require/module.exports); explicit .js extensions on relative imports; no Node CommonJS
+        globals (__dirname, __filename) without an import.meta.url derivation. Flag any default
+        export added to a module that already uses named exports. The engine must stay
+        client-agnostic: no client name, no client-specific branching, no hardcoded client paths
+        baked into engine code — per-client behavior comes from config data, never from engine
+        edits.
+    - path: "tools/**/*.js"
+      instructions: >-
+        These are CI gate tools. They must fail loud (non-zero exit on any violation), never
+        silently pass. Flag swallowed errors, empty catch blocks, or early returns that mask a
+        gate failure.
+    - path: "bin/**/*.js"
+      instructions: >-
+        CLI entry points. Validate argument parsing and ensure paths are resolved safely; flag any
+        shell-string interpolation of untrusted input (command injection) and any unguarded
+        path traversal.
+    - path: "clients/**"
+      instructions: >-
+        Per-client config data only — self-contained, no executable engine logic. Flag any code or
+        import that reaches back into the engine or couples a client to another client.
+    - path: "**/*.{md,yaml,yml,json}"
+      instructions: >-
+        Docs and config. Flag broken internal links and stale references. Verify any provenance or
+        source declarations stay accurate.
+
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+    base_branches:
+      - "main"
+
+  # Run only the linters relevant to this stack; disable the rest to keep reviews focused.
+  tools:
+    actionlint:
+      enabled: true
+    yamllint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    semgrep:
+      enabled: true
+    biome:
+      enabled: true
+    eslint:
+      enabled: true
+    shellcheck:
+      enabled: true
+    ruff:
+      enabled: false
+    rubocop:
+      enabled: false
+    golangci-lint:
+      enabled: false
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "CONTRIBUTING.md"
+      - "CLAUDE.md"
+      - "docs/**/*.md"
