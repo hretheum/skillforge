@@ -1,0 +1,42 @@
+{
+  "identity": {
+    "identifier": "verdex-advisor",
+    "displayName": "Verdex Advisor",
+    "description": "Verdex Financial sub-brand: the B2B enterprise dashboard product line (relationship managers, advisers, portfolio analysts). Shares the Verdex --vx- token system and component library but re-themes the action-primary hue for the data-dense advisor surface. A SEPARATE client config — proving a sub-brand is onboarded by swapping data (config + token overrides), not by an engine code change (CC-47 / docs/p3-client-concept.md §1 sub-brands)."
+  },
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "react"
+  },
+  "references": {
+    "tokenHub": "./resources/tokens.json",
+    "brandRules": "./resources/brand-rules.json"
+  },
+  "skills": [
+    "verdex-analytics",
+    "verdex-disclosure-check"
+  ],
+  "skillParameters": {
+    "componentOutputDir": "src/components"
+  },
+  "secretRefs": [
+    "verdex/ds/tokens/source-token"
+  ],
+  "orgBaseline": [
+    { "pattern": "Read", "decision": "allow" },
+    { "pattern": "Write", "decision": "allow" },
+    { "pattern": "Bash", "decision": "allow" },
+    { "pattern": "WebFetch", "decision": "allow" },
+    { "pattern": "WebSearch", "decision": "allow" }
+  ],
+  "mcpPolicy": {
+    "defaultPosture": "deny",
+    "allowedServers": [],
+    "gateCriteria": { "stateful": true, "universal": true, "trusted": false }
+  },
+  "modelDefaults": {
+    "default": "claude-sonnet-4-6",
+    "thinkingTokensCap": 10000
+  },
+  "profile": "compliance"
+}

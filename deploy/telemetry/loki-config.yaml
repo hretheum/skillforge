@@ -1,0 +1,36 @@
+# Loki config — DEPLOY-ONLY (T-P4-03, docs/10). Sources: concept + standard single-binary Loki config.
+#
+# A minimal, filesystem-backed single-binary Loki for a local/ops telemetry stack — stores the
+# structured events (skill_activated, tool_decision, guardrail.result) the Grafana log/event panels
+# read. Not a production HA topology; it is the events half of the local observability pipeline.
+
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  instance_addr: 127.0.0.1
+  path_prefix: /tmp/loki
+  storage:
+    filesystem:
+      chunks_directory: /tmp/loki/chunks
+      rules_directory: /tmp/loki/rules
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2024-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+
+limits_config:
+  # Accept OTLP-pushed log records (the collector forwards events here).
+  allow_structured_metadata: true

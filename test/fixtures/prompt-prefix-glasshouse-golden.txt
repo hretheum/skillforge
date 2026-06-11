@@ -1,0 +1,4 @@
+<<tier1:ENGINE/SKILL>>
+{"engine":"skillforge","skill":"create-component"}
+<<tier2:CLIENT>>
+{"identity":"./resources/glasshouse.tokens.json","kind":"design-system","payload":{"roles":[{"alias":"color.primitive.fern","name":"color.semantic.accent","type":"color"},{"alias":"color.primitive.bark","name":"color.semantic.canopy","type":"color"},{"alias":"color.primitive.mist","name":"color.semantic.surface","type":"color"}],"tokens":[{"name":"color.primitive.bark","type":"color","value":"#1c241d"},{"name":"color.primitive.fern","type":"color","value":"#6fae57"},{"name":"color.primitive.mist","type":"color","value":"#eef4ec"},{"name":"color.primitive.moss","type":"color","value":"#2f6b3a"},{"name":"radius.leaf","type":"dimension","value":"10px"},{"name":"space.1","type":"dimension","value":"6px"},{"name":"space.2","type":"dimension","value":"12px"},{"name":"space.3","type":"dimension","value":"24px"}]}}

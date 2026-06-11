@@ -1,0 +1,27 @@
+{
+  "name": "@skillforge-core/ecc-bundle",
+  "version": "0.2.1",
+  "description": "Community skill bundle for skillforge — brand, competitive analysis, and benchmarking skills",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hretheum/skillforge.git",
+    "directory": "packages/ecc-bundle"
+  },
+  "files": [
+    "skills",
+    "bundle-manifest.json"
+  ],
+  "keywords": [
+    "skillforge",
+    "skills",
+    "claude",
+    "mcp"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

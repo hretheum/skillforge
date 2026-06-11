@@ -1,0 +1,52 @@
+[
+  {
+    "name": "space.3",
+    "type": "dimension",
+    "value": "16px"
+  },
+  {
+    "name": "space.2",
+    "type": "dimension",
+    "value": "8px"
+  },
+  {
+    "name": "space.1",
+    "type": "dimension",
+    "value": "4px"
+  },
+  {
+    "name": "color.primitive.red",
+    "type": "color",
+    "value": "#e5232b"
+  },
+  {
+    "name": "color.primitive.paper",
+    "type": "color",
+    "value": "#f4f0e7"
+  },
+  {
+    "name": "color.primitive.ink",
+    "type": "color",
+    "value": "#0b0a0a"
+  },
+  {
+    "name": "border.width.base",
+    "type": "dimension",
+    "value": "2px"
+  },
+  {
+    "name": "color.semantic.fg",
+    "type": "color",
+    "ref": "color.primitive.paper"
+  },
+  {
+    "name": "color.semantic.bg",
+    "type": "color",
+    "ref": "color.primitive.ink"
+  },
+  {
+    "name": "color.semantic.accent",
+    "type": "color",
+    "ref": "color.primitive.red"
+  }
+]

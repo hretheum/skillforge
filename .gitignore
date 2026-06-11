@@ -1,0 +1,11 @@
+# Local-only / private context — never published to the remote.
+# Holds provenance, clean-room guardrails, fork-analysis, and validation notes
+# that reference private (prior-employer) context.
+private/
+
+# Node
+node_modules/
+npm-debug.log*
+docs/architecture/atlassian-topology.md
+.DS_Store
+.claude/

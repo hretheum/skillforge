@@ -1,0 +1,14 @@
+# Prometheus config — DEPLOY-ONLY (T-P4-03, docs/10). Sources: concept + standard Prometheus config.
+#
+# Metrics arrive via the OTLP write receiver (the collector pushes them), so no scrape target is
+# needed for the engine signals — Prometheus is a push destination here, fronted by the collector.
+# A self-scrape is kept only so the stack's own health is visible.
+
+global:
+  scrape_interval: 30s
+  evaluation_interval: 30s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]

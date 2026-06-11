@@ -1,0 +1,11 @@
+{
+  "$description": "Brand rules for the (fictional) Verdex Financial client. DATA the engine consumes through resolved references, never code. Verdex is a regulated fintech: trust-first, disclosure-heavy, multi-theme and multi-locale. A different client simply holds different values here, which keeps the skill generic.",
+  "tone": "trustworthy, precise, low-jargon",
+  "tagline": "Money that explains itself.",
+  "cornerStyle": "subtle-radius",
+  "iconography": "minimal regulatory line marks",
+  "themes": ["light", "dark", "hc-light", "hc-dark"],
+  "locales": ["en-US", "ar-SA", "ja-JP"],
+  "tokenPrefix": "--vx-",
+  "compliance": ["WCAG 2.1 AA", "GDPR", "PCI-DSS", "SOX", "MiFID II"]
+}

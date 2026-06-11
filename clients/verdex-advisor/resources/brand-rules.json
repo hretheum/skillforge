@@ -1,0 +1,11 @@
+{
+  "$description": "Brand rules for the Verdex Advisor sub-brand. DATA the engine consumes through resolved references, never code. Advisor is the B2B enterprise surface: data-dense, keyboard-first, audit-trail-visible. It inherits Verdex's regulated-fintech posture and re-themes the action hue to a cooler indigo.",
+  "tone": "precise, expert, data-dense",
+  "tagline": "Advise with the whole picture.",
+  "cornerStyle": "subtle-radius",
+  "iconography": "minimal regulatory line marks",
+  "themes": ["light", "dark", "hc-light", "hc-dark"],
+  "locales": ["en-US", "ar-SA", "ja-JP"],
+  "tokenPrefix": "--vx-",
+  "compliance": ["WCAG 2.1 AA", "GDPR", "PCI-DSS", "SOX", "MiFID II"]
+}

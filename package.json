@@ -1,0 +1,41 @@
+{
+  "name": "skillforge",
+  "version": "0.1.0",
+  "description": "A generic skill factory: one engine, per-client config, produces reusable agent skills.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "docs/",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/core/index.js",
+    "./governance": "./src/governance/index.js",
+    "./emit": "./src/emit/index.js"
+  },
+  "bin": {
+    "skillforge": "./bin/skillforge.js"
+  },
+  "scripts": {
+    "prepublishOnly": "node tools/gates.js",
+    "test": "node --test",
+    "test:ci": "node --test --test-concurrency=1",
+    "gate:determinism": "node tools/determinism-gate.js",
+    "gate:genericity": "node tools/genericity-proof.js",
+    "gate:skills-ref": "node tools/skills-ref.js",
+    "gate:registry-lint": "node tools/registry-lint.js",
+    "gate:secret-scan": "node tools/secret-scan.js",
+    "gate:cleanroom": "node tools/cleanroom-guards.js",
+    "gate:residency": "node tools/residency-check.js",
+    "gates": "node tools/gates.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}

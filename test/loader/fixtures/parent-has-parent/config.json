@@ -1,0 +1,12 @@
+{
+  "identity": {
+    "identifier": "parent-has-parent",
+    "displayName": "Mid Tier Brand",
+    "description": "CC-34 fixture: an intermediate config that itself declares a parent — used to assert inheritance is one level deep (no chaining)."
+  },
+  "parent": "grandparent",
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "react"
+  }
+}

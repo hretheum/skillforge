@@ -1,0 +1,4 @@
+{
+  "comment": "Org tool allow-list (doc 13 Layer 1 org baseline) — engine-owned DATA, no client material. registry-lint fails any skill requiredTools pattern not subsumed by an allowed pattern here. Patterns use the subsumption order literal subset prefix-* subset * (doc 13 §pattern matching). This is an allow-LIST for the inventory gate; the runtime resolver layers (client/project/skill) narrow further and are evaluated elsewhere.",
+  "allowed": ["Read", "Edit", "Write", "Glob", "Grep", "WebSearch", "WebFetch", "mcp__tracker__*"]
+}

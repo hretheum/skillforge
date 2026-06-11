@@ -1,0 +1,8 @@
+{
+  "identity": {
+    "identifier": "child-references",
+    "displayName": "Child References Brand",
+    "description": "CC-34 fixture: a child with no own references — it inherits the parent's local-path references, which resolve into the parent's subtree (ARCH-06 relaxation)."
+  },
+  "parent": "parent-base"
+}

@@ -1,0 +1,44 @@
+// Sprout — generated Web Component (custom element) for the design system.
+// Thin shell: it composes the canonical CSS classes onto its host; the craft stays in
+// the source stylesheet (code-as-source-of-truth). Requires the DS stylesheet at runtime.
+// Bound source classes: gh-sprout, gh-sprout--sm, gh-sprout--accent, gh-leaf.
+
+export class SproutElement extends HTMLElement {
+  static get observedAttributes() {
+    return ["size", "tone"];
+  }
+
+  connectedCallback() {
+    this._render();
+  }
+
+  attributeChangedCallback() {
+    this._render();
+  }
+
+  _render() {
+    const cls = [
+      "gh-sprout",
+      this.getAttribute("size") === "s" && "gh-sprout--sm",
+      this.getAttribute("tone") === "accent" && "gh-sprout--accent",
+    ].filter(Boolean);
+
+    const host = this.querySelector("article") ?? this._mount();
+    host.className = cls.join(" ");
+  }
+
+  _mount() {
+    const host = document.createElement("article");
+    const deco_gh_leaf = document.createElement("span");
+    deco_gh_leaf.className = "gh-leaf";
+    deco_gh_leaf.setAttribute("aria-hidden", "true");
+    host.appendChild(deco_gh_leaf);
+    host.appendChild(document.createElement("slot"));
+    this.appendChild(host);
+    return host;
+  }
+}
+
+if (!customElements.get("x-sprout")) {
+  customElements.define("x-sprout", SproutElement);
+}

@@ -1,0 +1,67 @@
+# Publish @skillforge/ecc-bundle to npm on every push to main that touches the package.
+#
+# Requires one repository secret: NPM_TOKEN (granular access token with publish rights
+# for the @skillforge npm org). Set it at: Settings → Secrets → Actions → New secret.
+#
+# Version bump is automatic (patch) — if you need minor/major, bump manually before
+# merging to main and the workflow picks up the new version.
+
+name: publish-ecc-bundle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/ecc-bundle/**'
+
+permissions:
+  contents: write   # needed for git tag push
+
+jobs:
+  publish:
+    name: Publish @skillforge/ecc-bundle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Bump patch version
+        id: bump
+        working-directory: packages/ecc-bundle
+        run: |
+          NEW_VERSION=$(npm version patch --no-git-tag-version)
+          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Update bundle-manifest bundleVersion
+        working-directory: packages/ecc-bundle
+        env:
+          BUNDLE_VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const v = process.env.BUNDLE_VERSION.replace(/^v/, '');
+            const m = JSON.parse(fs.readFileSync('bundle-manifest.json','utf8'));
+            m.bundleVersion = v;
+            fs.writeFileSync('bundle-manifest.json', JSON.stringify(m, null, 2) + '\n');
+          "
+
+      - name: Commit version bump
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/ecc-bundle/package.json packages/ecc-bundle/bundle-manifest.json
+          git commit -m "chore(ecc-bundle): version bump [skip ci]"
+          git push
+
+      - name: Publish to npm
+        working-directory: packages/ecc-bundle
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

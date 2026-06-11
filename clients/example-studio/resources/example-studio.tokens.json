@@ -1,0 +1,3 @@
+{
+  "$description": "Placeholder DTCG token-hub reference target for the Example Studio client. The DTCG input adapter reads and normalizes the real content; the loader only checks that this address resolves."
+}

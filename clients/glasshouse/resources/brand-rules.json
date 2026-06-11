@@ -1,0 +1,6 @@
+{
+  "$description": "Brand rules for the (fictional) Glasshouse Atrium client. These are DATA the engine consumes through the input adapter, never code. A different client simply holds different values here, which is what keeps the create-component skill generic.",
+  "tone": "calm, verdant, horticultural",
+  "cornerStyle": "soft-leaf",
+  "iconography": "botanical line marks"
+}

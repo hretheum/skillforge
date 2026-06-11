@@ -1,0 +1,17 @@
+{
+  "_note": "Backend-reported residency/retention evidence for the profile-A compliance posture. This is the SNAPSHOT the residency-check asserts against by default (deterministic, offline). It mirrors the facts docs/15-compliance-and-cost.md cites from the backend (the Bedrock model card's EU-available list and the abuse-detection page's retention-exception list), captured at the as-of date. The scheduled re-check (docs/15 'Monitoring the ZDR basis') re-runs the SAME assertResidencyPosture() over a LIVE fetch; a divergence between live evidence and the asserted posture is the regression this closes. To update after a deliberate, confirmed backend change: refresh these fields AND the asserted scope/as-of in src/governance/residency-posture.js, in one reviewed change.",
+  "endpointClass": "eu-regional",
+  "activeModelId": "anthropic.claude-sonnet-4-6",
+  "euAvailableModels": [
+    "anthropic.claude-sonnet-4-6",
+    "eu.anthropic.claude-sonnet-4-6",
+    "anthropic.claude-opus-4-8",
+    "anthropic.claude-haiku-4-5"
+  ],
+  "retentionExceptionList": [
+    "gpt-5",
+    "gpt-5.1"
+  ],
+  "evidenceAsOf": "2026-06-05",
+  "source": "snapshot:test/fixtures/residency-evidence-snapshot.json (mirrors AWS Bedrock model card + abuse-detection page facts cited in docs/15, fetched 2026-06-05)"
+}

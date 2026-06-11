@@ -1,0 +1,31 @@
+{
+  "$description": "A representative Example Studio DTCG token slice — the input-adapter fixture. Client knowledge (the actual brand values) lives HERE, not in the engine. Modeled on the real BC hub: color primitives are the only literal colours; semantic roles alias them; $type is inherited; $extensions/$description are metadata the adapter drops.",
+  "color": {
+    "$type": "color",
+    "$extensions": { "cult": { "source": "local" } },
+    "primitive": {
+      "$description": "Raw, context-free values — the ONLY literal colours.",
+      "ink": { "$value": "#0b0a0a", "$description": "Obsidian — base field" },
+      "paper": { "$value": "#f4f0e7", "$description": "Bone — scripture" },
+      "red": { "$value": "#e5232b", "$description": "Ritual Red — the sacred accent" }
+    },
+    "semantic": {
+      "$description": "Roles — the layer components bind to. Defaults = the heresy theme.",
+      "bg": { "$value": "{color.primitive.ink}", "$description": "page background" },
+      "fg": { "$value": "{color.primitive.paper}", "$description": "primary text" },
+      "accent": { "$value": "{color.primitive.red}", "$description": "the sacred accent role" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": "4px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "16px" }
+  },
+  "border": {
+    "width": {
+      "$type": "dimension",
+      "base": { "$value": "2px", "$description": "the brutalist hairline" }
+    }
+  }
+}

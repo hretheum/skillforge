@@ -1,0 +1,50 @@
+# OTEL Collector config — DEPLOY-ONLY (T-P4-03, docs/10 §architecture "the single inbound door").
+#
+# Sources: concept + first principles, zero third-party skills-factory files (clean-room). Names
+# are the standard OpenTelemetry Collector receiver/exporter names.
+#
+# The collector is the swappable EDGE between "what emits signals" (the Claude Code runtime + the CI
+# guardrail bridge) and "what stores them" (Prometheus + Loki) — the same adapters-at-the-edges
+# pattern as the rest of skillforge (docs/10). It receives OTLP, batches, and routes metrics to
+# Prometheus and events/logs to Loki.
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch: {}
+  # Defence-in-depth redaction: the engine is already secret-free by construction (the emitters
+  # fail-closed secret-scan), but the collector is the one place to add a belt-and-braces filter so
+  # an accidental credential-shaped attribute is dropped before storage (docs/10 privacy posture).
+  attributes/redact:
+    actions:
+      - key: authorization
+        action: delete
+      - key: api_key
+        action: delete
+      - key: token
+        action: delete
+
+exporters:
+  # Metrics → Prometheus (via its OTLP write receiver).
+  otlphttp/prometheus:
+    endpoint: http://prometheus:9090/api/v1/otlp
+  # Events/logs → Loki (via its OTLP endpoint).
+  otlphttp/loki:
+    endpoint: http://loki:3100/otlp
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [attributes/redact, batch]
+      exporters: [otlphttp/prometheus]
+    logs:
+      receivers: [otlp]
+      processors: [attributes/redact, batch]
+      exporters: [otlphttp/loki]

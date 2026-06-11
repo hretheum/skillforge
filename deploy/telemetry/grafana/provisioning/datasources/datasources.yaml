@@ -1,0 +1,16 @@
+# Grafana datasources — provisioned AS CODE (DEPLOY-ONLY, T-P4-03, docs/10). No click-ops: Grafana
+# reads metric panels from Prometheus and log/event panels from Loki, blended on one screen.
+# Sources: concept + standard Grafana provisioning schema.
+
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100

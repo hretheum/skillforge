@@ -1,0 +1,16 @@
+# Grafana dashboard provider — provisioned AS CODE (DEPLOY-ONLY, T-P4-03, docs/10). Loads the
+# dashboards-as-code JSON from /var/lib/grafana/dashboards so the factory dashboard is reproducible,
+# version-controlled, and identical on every bring-up (no manual dashboard editing).
+# Sources: concept + standard Grafana provisioning schema.
+
+apiVersion: 1
+
+providers:
+  - name: skillforge
+    orgId: 1
+    folder: skillforge
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

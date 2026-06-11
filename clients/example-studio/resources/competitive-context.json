@@ -1,0 +1,46 @@
+{
+  "$description": "Client-specific context for the competitive analysis skills. Loaded by the engine at run time; skill SKILL.md files hold none of this knowledge. Replace with your studio's real data.",
+  "identity": {
+    "name": "Example Studio",
+    "shortName": "BC",
+    "tagline": "<your studio tagline>",
+    "aestheticRegister": "<your aesthetic register>",
+    "modelType": "boutique product-design studio",
+    "band": "boutique"
+  },
+  "offer": [
+    "product design",
+    "UX strategy",
+    "design-system foundations"
+  ],
+  "targetClients": [
+    "product leaders",
+    "founders",
+    "scaleups"
+  ],
+  "differentiator": "<what makes your studio distinct and memorable>",
+  "scopingConsequence": "<how to rank competitors for this client's positioning>",
+  "strategicTension": {
+    "name": "<axis1> × <axis2>",
+    "axis1": {
+      "label": "<first dimension>",
+      "anchor1": "low",
+      "anchor3": "mid",
+      "anchor5": "high"
+    },
+    "axis2": {
+      "label": "<second dimension>",
+      "anchor1": "low",
+      "anchor3": "mid",
+      "anchor5": "high"
+    },
+    "targetQuadrant": "high-<axis1> / high-<axis2>",
+    "description": "<description of the strategic tension>"
+  },
+  "brandBalance": {
+    "strategyAndEvidence": 0.60,
+    "heresyAndDistinctiveness": 0.25,
+    "premiumEditorialCraft": 0.15,
+    "note": "<guidance on how to apply the balance in recommendations>"
+  }
+}

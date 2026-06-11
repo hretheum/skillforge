@@ -1,0 +1,66 @@
+# skillforge telemetry stack — DEPLOY-ONLY config (T-P4-03, docs/10 §architecture).
+#
+# Sources: concept + first principles, zero files from any third-party skills-factory codebase
+# (clean-room). The component names/ports are the public, standard OTEL/Prometheus/Loki/Grafana
+# defaults.
+#
+# ★ HONEST INFRA BOUNDARY. This file STANDS UP the collector → Prometheus/Loki → Grafana pipeline
+# that RECEIVES and DRAWS the signals the engine emits. It does NOT run in CI and is NOT exercised
+# by the test suite — the engine-side EMISSION (src/core/telemetry.js, src/core/cache-diagnostics.js,
+# tools/guardrail-bridge.js) is the tested code; this is the operator-run pipeline those signals
+# flow into. Bring it up with `docker compose up` per README-telemetry.md; nothing here is claimed
+# to be live until an operator runs it.
+#
+# The data flow (docs/10 architecture diagram):
+#   Claude Code runtime (OTEL) ─┐
+#   CI guardrail bridge (OTLP) ─┴─> OTEL Collector ─┬─> Prometheus (metrics) ─┐
+#                                                    └─> Loki (events/logs)   ─┴─> Grafana (dashboard)
+
+services:
+  # The single inbound OTLP door — receives metrics + events, fans out by signal type (docs/10).
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.110.0
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otelcol/config.yaml:ro
+    ports:
+      - "4317:4317" # OTLP gRPC (OTEL_EXPORTER_OTLP_PROTOCOL=grpc)
+      - "4318:4318" # OTLP HTTP (the guardrail bridge posts here: /v1/metrics, /v1/logs)
+    depends_on:
+      - prometheus
+      - loki
+
+  # Time-series store for metrics (cost, tokens, cache-hit ratio, guardrail gauge).
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--enable-feature=otlp-write-receiver" # accept OTLP metrics pushed by the collector
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+
+  # Log/event store for the structured records (skill_activated, tool_decision, guardrail.result).
+  loki:
+    image: grafana/loki:3.2.0
+    command: ["-config.file=/etc/loki/loki-config.yaml"]
+    volumes:
+      - ./loki-config.yaml:/etc/loki/loki-config.yaml:ro
+    ports:
+      - "3100:3100"
+
+  # The dashboard — datasources + dashboards are provisioned AS CODE (no click-ops).
+  grafana:
+    image: grafana/grafana:11.2.0
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - loki

@@ -1,0 +1,4 @@
+{
+  "$description": "Placeholder brand-rules reference target. Brand rules are data the engine consumes; they are never code. Loaded by the input adapter, not the loader.",
+  "titleAccent": "last-word"
+}

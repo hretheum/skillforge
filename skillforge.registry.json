@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1",
+  "skills": {
+    "create-component": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "artifact",
+      "compose": "create-component/compose.js#composeComponent",
+      "requiredTools": ["Read", "Edit", "Write"],
+      "sourceKind": "design-system",
+      "resultKind": "frontend-component",
+      "requiredAdapters": {
+        "input": ["dtcg-tokens"],
+        "output": ["react"]
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["*"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    },
+    "sync-example": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "sync",
+      "compose": "sync-example/compose.js#composeSync",
+      "requiredTools": ["Read", "Write"],
+      "sourceKind": "design-system",
+      "resultKind": "frontend-component",
+      "requiredAdapters": {
+        "input": ["flat-tokens"],
+        "output": ["react"]
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["*"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    },
+    "verdex-create-component": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "instruction",
+      "compose": "verdex-create-component/compose.js#composeInstruction",
+      "requiredTools": ["Read"],
+      "requiredAdapters": {
+        "input": [],
+        "output": []
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["verdex"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    },
+    "verdex-form-builder": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "instruction",
+      "compose": "verdex-form-builder/compose.js#composeInstruction",
+      "requiredTools": ["Read"],
+      "requiredAdapters": {
+        "input": [],
+        "output": []
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["verdex"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    },
+    "verdex-analytics": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "analysis",
+      "compose": "verdex-analytics/compose.js#composeAnalysis",
+      "requiredTools": ["Read"],
+      "requiredAdapters": {
+        "input": [],
+        "output": []
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["verdex", "verdex-advisor"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    },
+    "verdex-disclosure-check": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "validation",
+      "compose": "verdex-disclosure-check/compose.js#composeValidation",
+      "requiredTools": ["Read"],
+      "requiredAdapters": {
+        "input": [],
+        "output": []
+      },
+      "requiredSecrets": [],
+      "scope": { "clients": ["verdex", "verdex-advisor"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "medium"
+    }
+  }
+}

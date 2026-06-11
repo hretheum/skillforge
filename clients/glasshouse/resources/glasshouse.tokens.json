@@ -1,0 +1,57 @@
+[
+  {
+    "name": "space.1",
+    "type": "dimension",
+    "value": "6px"
+  },
+  {
+    "name": "space.2",
+    "type": "dimension",
+    "value": "12px"
+  },
+  {
+    "name": "space.3",
+    "type": "dimension",
+    "value": "24px"
+  },
+  {
+    "name": "radius.leaf",
+    "type": "dimension",
+    "value": "10px"
+  },
+  {
+    "name": "color.primitive.moss",
+    "type": "color",
+    "value": "#2f6b3a"
+  },
+  {
+    "name": "color.primitive.fern",
+    "type": "color",
+    "value": "#6fae57"
+  },
+  {
+    "name": "color.primitive.mist",
+    "type": "color",
+    "value": "#eef4ec"
+  },
+  {
+    "name": "color.primitive.bark",
+    "type": "color",
+    "value": "#1c241d"
+  },
+  {
+    "name": "color.semantic.surface",
+    "type": "color",
+    "ref": "color.primitive.mist"
+  },
+  {
+    "name": "color.semantic.canopy",
+    "type": "color",
+    "ref": "color.primitive.bark"
+  },
+  {
+    "name": "color.semantic.accent",
+    "type": "color",
+    "ref": "color.primitive.fern"
+  }
+]

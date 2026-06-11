@@ -1,0 +1,46 @@
+# MVP CI pipeline (T-MVP-14) — docs/07 §Verification + docs/08 §CI gates.
+#
+# Runs on every PR and every push to the default branch. Two jobs:
+#   - tests: the unit + integration suite, run with --test-concurrency=1 so FS-touching tests
+#     (the e2e temp-dir builders) cannot race — CI must be DETERMINISTICALLY green, which is the
+#     whole project's value proposition.
+#   - gates: the five gate families via the fail-loud runner (node tools/gates.js): a missing or
+#     crashing gate makes the job FAIL, never silently pass.
+#
+# Sources: concept + first principles; zero files from any third-party skills-factory codebase
+# (clean-room). Note: the clean-room gate's authoritative E0-E10 catalog is local-only (private/);
+# tools/cleanroom-guards.js implements the public subset and embeds no private catalog text.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: tests (deterministic)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Zero runtime dependencies — nothing to install. node:test is built in.
+      - name: Run the test suite (serial, deterministic)
+        run: npm run test:ci
+
+  gates:
+    name: gates (determinism · skills-ref · registry-lint · secret-scan · cleanroom)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run all gate families (fail-loud runner)
+        run: npm run gates

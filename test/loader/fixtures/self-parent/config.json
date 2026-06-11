@@ -1,0 +1,8 @@
+{
+  "identity": {
+    "identifier": "self-parent",
+    "displayName": "Self Parent Brand",
+    "description": "CC-34 fixture: declares itself as its own parent — must fail."
+  },
+  "parent": "self-parent"
+}

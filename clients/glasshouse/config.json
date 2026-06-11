@@ -1,0 +1,41 @@
+{
+  "identity": {
+    "identifier": "glasshouse",
+    "displayName": "Glasshouse Atrium",
+    "description": "Fictional botanical greenhouse / plant-care dashboard brand; calm, verdant aesthetic with flat design tokens shipped as vanilla Web Components. The author's second own client, used to prove the engine is generic across DIFFERENT adapters than Example Studio's."
+  },
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "web-components"
+  },
+  "references": {
+    "tokenHub": "./resources/glasshouse.tokens.json",
+    "brandRules": "./resources/brand-rules.json"
+  },
+  "skills": [
+    "create-component"
+  ],
+  "skillParameters": {
+    "componentOutputDir": "src/elements"
+  },
+  "secretRefs": [
+    "glasshouse/ds/tokens/source-token"
+  ],
+  "orgBaseline": [
+    { "pattern": "Read", "decision": "allow" },
+    { "pattern": "Write", "decision": "allow" },
+    { "pattern": "Bash", "decision": "allow" },
+    { "pattern": "WebFetch", "decision": "allow" },
+    { "pattern": "WebSearch", "decision": "allow" }
+  ],
+  "mcpPolicy": {
+    "defaultPosture": "deny",
+    "allowedServers": [],
+    "gateCriteria": { "stateful": true, "universal": true, "trusted": false }
+  },
+  "modelDefaults": {
+    "default": "claude-sonnet-4-6",
+    "thinkingTokensCap": 10000
+  },
+  "profile": "convenience"
+}

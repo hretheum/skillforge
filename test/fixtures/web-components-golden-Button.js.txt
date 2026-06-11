@@ -1,0 +1,44 @@
+// Button — generated Web Component (custom element) for the design system.
+// Thin shell: it composes the canonical CSS classes onto its host; the craft stays in
+// the source stylesheet (code-as-source-of-truth). Requires the DS stylesheet at runtime.
+// Bound source classes: hbtn, hbtn--acc, hbtn--sm, sq.
+
+export class ButtonElement extends HTMLElement {
+  static get observedAttributes() {
+    return ["size", "variant"];
+  }
+
+  connectedCallback() {
+    this._render();
+  }
+
+  attributeChangedCallback() {
+    this._render();
+  }
+
+  _render() {
+    const cls = [
+      "hbtn",
+      this.getAttribute("size") === "s" && "hbtn--sm",
+      this.getAttribute("variant") === "acc" && "hbtn--acc",
+    ].filter(Boolean);
+
+    const host = this.querySelector("button") ?? this._mount();
+    host.className = cls.join(" ");
+  }
+
+  _mount() {
+    const host = document.createElement("button");
+    const deco_sq = document.createElement("span");
+    deco_sq.className = "sq";
+    deco_sq.setAttribute("aria-hidden", "true");
+    host.appendChild(deco_sq);
+    host.appendChild(document.createElement("slot"));
+    this.appendChild(host);
+    return host;
+  }
+}
+
+if (!customElements.get("x-button")) {
+  customElements.define("x-button", ButtonElement);
+}

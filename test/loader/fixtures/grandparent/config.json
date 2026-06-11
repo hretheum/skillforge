@@ -1,0 +1,11 @@
+{
+  "identity": {
+    "identifier": "grandparent",
+    "displayName": "Grandparent Corp",
+    "description": "CC-34 fixture: the top of a would-be chain; valid standalone config."
+  },
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "react"
+  }
+}

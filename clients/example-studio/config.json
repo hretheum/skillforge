@@ -1,0 +1,48 @@
+{
+  "identity": {
+    "identifier": "example-studio",
+    "displayName": "Example Studio",
+    "description": "Example client configuration for a boutique product-design studio. Token-centric (DTCG hub), craft-heavy design system."
+  },
+  "adapters": {
+    "input": "dtcg-tokens",
+    "output": "react"
+  },
+  "references": {
+    "tokenHub": "./resources/example-studio.tokens.json",
+    "designSystemSource": "figma://<your-figma-file-key>",
+    "brandRules": "./resources/brand-rules.json",
+    "competitiveContext": "./resources/competitive-context.json",
+    "brandState": "./resources/brand-state.json"
+  },
+  "skills": [
+    "create-component",
+    "brand-discovery",
+    "competitive-platform-analysis",
+    "benchmark-methodology",
+    "competitive-report-structure"
+  ],
+  "skillParameters": {
+    "componentOutputDir": "src/components"
+  },
+  "secretRefs": [
+    "example-studio/ds/figma/api-token"
+  ],
+  "orgBaseline": [
+    { "pattern": "Read", "decision": "allow" },
+    { "pattern": "Write", "decision": "allow" },
+    { "pattern": "Bash", "decision": "allow" },
+    { "pattern": "WebFetch", "decision": "allow" },
+    { "pattern": "WebSearch", "decision": "allow" }
+  ],
+  "mcpPolicy": {
+    "defaultPosture": "deny",
+    "allowedServers": [],
+    "gateCriteria": { "stateful": true, "universal": true, "trusted": false }
+  },
+  "modelDefaults": {
+    "default": "claude-sonnet-4-6",
+    "thinkingTokensCap": 10000
+  },
+  "profile": "compliance"
+}

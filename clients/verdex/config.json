@@ -1,0 +1,44 @@
+{
+  "identity": {
+    "identifier": "verdex",
+    "displayName": "Verdex Financial",
+    "description": "Regulated multi-product fintech (wealth + payments + treasury); 3-tier --vx- token system, 4 themes (light/dark/hc-light/hc-dark), en-US/ar-SA/ja-JP. Third client, proves engine genericity under regulatory + i18n + multi-theme load. P3 genericity client."
+  },
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "react"
+  },
+  "references": {
+    "tokenHub": "./resources/tokens.json",
+    "brandRules": "./resources/brand-rules.json"
+  },
+  "skills": [
+    "verdex-create-component",
+    "verdex-form-builder",
+    "verdex-analytics",
+    "verdex-disclosure-check"
+  ],
+  "skillParameters": {
+    "componentOutputDir": "src/components"
+  },
+  "secretRefs": [
+    "verdex/ds/tokens/source-token"
+  ],
+  "orgBaseline": [
+    { "pattern": "Read", "decision": "allow" },
+    { "pattern": "Write", "decision": "allow" },
+    { "pattern": "Bash", "decision": "allow" },
+    { "pattern": "WebFetch", "decision": "allow" },
+    { "pattern": "WebSearch", "decision": "allow" }
+  ],
+  "mcpPolicy": {
+    "defaultPosture": "deny",
+    "allowedServers": [],
+    "gateCriteria": { "stateful": true, "universal": true, "trusted": false }
+  },
+  "modelDefaults": {
+    "default": "claude-sonnet-4-6",
+    "thinkingTokensCap": 10000
+  },
+  "profile": "compliance"
+}

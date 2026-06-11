@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "identifier": "child-inherits",
+    "displayName": "Child Inherits Brand",
+    "description": "CC-34 fixture: a child that declares a parent and overrides adapters, skills, one skillParameter, and adds a secretRef + a child-local reference."
+  },
+  "parent": "parent-base",
+  "adapters": {
+    "input": "dtcg-tokens",
+    "output": "react"
+  },
+  "skills": ["child-create-component"],
+  "skillParameters": {
+    "theme": "child-override"
+  },
+  "references": {
+    "childRules": "./resources/child-rules.json"
+  },
+  "secretRefs": ["brand/child/extra-token"]
+}

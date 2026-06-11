@@ -1,0 +1,34 @@
+{
+  "identity": {
+    "identifier": "parent-base",
+    "displayName": "Parent Base Corp",
+    "description": "CC-34 fixture: a parent client carrying shared group-level config a child inherits."
+  },
+  "adapters": {
+    "input": "flat-tokens",
+    "output": "react"
+  },
+  "references": {
+    "tokenHub": "./resources/tokens.json",
+    "legalText": "./resources/legal.json"
+  },
+  "skills": ["parent-create-component", "parent-disclosure-check"],
+  "skillParameters": {
+    "componentOutputDir": "src/components",
+    "theme": "parent-default"
+  },
+  "secretRefs": ["group/shared/source-token"],
+  "orgBaseline": [
+    { "pattern": "Read", "decision": "allow" },
+    { "pattern": "Write", "decision": "allow" }
+  ],
+  "mcpPolicy": {
+    "defaultPosture": "deny",
+    "allowedServers": []
+  },
+  "modelDefaults": {
+    "default": "claude-sonnet-4-6",
+    "thinkingTokensCap": 10000
+  },
+  "profile": "compliance"
+}

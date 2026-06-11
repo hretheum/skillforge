@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "skills": {
+    "sample-skill": {
+      "version": "0.1.0",
+      "enabled": true,
+      "owner": "platform",
+      "skillKind": "instruction",
+      "requiredTools": ["Read", "Write"],
+      "scope": { "clients": ["*"], "projects": ["*"] },
+      "model": "inherit",
+      "effort": "high"
+    }
+  }
+}

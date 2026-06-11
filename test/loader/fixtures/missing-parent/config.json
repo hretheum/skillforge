@@ -1,0 +1,8 @@
+{
+  "identity": {
+    "identifier": "missing-parent",
+    "displayName": "Missing Parent Brand",
+    "description": "CC-34 fixture: declares a parent that does not exist in clients_dir — must fail."
+  },
+  "parent": "no-such-parent"
+}

@@ -1,0 +1,8 @@
+{
+  "identity": {
+    "identifier": "child-chained",
+    "displayName": "Child Of Chained Parent",
+    "description": "CC-34 fixture: declares a parent that itself has a parent — must fail (no chaining)."
+  },
+  "parent": "parent-has-parent"
+}

@@ -1,0 +1,140 @@
+{
+  "__comment": "skillforge factory dashboard — DEPLOY-ONLY dashboards-as-code (T-P4-03, docs/10 §'Example Grafana dashboard'). Sources: concept + first principles, zero third-party skills-factory files (clean-room). PromQL/LogQL expressions reference the public Claude Code metric/event names + the skillforge-namespaced signals the engine emits (skillforge.skill / skillforge.client resource attributes, skillforge.guardrail.status metric, skillforge.guardrail.result + skillforge.skill_result events, and the cache-hit fingerprint attributes). This file is the panel definition the operator-run stack draws; it is not exercised by CI.",
+  "title": "skillforge — factory health",
+  "uid": "skillforge-factory",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "time": { "from": "now-7d", "to": "now" },
+  "panels": [
+    {
+      "type": "row",
+      "title": "Row 1 — Factory pulse",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Skill runs over time (by skill)",
+      "description": "claude_code.skill_activated grouped by the injected skillforge.skill attribute.",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 7, "w": 8, "x": 0, "y": 1 },
+      "targets": [
+        { "expr": "sum by (skillforge_skill) (rate(claude_code_skill_activated_total[5m]))", "legendFormat": "{{skillforge_skill}}" }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Success rate (generation grain)",
+      "description": "skillforge.skill_result PASS ÷ total — the generation-grain success KPI (OBS-04), NOT proxied by api-error counts.",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "h": 7, "w": 8, "x": 8, "y": 1 },
+      "targets": [
+        { "expr": "sum(count_over_time({event=\"skillforge.skill_result\", outcome=\"PASS\"}[24h])) / sum(count_over_time({event=\"skillforge.skill_result\"}[24h]))" }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Cost (rolling 24h)",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 7, "w": 8, "x": 16, "y": 1 },
+      "targets": [
+        { "expr": "sum(increase(claude_code_cost_usage_USD_total[24h]))" }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Row 2 — Cost and volume (★ cache-hit + per-skill/per-client slicing)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 8 }
+    },
+    {
+      "type": "barchart",
+      "title": "Cost per skill / per client",
+      "description": "claude_code.cost.usage grouped by the injected skillforge.skill + skillforge.client resource attributes (OBS-01). Without the injection this would have no skill/client dimension to group by.",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 9 },
+      "targets": [
+        { "expr": "sum by (skillforge_skill, skillforge_client) (increase(claude_code_cost_usage_USD_total[24h]))", "legendFormat": "{{skillforge_client}} / {{skillforge_skill}}" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "★ Cache-hit ratio (by client) + determinism owner",
+      "description": "cache-read ÷ (input + cache-creation + cache-read) from claude_code.token.usage, grouped by client. A DROP can come from EITHER prefix owner: tier 1 = CORE (skillforge.cache.tier1_prefix_hash), tier 2 = INPUT ADAPTER (skillforge.cache.tier2_content_hash). Read this panel alongside the two fingerprint tables below: whichever hash CHANGED names the owner at fault (OBS-02). If both held but the ratio dropped, the cause is downstream of the prefix.",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 9 },
+      "targets": [
+        { "expr": "sum by (skillforge_client) (rate(claude_code_token_usage_tokens_total{type=\"cacheRead\"}[1h])) / sum by (skillforge_client) (rate(claude_code_token_usage_tokens_total{type=~\"input|cacheCreation|cacheRead\"}[1h]))", "legendFormat": "{{skillforge_client}}" }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Cache fingerprint — tier 1 (CORE owner)",
+      "description": "The tier-1 prefix hash per run (skillforge.cache.tier1_prefix_hash). A change here when the cache-hit ratio drops attributes the break to the CORE's engine/skill text determinism.",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 17 },
+      "targets": [
+        { "expr": "{event=\"skillforge.skill_result\"} | json | line_format \"{{.skillforge_cache_tier1_prefix_hash}}\"" }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Cache fingerprint — tier 2 (INPUT ADAPTER owner)",
+      "description": "The tier-2 content hash per run (skillforge.cache.tier2_content_hash). A change here when the cache-hit ratio drops attributes the break to the INPUT ADAPTER's normalized-description determinism.",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 17 },
+      "targets": [
+        { "expr": "{event=\"skillforge.skill_result\"} | json | line_format \"{{.skillforge_cache_tier2_content_hash}}\"" }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Row 3 — Reliability",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 24 }
+    },
+    {
+      "type": "timeseries",
+      "title": "API errors & requests",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 7, "w": 24, "x": 0, "y": 25 },
+      "targets": [
+        { "expr": "sum(rate(claude_code_api_error_total[5m]))", "legendFormat": "errors" },
+        { "expr": "sum(rate(claude_code_api_request_total[5m]))", "legendFormat": "requests" }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Row 4 — ★ Guardrail health (skillforge-specific)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 32 }
+    },
+    {
+      "type": "state-timeline",
+      "title": "Guardrail PASS/FAIL trend (E0–E10)",
+      "description": "skillforge.guardrail.status gauge per gate (1=PASS, 0=FAIL), fed by the CI guardrail bridge (tools/guardrail-bridge.js). The public gates appear as a verifiable subset; the local-only gates are bridged identically in private CI.",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 33 },
+      "targets": [
+        { "expr": "max by (gate) (skillforge_guardrail_status)", "legendFormat": "{{gate}}" }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Latest guardrail run",
+      "description": "skillforge.guardrail.result events — each gate, its PASS/FAIL, and the commit/PR/run it ran against. The clickable audit trail of WHY a gate failed.",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 33 },
+      "targets": [
+        { "expr": "{event=\"skillforge.guardrail.result\"} | json" }
+      ]
+    },
+    {
+      "type": "logs",
+      "title": "Recent permission denials",
+      "description": "claude_code.tool_decision (deny) — a spike can indicate a skill trying to step outside its sandbox.",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "h": 7, "w": 24, "x": 0, "y": 41 },
+      "targets": [
+        { "expr": "{event=\"claude_code.tool_decision\"} | json | decision=\"deny\"" }
+      ]
+    }
+  ]
+}
