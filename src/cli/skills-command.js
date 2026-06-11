@@ -14,18 +14,22 @@ import { execFileSync } from 'node:child_process';
 import {
   cpSync,
   existsSync,
+  mkdirSync,
   mkdtempSync,
   readFileSync,
   readdirSync,
   rmSync,
   statSync,
+  writeFileSync,
 } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { homedir, tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { STORE_PATH } from '../store/index.js';
 import { discoverSkills } from '../store/discovery.js';
 import { readManifest, writeManifestEntry } from '../store/manifest.js';
+import { emit } from '../emit/index.js';
+import { readConfig, writeConfig } from './config-command.js';
 
 const SKILL_FILE = 'SKILL.md';
 const VERSION_MARKER = /^#\s*skillforge-version:\s*(.+?)\s*$/m;
@@ -211,4 +215,92 @@ export function skillsListCommand(opts = {}) {
       installedAt: provenance.installedAt || '',
     };
   });
+}
+
+// Resolve the harness skills directory a target writes into. A target is a NAME (e.g. "superpowers")
+// for messaging only — every target currently lands in the same Claude skills dir. The directory is
+// overridable via CLAUDE_SKILLS_DIR (tests, alternate installs); the default is ~/.claude/skills.
+function harnessSkillsDir() {
+  return process.env.CLAUDE_SKILLS_DIR || join(homedir(), '.claude', 'skills');
+}
+
+/**
+ * Resolve the activation target: the explicit `--target`, else the persisted `default-target`. There
+ * is NO hard-coded default — when neither is set this returns '' and the caller must fail loudly
+ * rather than silently picking a harness.
+ */
+function resolveTarget(opts) {
+  if (opts.target && opts.target.trim() !== '') return opts.target.trim();
+  const fromConfig = readConfig(opts.configDir ? { configDir: opts.configDir } : {}).defaultTarget;
+  return fromConfig && fromConfig.trim() !== '' ? fromConfig.trim() : '';
+}
+
+/**
+ * Activate one installed skill into a harness skills directory: emit it from the store and drop the
+ * result as `<targetDir>/<name>.md`. Idempotent — a re-run overwrites the same file in place.
+ *
+ * The emit uses the "claude" profile when a registry entry is available for the skill (so the
+ * harness flavour is applied), and falls back to the portable "open-core" profile otherwise, so any
+ * installed skill can be activated without a registry on hand.
+ *
+ * @param {string} name  the installed skill name (a directory under the store).
+ * @param {object} [opts]
+ * @param {string} [opts.target]    the activation target name (e.g. "superpowers"). REQUIRED unless a
+ *                                  persisted `default-target` is set — there is no hard default, so
+ *                                  with neither this throws.
+ * @param {boolean} [opts.list]     when true, do not activate — report which installed skills have a
+ *                                  file present in the target dir.
+ * @param {string} [opts.storeDir]  override STORE_PATH (for tests).
+ * @param {string} [opts.targetDir] override the harness skills dir (for tests).
+ * @param {string} [opts.configDir] override ~/.skillforge (for tests).
+ * @param {object} [opts.registryEntry] explicit registry entry for the claude profile (optional).
+ * @returns {{ activated: string, target: string, outputFile: string }
+ *           | { activated: string[] }}
+ * @throws {Error} when the skill is not installed, or when no target is given and none is persisted.
+ */
+export function skillsActivateCommand(name, opts = {}) {
+  const storeDir = opts.storeDir || STORE_PATH;
+  const targetDir = opts.targetDir || harnessSkillsDir();
+
+  if (opts.list) {
+    const installed = discoverSkills(storeDir);
+    const activated = installed
+      .filter((skill) => existsSync(join(targetDir, `${skill.name}.md`)))
+      .map((skill) => skill.name);
+    return { activated };
+  }
+
+  if (typeof name !== 'string' || name.trim() === '') {
+    throw new Error('skills activate requires a <name> (an installed skill)');
+  }
+
+  const skillDir = join(storeDir, name);
+  const skillMd = join(skillDir, SKILL_FILE);
+  if (!existsSync(skillMd)) {
+    throw new Error(`skill "${name}" is not installed (expected ${skillMd}). Run "skillforge skills add" first.`);
+  }
+
+  const target = resolveTarget(opts);
+  if (target === '') {
+    throw new Error(
+      'skills activate requires a target: pass --target <name> or set a default with ' +
+        '"skillforge skills config default-target <name>"',
+    );
+  }
+
+  const skillText = readFileSync(skillMd, 'utf8');
+  const registryEntry = opts.registryEntry;
+  const profile = registryEntry && typeof registryEntry === 'object' ? 'claude' : 'open-core';
+  const result = emit({ skillText, profile, registryEntry, name });
+
+  mkdirSync(targetDir, { recursive: true });
+  const outputFile = join(targetDir, `${name}.md`);
+  writeFileSync(outputFile, result.skillMd);
+
+  return { activated: name, target, outputFile };
+}
+
+// Persist a default activation target so future `skills activate` calls need no --target.
+export function setDefaultTarget(target, opts = {}) {
+  return writeConfig('default-target', target, opts.configDir ? { configDir: opts.configDir } : {});
 }

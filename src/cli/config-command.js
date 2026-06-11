@@ -23,6 +23,7 @@ const DEFAULT_CONFIG_DIR = dirname(STORE_PATH) || join(homedir(), '.skillforge')
 // Maps the CLI key spelling to its JSON field and a parser. Adding a key is a one-line entry here.
 const KEYS = {
   'auto-update': { field: 'autoUpdate', parse: (v) => v === 'true' },
+  'default-target': { field: 'defaultTarget', parse: (v) => String(v) },
 };
 
 function configPathFor(configDir) {
@@ -48,7 +49,10 @@ function readRaw(configDir) {
 export function readConfig(opts = {}) {
   const configDir = opts.configDir || DEFAULT_CONFIG_DIR;
   const raw = readRaw(configDir);
-  return { autoUpdate: raw.autoUpdate === true };
+  return {
+    autoUpdate: raw.autoUpdate === true,
+    defaultTarget: typeof raw.defaultTarget === 'string' ? raw.defaultTarget : '',
+  };
 }
 
 /**

@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { emitCommand } from '../src/cli/emit-command.js';
-import { skillsAddCommand, skillsListCommand } from '../src/cli/skills-command.js';
+import { skillsAddCommand, skillsListCommand, skillsActivateCommand } from '../src/cli/skills-command.js';
 import { writeConfig } from '../src/cli/config-command.js';
 import { initCommand } from '../src/cli/init-command.js';
 
@@ -58,15 +58,25 @@ const SKILLS_USAGE = `skillforge skills — manage the global skill store (~/.sk
 Usage:
   skillforge skills add <source>         Install a skill bundle into the store
   skillforge skills list                 List installed skills
+  skillforge skills activate <name>      Emit an installed skill into a harness
   skillforge skills config <key> <val>   Set a persisted config flag
 
 A <source> is an npm package (e.g. @skillforge-core/ecc-bundle), a curated alias
 (e.g. "ecc" -> @skillforge-core/ecc-bundle), or a local bundle directory holding
 skills/<name>/SKILL.md per skill.
 
+skills activate emits an installed skill and writes it as <name>.md into the
+target harness skills directory (default: ~/.claude/skills, overridable via the
+CLAUDE_SKILLS_DIR env var). Idempotent — re-running overwrites in place.
+
+  --target <name>   Activation target. Required unless a default-target is set
+                    via "skills config" — there is no built-in default
+  --list            List which installed skills are activated in the target dir
+
 Config keys:
   auto-update <true|false>   When true, the MCP server installs newer bundle
                              versions on startup instead of only notifying.
+  default-target <name>      Default target for "skills activate".
 
 Options:
   -h, --help          Show this help`;
@@ -161,6 +171,42 @@ async function runSkills(argv) {
       const source = skill.source ? ` <- ${skill.source}` : '';
       process.stdout.write(`${skill.name}  ${version}${source}\n`);
     }
+    return;
+  }
+
+  if (action === 'activate') {
+    const { values, positionals } = parseArgs({
+      args: argv.slice(1),
+      options: {
+        help: { type: 'boolean', short: 'h', default: false },
+        target: { type: 'string' },
+        list: { type: 'boolean', default: false },
+      },
+      allowPositionals: true,
+    });
+    if (values.help) {
+      process.stdout.write(SKILLS_USAGE + '\n');
+      process.exit(0);
+    }
+
+    if (values.list) {
+      const { activated } = skillsActivateCommand(undefined, { list: true, target: values.target });
+      if (activated.length === 0) {
+        process.stdout.write('(no skills activated)\n');
+        return;
+      }
+      for (const name of activated) process.stdout.write(`${name}\n`);
+      return;
+    }
+
+    const name = positionals[0];
+    if (!name) {
+      process.stderr.write('skills activate requires a <name>\n');
+      process.stderr.write(SKILLS_USAGE + '\n');
+      process.exit(1);
+    }
+    const result = skillsActivateCommand(name, { target: values.target });
+    process.stdout.write(`activated ${result.activated} -> ${result.outputFile} (target: ${result.target})\n`);
     return;
   }
 

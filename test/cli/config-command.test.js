@@ -20,7 +20,7 @@ function tmp(t) {
 
 test('readConfig returns safe default when file is missing', (t) => {
   const configDir = tmp(t);
-  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false });
+  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false, defaultTarget: '' });
 });
 
 test('writeConfig writes the file and returns the parsed value', (t) => {
@@ -38,7 +38,7 @@ test('writeConfig writes the file and returns the parsed value', (t) => {
 test('readConfig reflects a prior writeConfig true', (t) => {
   const configDir = tmp(t);
   writeConfig('auto-update', 'true', { configDir });
-  assert.deepEqual(readConfig({ configDir }), { autoUpdate: true });
+  assert.deepEqual(readConfig({ configDir }), { autoUpdate: true, defaultTarget: '' });
 });
 
 test('writeConfig false stores a boolean false', (t) => {
@@ -46,7 +46,7 @@ test('writeConfig false stores a boolean false', (t) => {
   const result = writeConfig('auto-update', 'false', { configDir });
   assert.equal(result.value, false);
   assert.equal(typeof result.value, 'boolean');
-  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false });
+  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false, defaultTarget: '' });
 });
 
 test('writeConfig throws on an unknown key', (t) => {
@@ -69,5 +69,5 @@ test('writeConfig preserves other keys already in the file', (t) => {
 test('readConfig treats a non-boolean autoUpdate as false', (t) => {
   const configDir = tmp(t);
   writeFileSync(join(configDir, 'config.json'), JSON.stringify({ autoUpdate: 'true' }) + '\n');
-  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false });
+  assert.deepEqual(readConfig({ configDir }), { autoUpdate: false, defaultTarget: '' });
 });
