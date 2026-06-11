@@ -37,7 +37,14 @@ const SYNTHETIC_FIXTURE_ALLOWLIST = new Set([
   "test/governance/injection-guard.test.js", // synthetic base64 attack payloads (not secrets) for the base64-instruction detector
   "test/governance/mcp-policy.test.js",    // MCP-policy gate tests feed a synthetic token to prove secret-scan still wins
   "package-lock.json",                     // npm integrity hashes (SHA-512 digests) are not credentials
+  "clients/verdex/resources/tokens.json",  // design tokens: base64-encoded SVG icons, not credentials
+  "test/engine/large-compose.test.js",     // uses AWS docs canonical example key as synthetic large-input payload
 ]);
+
+// Third-party vendored content directories exempt from credential scanning.
+// ECC skills are published by an external community; they may contain example
+// credential strings in documentation/tutorials (bearer token examples, etc.).
+const SKIP_DIRS_CONTENT = new Set(["packages"]);
 
 const SCANNABLE_RE = /\.(js|mjs|cjs|ts|tsx|json|md|txt|env|ya?ml)$/;
 
@@ -51,6 +58,7 @@ function walk(dir, acc = []) {
   for (const e of entries) {
     if (e.isDirectory()) {
       if (SKIP_DIRS.has(e.name)) continue;
+      if (SKIP_DIRS_CONTENT.has(e.name)) continue;
       walk(join(dir, e.name), acc);
     } else if (e.isFile()) {
       acc.push(join(dir, e.name));

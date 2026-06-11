@@ -206,7 +206,7 @@ function guardClientsDir(problems) {
   // engine is generic across DIFFERENT adapters — it is NOT a prior-employer/efigence client
   // (those remain forbidden by EFI_CLIENT_RE). Extending this set is legitimate author-owned
   // maintenance: a new author client is data-only and must still pass EFI_CLIENT_RE.
-  const allowed = new Set(["example-studio", "glasshouse"]);
+  const allowed = new Set(["example-studio", "glasshouse", "verdex", "verdex-advisor"]);
   for (const e of entries) {
     if (e.isDirectory() && !allowed.has(e.name)) {
       problems.push(
