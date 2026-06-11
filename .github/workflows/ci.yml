@@ -30,7 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # Zero runtime dependencies — nothing to install. node:test is built in.
+      # Install dependencies (MCP SDK is the sole runtime dep — needed by test/mcp/).
+      - run: npm ci
       - name: Run the test suite (serial, deterministic)
         run: npm run test:ci
 
