@@ -8,6 +8,13 @@ at, and, for harness profiles, a registry entry).
 
 If you just want the flag reference, jump to the [Options reference](#5-options-reference).
 
+> **Just want the skills in Claude Code — no git, no Node, no terminal?** You don't need this
+> guide or any of its prerequisites. Download the skills ZIP from
+> [Releases](https://github.com/hretheum/skillforge/releases), unpack it into `~/.claude/skills/`,
+> and restart Claude Code. See the README's
+> ["I don't know what git is"](../README.md#i-dont-know-what-git-is--and-i-dont-want-to) section.
+> The guide below covers the full engine (CLI + MCP server).
+
 ## 1. Prerequisites
 
 - **Node.js 18 or newer.** Check with `node --version`.

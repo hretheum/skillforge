@@ -39,9 +39,33 @@ poufnych nie jest przenoszona — tylko idee i „jak to ma działać".
 
 ## Szybki start
 
+### „Nie wiem co to git i nie wiem co to homebrew — i nie chcę wiedzieć"
+
+Chcesz po prostu używać umiejętności jako komend `/nazwa-skilla` w **Claude Code**. Bez terminala,
+bez gita, bez Node.js:
+
+1. Pobierz ZIP z umiejętnościami z [**Releases**](https://github.com/hretheum/skillforge/releases)
+   (plik `skillforge-skills-<wersja>.zip`)
+2. Rozpakuj go i przenieś foldery umiejętności do `~/.claude/skills/`
+   (w Finderze: **Cmd+Shift+G** → wpisz `~/.claude/skills`)
+3. Zrestartuj Claude Code — wszystkie 266 umiejętności działa jako komendy: `/brand-discovery`,
+   `/brand-voice`, `/api-design`, …
+
+Albo, jeśli jedna linia w Terminalu nie jest problemem (używa wyłącznie narzędzi preinstalowanych
+w macOS):
+
+```bash
+curl -L https://github.com/hretheum/skillforge/releases/download/skills-v0.2.1/skillforge-skills-0.2.1.zip -o /tmp/sf.zip && mkdir -p ~/.claude/skills && unzip -oq /tmp/sf.zip -d ~/.claude/skills
+```
+
+Ta ścieżka instaluje wyłącznie umiejętności — bez CLI, bez serwera MCP; podczas instalacji nie
+wykonuje się żaden kod. Jeśli chcesz pełny silnik, czytaj dalej.
+
+### „Jestem developerem"
+
 **Wybierz jedną** z dwóch opcji instalacji poniżej, a następnie opcjonalnie dodaj serwer MCP i pakiet umiejętności.
 
-### Opcja A — Globalne CLI (zalecane)
+#### Opcja A — Globalne CLI (zalecane)
 
 Instalujesz raz, używasz wszędzie:
 
@@ -53,7 +77,7 @@ npm install -g .
 skillforge --help
 ```
 
-### Opcja B — Uruchom bezpośrednio bez instalacji
+#### Opcja B — Uruchom bezpośrednio bez instalacji
 
 Jeśli nie chcesz instalować globalnie, uruchamiaj z katalogu repozytorium:
 

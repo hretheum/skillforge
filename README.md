@@ -39,9 +39,32 @@ confidential data is carried in — only ideas and "how it should work".
 
 ## Quick start
 
+### "I don't know what git is — and I don't want to"
+
+You just want the skills as `/skill-name` slash commands in **Claude Code**. No terminal, no git,
+no Node.js:
+
+1. Download the skills ZIP from [**Releases**](https://github.com/hretheum/skillforge/releases)
+   (asset `skillforge-skills-<version>.zip`)
+2. Unpack it and move the skill folders into `~/.claude/skills/`
+   (in Finder: **Cmd+Shift+G** → type `~/.claude/skills`)
+3. Restart Claude Code — all 266 skills work as slash commands: `/brand-discovery`,
+   `/brand-voice`, `/api-design`, …
+
+Or, if a single Terminal line is acceptable (uses only tools preinstalled on macOS):
+
+```bash
+curl -L https://github.com/hretheum/skillforge/releases/download/skills-v0.2.1/skillforge-skills-0.2.1.zip -o /tmp/sf.zip && mkdir -p ~/.claude/skills && unzip -oq /tmp/sf.zip -d ~/.claude/skills
+```
+
+This path installs the skills only — no CLI, no MCP server, nothing executes at install time.
+If you want the full engine, read on.
+
+### "I'm a developer"
+
 **Pick one** of the two installation options below, then optionally add the MCP server and a skill bundle.
 
-### Option A — Global CLI (recommended)
+#### Option A — Global CLI (recommended)
 
 Install once, use from anywhere:
 
@@ -53,7 +76,7 @@ npm install -g .
 skillforge --help
 ```
 
-### Option B — Run directly without installing
+#### Option B — Run directly without installing
 
 If you prefer not to install globally, run from the cloned directory:
 

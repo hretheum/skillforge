@@ -1,0 +1,49 @@
+# Build and publish the zero-prerequisite skills ZIP as a GitHub Release.
+#
+# The ZIP holds every skill from the published @skillforge-core/ecc-bundle as
+# <name>/SKILL.md (plus references), ready to unpack into ~/.claude/skills/ —
+# the install path for users without git/node/npm.
+#
+# Trigger manually (workflow_dispatch) after a new bundle version is published;
+# the release tag is derived from the bundle version (skills-v<version>).
+
+name: skills-release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to create the release
+
+jobs:
+  release:
+    name: Build and release skills ZIP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch the published bundle
+        run: |
+          npm pack @skillforge-core/ecc-bundle --silent
+          tar -xzf skillforge-core-ecc-bundle-*.tgz
+          VERSION=$(node -p "require('./package/package.json').version")
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Build the ZIP (skill dirs at top level)
+        run: |
+          cd package/skills
+          zip -rq "../../skillforge-skills-${VERSION}.zip" .
+          cd ../..
+          unzip -l "skillforge-skills-${VERSION}.zip" | tail -2
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "skills-v${VERSION}" \
+            "skillforge-skills-${VERSION}.zip" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Skills bundle ${VERSION} — no tools required" \
+            --notes "Unpack into ~/.claude/skills/ and restart Claude Code. See the README's \"I don't know what git is\" section for full instructions."
