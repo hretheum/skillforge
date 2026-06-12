@@ -199,8 +199,25 @@ skillforge skills config default-target superpowers
 skillforge skills activate brand-voice   # uses default
 ```
 
+**How loading works — lazy by design.** superpowers loads a skill's full content only when you invoke it
+(`/brand-voice` or via the `Skill` tool). At session start only the skill registry metadata is read, not
+the file bodies. This means activating all installed skills at once carries effectively zero SessionStart
+cost — you can safely activate your entire store:
+
+```bash
+ls ~/.skillforge/skills/ | while read skill; do
+  skillforge skills activate "$skill" --target superpowers
+done
+```
+
 List which skills are currently activated:
 
 ```bash
 skillforge skills activate --list
+```
+
+To remove a skill from the harness:
+
+```bash
+skillforge skills deactivate brand-voice
 ```
