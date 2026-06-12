@@ -86,6 +86,24 @@ export const TOOLS = [
     },
   },
   {
+    name: 'skillforge_get_skill',
+    description:
+      'Load the full SKILL.md content of an installed skill by name. USE THIS whenever the user ' +
+      'types a slash command like /<skill-name> (e.g. "/api-design", "/brand-discovery") — resolve ' +
+      'the name against the skill store and follow the returned skill content as instructions. ' +
+      'Use skillforge_list_skills first if unsure whether the skill exists.',
+    inputSchema: {
+      type: 'object',
+      required: ['name'],
+      properties: {
+        name: {
+          type: 'string',
+          description: 'The skill name, exactly as listed by skillforge_list_skills (no leading slash).',
+        },
+      },
+    },
+  },
+  {
     name: 'skillforge_skills_update',
     description:
       'Update all installed skill bundles to their latest versions. Re-fetches each bundle from its source and re-installs. Returns a summary of what was updated.',
@@ -288,10 +306,28 @@ function handleReadFile(args) {
   return textResult(readFileSync(abs, 'utf8'));
 }
 
+function handleGetSkill(args) {
+  const skillName = typeof args.name === 'string' ? args.name.replace(/^\//, '').trim() : '';
+  try {
+    assertSafeSkillName(skillName);
+  } catch (err) {
+    return errorResult(err.message);
+  }
+  const skillMd = join(STORE_PATH, skillName, 'SKILL.md');
+  if (!existsSync(skillMd)) {
+    return errorResult(
+      `skill "${skillName}" is not installed. Call skillforge_list_skills to see available names.`,
+    );
+  }
+  return textResult(readFileSync(skillMd, 'utf8'));
+}
+
 async function dispatch(name, args) {
   switch (name) {
     case 'skillforge_emit':
       return handleEmit(args);
+    case 'skillforge_get_skill':
+      return handleGetSkill(args);
     case 'skillforge_list_profiles':
       return handleListProfiles();
     case 'skillforge_list_skills':
@@ -335,7 +371,16 @@ function readSkillDescription(skillName) {
 export async function startMcpServer() {
   const server = new Server(
     { name: 'skillforge', version: '0.1.0' },
-    { capabilities: { tools: {}, prompts: {} } },
+    {
+      capabilities: { tools: {}, prompts: {} },
+      instructions:
+        'skillforge hosts a store of installed skills (reusable agent instructions). ' +
+        'SLASH COMMANDS: when the user types /<skill-name> (e.g. "/api-design", "/brand-discovery") ' +
+        'and it is not a built-in command, call skillforge_get_skill with that name and follow the ' +
+        'returned SKILL.md as instructions for the rest of the conversation. If the name does not ' +
+        'resolve, call skillforge_list_skills and suggest close matches. The same skills are also ' +
+        'exposed as MCP prompts.',
+    },
   );
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }));

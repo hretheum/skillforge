@@ -99,16 +99,17 @@ test('initialize handshake returns protocolVersion and serverInfo', async () => 
   }
 });
 
-test('tools/list returns 6 tools with correct names', async () => {
+test('tools/list returns 7 tools with correct names', async () => {
   const child = startServer();
   try {
     await initialize(child);
     const res = await sendRequest(child, 2, 'tools/list', {});
     const names = res.result.tools.map((t) => t.name);
-    assert.equal(res.result.tools.length, 6);
+    assert.equal(res.result.tools.length, 7);
     assert.ok(names.includes('skillforge_emit'));
     assert.ok(names.includes('skillforge_list_profiles'));
     assert.ok(names.includes('skillforge_list_skills'));
+    assert.ok(names.includes('skillforge_get_skill'));
     assert.ok(names.includes('skillforge_skills_update'));
     assert.ok(names.includes('skillforge_write_file'));
     assert.ok(names.includes('skillforge_read_file'));
@@ -153,6 +154,36 @@ test('skillforge_list_skills with no registry returns empty list', async () => {
     assert.notEqual(res.result.isError, true);
     const payload = JSON.parse(res.result.content[0].text);
     assert.deepEqual(payload.skills, []);
+  } finally {
+    child.kill();
+  }
+});
+
+test('skillforge_get_skill rejects a path-traversal name', async () => {
+  const child = startServer();
+  try {
+    await initialize(child);
+    const res = await callTool(child, 30, 'skillforge_get_skill', {
+      name: '../../../etc/passwd',
+    });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /invalid skill name/);
+  } finally {
+    child.kill();
+  }
+});
+
+test('skillforge_get_skill on a not-installed name returns a helpful error', async () => {
+  const child = startServer();
+  try {
+    await initialize(child);
+    // A leading slash (as typed in chat) is stripped before resolution.
+    const res = await callTool(child, 31, 'skillforge_get_skill', {
+      name: '/sfg-definitely-not-a-real-skill',
+    });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /not installed/);
+    assert.match(res.result.content[0].text, /skillforge_list_skills/);
   } finally {
     child.kill();
   }
