@@ -174,3 +174,33 @@ from the `--skill` filename (`MY-SKILL.md` → `MY-SKILL`); add a matching key u
 
 **`registry "…" is not valid JSON: …`**
 The registry file could not be parsed. Check it is well-formed JSON (no trailing commas, quoted keys).
+
+**`skills activate requires a target`**
+You ran `skillforge skills activate <name>` without `--target` and without a `default-target` in config.
+Either pass `--target superpowers` explicitly, or set a default once:
+```bash
+skillforge skills config default-target superpowers
+```
+
+## 9. Activate a skill for Claude Code (optional)
+
+If you use [superpowers](https://github.com/georgejung/superpowers) with Claude Code, you can
+activate any installed skill as a native slash command:
+
+```bash
+skillforge skills activate brand-voice --target superpowers
+```
+
+This writes `~/.claude/skills/brand-voice.md` so Claude Code picks it up automatically.
+To avoid typing `--target` every time, set a default:
+
+```bash
+skillforge skills config default-target superpowers
+skillforge skills activate brand-voice   # uses default
+```
+
+List which skills are currently activated:
+
+```bash
+skillforge skills activate --list
+```
