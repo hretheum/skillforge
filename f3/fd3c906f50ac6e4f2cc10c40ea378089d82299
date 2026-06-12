@@ -1,0 +1,22 @@
+src/mcp/server.js
+  s_cccb63ccf9da6d::t_fd52245abf31f9 16
+  s_cccb63ccf9da6d::t_f5124353c623d9 24-25
+  s_cccb63ccf9da6d::t_a9f460f2dc941c 33
+  s_cccb63ccf9da6d::t_fb302c88bc1759 310-321,325,330-349
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f3fd3c906f50ac6e4f2cc10c40ea378089d82299",
+  "prompts": {},
+  "sessions": {
+    "s_cccb63ccf9da6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d350c1a1-ae92-4675-b8fa-96d23f7cf256",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
