@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { emitCommand } from '../src/cli/emit-command.js';
-import { skillsAddCommand, skillsListCommand, skillsActivateCommand } from '../src/cli/skills-command.js';
+import { skillsAddCommand, skillsListCommand, skillsActivateCommand, skillsDeactivateCommand } from '../src/cli/skills-command.js';
 import { writeConfig } from '../src/cli/config-command.js';
 import { initCommand } from '../src/cli/init-command.js';
 
@@ -59,6 +59,7 @@ Usage:
   skillforge skills add <source>         Install a skill bundle into the store
   skillforge skills list                 List installed skills
   skillforge skills activate <name>      Emit an installed skill into a harness
+  skillforge skills deactivate <name>    Remove an activated skill from the harness
   skillforge skills config <key> <val>   Set a persisted config flag
 
 A <source> is an npm package (e.g. @skillforge-core/ecc-bundle), a curated alias
@@ -207,6 +208,26 @@ async function runSkills(argv) {
     }
     const result = skillsActivateCommand(name, { target: values.target });
     process.stdout.write(`activated ${result.activated} -> ${result.outputFile} (target: ${result.target})\n`);
+    return;
+  }
+
+  if (action === 'deactivate') {
+    const { values, positionals } = parseArgs({
+      args: argv.slice(1),
+      options: { help: { type: 'boolean', short: 'h', default: false } },
+      allowPositionals: true,
+    });
+    if (values.help) { process.stdout.write(SKILLS_USAGE + '\n'); process.exit(0); }
+    const name = positionals[0];
+    if (!name) {
+      process.stderr.write('skills deactivate requires a <name>\n');
+      process.stderr.write(SKILLS_USAGE + '\n');
+      process.exit(1);
+    }
+    const result = skillsDeactivateCommand(name);
+    process.stdout.write(result.wasActive
+      ? `deactivated ${result.deactivated}\n`
+      : `${result.deactivated} was not activated (nothing to remove)\n`);
     return;
   }
 

@@ -304,3 +304,28 @@ export function skillsActivateCommand(name, opts = {}) {
 export function setDefaultTarget(target, opts = {}) {
   return writeConfig('default-target', target, opts.configDir ? { configDir: opts.configDir } : {});
 }
+
+// Remove a previously activated skill from the harness skills directory.
+// Inverse of skillsActivateCommand. Idempotent: deactivating a skill that is not
+// activated is not an error.
+export function skillsDeactivateCommand(name, opts = {}) {
+  const storeDir = opts.storeDir || STORE_PATH;
+  const targetDir = opts.targetDir || harnessSkillsDir();
+
+  if (typeof name !== 'string' || name.trim() === '') {
+    throw new Error('skills deactivate requires a <name>');
+  }
+
+  const skillMd = join(storeDir, name, SKILL_FILE);
+  if (!existsSync(skillMd)) {
+    throw new Error(`skill "${name}" is not installed (expected ${skillMd}). Run "skillforge skills add" first.`);
+  }
+
+  const outputFile = join(targetDir, `${name}.md`);
+  if (!existsSync(outputFile)) {
+    return { deactivated: name, wasActive: false };
+  }
+
+  rmSync(outputFile);
+  return { deactivated: name, wasActive: true };
+}
