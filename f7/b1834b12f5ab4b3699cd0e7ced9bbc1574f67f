@@ -1,0 +1,27 @@
+test/cli/skills-activate.test.js
+  s_cccb63ccf9da6d::t_bc1e923d5862f0 74
+  s_cccb63ccf9da6d::t_851b782b5e4393 107
+  s_cccb63ccf9da6d::t_3645f7b2b7ca22 34
+  s_cccb63ccf9da6d::t_961de2762a4c4b 43
+  s_cccb63ccf9da6d::t_e4f9f82ce8e3e4 61
+src/cli/skills-command.js
+  s_cccb63ccf9da6d::t_a5f9dc226ec1e1 332-333,337
+  s_cccb63ccf9da6d::t_4e36623566743f 268
+  s_cccb63ccf9da6d::t_cc74e08a127cba 296-299
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f7b1834b12f5ab4b3699cd0e7ced9bbc1574f67f",
+  "prompts": {},
+  "sessions": {
+    "s_cccb63ccf9da6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d350c1a1-ae92-4675-b8fa-96d23f7cf256",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
