@@ -259,6 +259,20 @@ done
 
 ---
 
+**Skills don't respond to `/skill-name` in Claude Desktop chat**
+
+Claude Desktop's chat `/` menu only lists Anthropic cloud skills — it does not surface MCP prompts or
+tools from connected servers until the model has a reason to use them. To run a store skill in
+Desktop chat, mention the server explicitly, e.g.:
+
+> use the skillforge mcp skill api-design
+
+The model will then call `skillforge_get_skill` and follow the skill. In **Claude Code** (CLI and
+desktop app) activated skills work as native `/skill-name` commands — see
+[`docs/getting-started.md`](docs/getting-started.md), section 9.
+
+---
+
 **Contributing a skill to ECC** (the community bundle):
 
 skillforge ships the [ECC](https://github.com/affaan-m/ECC) bundle. If you want to add a skill to

@@ -137,6 +137,12 @@ skillforge init
 skillforge mcp
 ```
 
+**Running store skills from Claude Desktop chat.** The chat `/` menu lists only Anthropic cloud
+skills, so typing `/skill-name` alone is not recognized. Instead, name the server in your message —
+"use the skillforge mcp skill api-design" — and the model will load the skill via the
+`skillforge_get_skill` tool. (In Claude Code, activated skills work as native `/skill-name`
+commands — see section 9.)
+
 ## 7. Install a skill bundle (optional)
 
 Install 266 community skills from the [ECC](https://github.com/affaan-m/ECC) collection:
