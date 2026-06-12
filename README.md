@@ -237,6 +237,28 @@ Contributions are welcome — bug reports, new skill kinds, adapter implementati
 | Emit profiles | [`docs/deployment-profiles.md`](docs/deployment-profiles.md) |
 | Glossary | [`docs/glossary.md`](docs/glossary.md) |
 
+## Troubleshooting
+
+**Activated skills not visible as slash commands in Claude Code**
+
+Before v0.1.1, `skills activate` wrote flat `~/.claude/skills/<name>.md` files. Claude Code requires
+skills to be in `~/.claude/skills/<name>/SKILL.md` directory format. If you activated skills with an
+older version, re-run:
+
+```bash
+# Remove old flat files
+ls ~/.skillforge/skills/ | while read skill; do
+  rm -f ~/.claude/skills/${skill}.md
+done
+
+# Re-activate in the correct format
+ls ~/.skillforge/skills/ | while read skill; do
+  skillforge skills activate "$skill" --target superpowers
+done
+```
+
+---
+
 **Contributing a skill to ECC** (the community bundle):
 
 skillforge ships the [ECC](https://github.com/affaan-m/ECC) bundle. If you want to add a skill to
