@@ -104,6 +104,24 @@ export const TOOLS = [
     },
   },
   {
+    name: 'skillforge_skills_add',
+    description:
+      'Install a skill bundle into the global skill store (~/.skillforge/skills/). Accepts a ' +
+      'curated alias (e.g. "ecc" = the 266-skill ECC community bundle), an npm package name, or ' +
+      'a local bundle directory. Use when the user asks to install/add skills or a bundle.',
+    inputSchema: {
+      type: 'object',
+      required: ['source'],
+      properties: {
+        source: {
+          type: 'string',
+          description:
+            'Bundle source: alias ("ecc"), npm package ("@skillforge-core/ecc-bundle"), or local directory path.',
+        },
+      },
+    },
+  },
+  {
     name: 'skillforge_skills_update',
     description:
       'Update all installed skill bundles to their latest versions. Re-fetches each bundle from its source and re-installs. Returns a summary of what was updated.',
@@ -328,6 +346,10 @@ async function dispatch(name, args) {
       return handleEmit(args);
     case 'skillforge_get_skill':
       return handleGetSkill(args);
+    case 'skillforge_skills_add': {
+      const { installed, skipped } = await skillsAddCommand(args.source);
+      return textResult(JSON.stringify({ installed: installed.length, skipped: skipped.length, names: installed }));
+    }
     case 'skillforge_list_profiles':
       return handleListProfiles();
     case 'skillforge_list_skills':

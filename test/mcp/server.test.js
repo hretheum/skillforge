@@ -99,13 +99,14 @@ test('initialize handshake returns protocolVersion and serverInfo', async () => 
   }
 });
 
-test('tools/list returns 7 tools with correct names', async () => {
+test('tools/list returns 8 tools with correct names', async () => {
   const child = startServer();
   try {
     await initialize(child);
     const res = await sendRequest(child, 2, 'tools/list', {});
     const names = res.result.tools.map((t) => t.name);
-    assert.equal(res.result.tools.length, 7);
+    assert.equal(res.result.tools.length, 8);
+    assert.ok(names.includes('skillforge_skills_add'));
     assert.ok(names.includes('skillforge_emit'));
     assert.ok(names.includes('skillforge_list_profiles'));
     assert.ok(names.includes('skillforge_list_skills'));
@@ -154,6 +155,32 @@ test('skillforge_list_skills with no registry returns empty list', async () => {
     assert.notEqual(res.result.isError, true);
     const payload = JSON.parse(res.result.content[0].text);
     assert.deepEqual(payload.skills, []);
+  } finally {
+    child.kill();
+  }
+});
+
+test('skillforge_skills_add with an empty source returns a clear error', async () => {
+  const child = startServer();
+  try {
+    await initialize(child);
+    const res = await callTool(child, 32, 'skillforge_skills_add', { source: '' });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /requires a <source>/);
+  } finally {
+    child.kill();
+  }
+});
+
+test('skillforge_skills_add with a missing local dir returns a clear error', async () => {
+  const child = startServer();
+  try {
+    await initialize(child);
+    const res = await callTool(child, 33, 'skillforge_skills_add', {
+      source: '/no/such/bundle-dir',
+    });
+    assert.equal(res.result.isError, true);
+    assert.match(res.result.content[0].text, /not a directory/);
   } finally {
     child.kill();
   }
