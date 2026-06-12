@@ -316,16 +316,26 @@ export function skillsDeactivateCommand(name, opts = {}) {
     throw new Error('skills deactivate requires a <name>');
   }
 
+  // Guard against path traversal: name must be a plain basename with no
+  // directory separators, null bytes, or drive-letter prefixes.
+  if (/[/\\]/.test(name) || name.includes('\0') || /^[a-zA-Z]:/.test(name)) {
+    throw new Error(`invalid skill name "${name}": must be a simple name with no path separators`);
+  }
+
   const skillMd = join(storeDir, name, SKILL_FILE);
   if (!existsSync(skillMd)) {
     throw new Error(`skill "${name}" is not installed (expected ${skillMd}). Run "skillforge skills add" first.`);
   }
 
   const outputFile = join(targetDir, `${name}.md`);
-  if (!existsSync(outputFile)) {
-    return { deactivated: name, wasActive: false };
+  // Atomic: let the OS tell us whether the file existed rather than a
+  // separate existsSync check (avoids TOCTOU race).
+  let wasActive = true;
+  try {
+    rmSync(outputFile);
+  } catch (err) {
+    if (err.code === 'ENOENT') wasActive = false;
+    else throw err;
   }
-
-  rmSync(outputFile);
-  return { deactivated: name, wasActive: true };
+  return { deactivated: name, wasActive };
 }
