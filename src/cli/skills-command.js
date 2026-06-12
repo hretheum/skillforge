@@ -265,7 +265,7 @@ export function skillsActivateCommand(name, opts = {}) {
   if (opts.list) {
     const installed = discoverSkills(storeDir);
     const activated = installed
-      .filter((skill) => existsSync(join(targetDir, `${skill.name}.md`)))
+      .filter((skill) => existsSync(join(targetDir, skill.name, SKILL_FILE)))
       .map((skill) => skill.name);
     return { activated };
   }
@@ -293,8 +293,10 @@ export function skillsActivateCommand(name, opts = {}) {
   const profile = registryEntry && typeof registryEntry === 'object' ? 'claude' : 'open-core';
   const result = emit({ skillText, profile, registryEntry, name });
 
-  mkdirSync(targetDir, { recursive: true });
-  const outputFile = join(targetDir, `${name}.md`);
+  // Claude Code's Skill tool discovers skills as <dir>/<name>/SKILL.md, not flat <name>.md files.
+  const outputDir = join(targetDir, name);
+  mkdirSync(outputDir, { recursive: true });
+  const outputFile = join(outputDir, SKILL_FILE);
   writeFileSync(outputFile, result.skillMd);
 
   return { activated: name, target, outputFile };
@@ -327,12 +329,12 @@ export function skillsDeactivateCommand(name, opts = {}) {
     throw new Error(`skill "${name}" is not installed (expected ${skillMd}). Run "skillforge skills add" first.`);
   }
 
-  const outputFile = join(targetDir, `${name}.md`);
-  // Atomic: let the OS tell us whether the file existed rather than a
+  const outputDir = join(targetDir, name);
+  // Atomic: let the OS tell us whether the directory existed rather than a
   // separate existsSync check (avoids TOCTOU race).
   let wasActive = true;
   try {
-    rmSync(outputFile);
+    rmSync(outputDir, { recursive: true });
   } catch (err) {
     if (err.code === 'ENOENT') wasActive = false;
     else throw err;

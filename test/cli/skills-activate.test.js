@@ -31,7 +31,7 @@ function installSkill(storeDir, name, body = `---\nname: ${name}\n---\n# ${name}
   writeFileSync(join(dir, 'SKILL.md'), body);
 }
 
-test('activate writes the emitted skill as <name>.md in the target dir', (t) => {
+test('activate writes the emitted skill as <name>/SKILL.md in the target dir', (t) => {
   const storeDir = tmp(t, 'sf-store-');
   const targetDir = tmp(t, 'sf-target-');
   installSkill(storeDir, 'demo');
@@ -40,7 +40,7 @@ test('activate writes the emitted skill as <name>.md in the target dir', (t) => 
 
   assert.equal(res.activated, 'demo');
   assert.equal(res.target, 'superpowers');
-  const out = join(targetDir, 'demo.md');
+  const out = join(targetDir, 'demo', 'SKILL.md');
   assert.equal(res.outputFile, out);
   assert.ok(existsSync(out));
   // open-core profile (no registry) emits byte-identical to the source.
@@ -58,7 +58,7 @@ test('activate with no --target and no default-target throws a clear error', (t)
     /requires a target/,
   );
   // nothing was written — the command bailed before emitting
-  assert.ok(!existsSync(join(targetDir, 'demo.md')));
+  assert.ok(!existsSync(join(targetDir, 'demo', 'SKILL.md')));
 });
 
 test('activate falls back to a persisted default-target when --target is omitted', (t) => {
@@ -71,7 +71,7 @@ test('activate falls back to a persisted default-target when --target is omitted
   const res = skillsActivateCommand('demo', { storeDir, targetDir, configDir });
 
   assert.equal(res.target, 'superpowers');
-  assert.ok(existsSync(join(targetDir, 'demo.md')));
+  assert.ok(existsSync(join(targetDir, 'demo', 'SKILL.md')));
 });
 
 test('an explicit --target overrides a persisted default-target', (t) => {
@@ -104,7 +104,7 @@ test('activate is idempotent — a re-run overwrites the same file in place', (t
 
   assert.deepEqual(first, second);
   assert.equal(
-    readFileSync(join(targetDir, 'demo.md'), 'utf8'),
+    readFileSync(join(targetDir, 'demo', 'SKILL.md'), 'utf8'),
     readFileSync(join(storeDir, 'demo', 'SKILL.md'), 'utf8'),
   );
 });
