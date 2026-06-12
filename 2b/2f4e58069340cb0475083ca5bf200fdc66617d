@@ -1,0 +1,26 @@
+.github/workflows/skills-release.yml
+  s_cccb63ccf9da6d::t_96c5fc56216b9f 1-49
+docs/getting-started.md
+  s_cccb63ccf9da6d::t_ab535a53d2abb3 11-17
+README.md
+  s_cccb63ccf9da6d::t_75a5eedcaada76 67,79
+  s_cccb63ccf9da6d::t_98dfb147c22b9b 42-64
+docs/README.pl.md
+  s_cccb63ccf9da6d::t_63ceda12b94d02 42-65,68,80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2b2f4e58069340cb0475083ca5bf200fdc66617d",
+  "prompts": {},
+  "sessions": {
+    "s_cccb63ccf9da6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d350c1a1-ae92-4675-b8fa-96d23f7cf256",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
