@@ -1,0 +1,19 @@
+README.md
+  s_cccb63ccf9da6d::t_b8f10b9dee2e50 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6907dcd8a17deb7a142abf8fbafe89c4b7537bb4",
+  "prompts": {},
+  "sessions": {
+    "s_cccb63ccf9da6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d350c1a1-ae92-4675-b8fa-96d23f7cf256",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
