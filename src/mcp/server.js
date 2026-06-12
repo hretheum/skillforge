@@ -308,9 +308,22 @@ async function dispatch(name, args) {
 }
 
 const FRONTMATTER_DESC = /^---[\s\S]*?^description:\s*(.+?)(?=\n\w|\n---)/m;
+const SAFE_SKILL_NAME = /^[A-Za-z0-9_.-]+$/;
+
+function assertSafeSkillName(name) {
+  if (!name || !SAFE_SKILL_NAME.test(name) || name === '..') {
+    throw new Error(`invalid skill name: "${name}"`);
+  }
+  const resolved = resolvePath(STORE_PATH, name, 'SKILL.md');
+  const root = resolvePath(STORE_PATH) + sep;
+  if (!resolved.startsWith(root)) {
+    throw new Error(`invalid skill name: "${name}"`);
+  }
+}
 
 function readSkillDescription(skillName) {
   try {
+    assertSafeSkillName(skillName);
     const text = readFileSync(join(STORE_PATH, skillName, 'SKILL.md'), 'utf8');
     const m = text.match(FRONTMATTER_DESC);
     return m ? m[1].trim().replace(/\n\s*/g, ' ') : '';
@@ -336,6 +349,7 @@ export async function startMcpServer() {
 
   server.setRequestHandler(GetPromptRequestSchema, async (request) => {
     const { name } = request.params;
+    assertSafeSkillName(name);
     const skillMd = join(STORE_PATH, name, 'SKILL.md');
     if (!existsSync(skillMd)) {
       throw new Error(`skill "${name}" not found in store`);
