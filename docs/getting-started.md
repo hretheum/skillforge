@@ -191,7 +191,7 @@ activate any installed skill as a native slash command:
 skillforge skills activate brand-voice --target superpowers
 ```
 
-This writes `~/.claude/skills/brand-voice.md` so Claude Code picks it up automatically.
+This writes `~/.claude/skills/brand-voice/SKILL.md` so Claude Code picks it up automatically as a slash command.
 To avoid typing `--target` every time, set a default:
 
 ```bash
