@@ -13,7 +13,7 @@
 // (the tool-call arguments — skill path, profile, registry path).
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, lstatSync } from 'node:fs';
-import { resolve as resolvePath, isAbsolute, dirname, sep } from 'node:path';
+import { resolve as resolvePath, isAbsolute, dirname, join, sep } from 'node:path';
 import { homedir } from 'node:os';
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -21,6 +21,8 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
   ListToolsRequestSchema,
   CallToolRequestSchema,
+  ListPromptsRequestSchema,
+  GetPromptRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
 import { readConfig } from '../cli/config-command.js';
@@ -28,6 +30,7 @@ import { emitCommand } from '../cli/emit-command.js';
 import { skillsAddCommand } from '../cli/skills-command.js';
 import { emitProfileNames } from '../emit/index.js';
 import { STORE_PATH, listSkills } from '../store/index.js';
+import { discoverSkills } from '../store/discovery.js';
 import { readManifest } from '../store/manifest.js';
 import { checkForUpdates } from './update-checker.js';
 
@@ -304,13 +307,46 @@ async function dispatch(name, args) {
   }
 }
 
+const FRONTMATTER_DESC = /^---[\s\S]*?^description:\s*(.+?)(?=\n\w|\n---)/m;
+
+function readSkillDescription(skillName) {
+  try {
+    const text = readFileSync(join(STORE_PATH, skillName, 'SKILL.md'), 'utf8');
+    const m = text.match(FRONTMATTER_DESC);
+    return m ? m[1].trim().replace(/\n\s*/g, ' ') : '';
+  } catch {
+    return '';
+  }
+}
+
 export async function startMcpServer() {
   const server = new Server(
     { name: 'skillforge', version: '0.1.0' },
-    { capabilities: { tools: {} } },
+    { capabilities: { tools: {}, prompts: {} } },
   );
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }));
+
+  server.setRequestHandler(ListPromptsRequestSchema, async () => ({
+    prompts: discoverSkills(STORE_PATH).map((skill) => ({
+      name: skill.name,
+      description: readSkillDescription(skill.name),
+    })),
+  }));
+
+  server.setRequestHandler(GetPromptRequestSchema, async (request) => {
+    const { name } = request.params;
+    const skillMd = join(STORE_PATH, name, 'SKILL.md');
+    if (!existsSync(skillMd)) {
+      throw new Error(`skill "${name}" not found in store`);
+    }
+    return {
+      messages: [{
+        role: 'user',
+        content: { type: 'text', text: readFileSync(skillMd, 'utf8') },
+      }],
+    };
+  });
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params;
