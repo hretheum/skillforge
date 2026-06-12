@@ -1,0 +1,24 @@
+test/mcp/server.test.js
+  s_cccb63ccf9da6d::t_ac419f02951b10 162-191
+  s_cccb63ccf9da6d::t_619f0a9fd2b77d 102,108,112
+src/mcp/server.js
+  s_cccb63ccf9da6d::t_9d711de34e58a9 89-105
+  s_cccb63ccf9da6d::t_98dea174827873 309-324,329-330
+  s_cccb63ccf9da6d::t_4d10eaf34c4f8a 374-383
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "16b0f0694711a5be83ec3fc2cb25fa4af88ca887",
+  "prompts": {},
+  "sessions": {
+    "s_cccb63ccf9da6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d350c1a1-ae92-4675-b8fa-96d23f7cf256",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
