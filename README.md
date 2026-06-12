@@ -163,6 +163,12 @@ skillforge skills list
 
 # Persist a config flag (e.g. auto-update on MCP startup)
 skillforge skills config auto-update true
+
+# Activate an installed skill as a native slash command in Claude Code
+skillforge skills activate brand-voice --target superpowers
+
+# Deactivate (remove from the harness directory)
+skillforge skills deactivate brand-voice
 ```
 
 ## Skill kinds
