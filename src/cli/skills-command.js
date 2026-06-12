@@ -304,3 +304,38 @@ export function skillsActivateCommand(name, opts = {}) {
 export function setDefaultTarget(target, opts = {}) {
   return writeConfig('default-target', target, opts.configDir ? { configDir: opts.configDir } : {});
 }
+
+// Remove a previously activated skill from the harness skills directory.
+// Inverse of skillsActivateCommand. Idempotent: deactivating a skill that is not
+// activated is not an error.
+export function skillsDeactivateCommand(name, opts = {}) {
+  const storeDir = opts.storeDir || STORE_PATH;
+  const targetDir = opts.targetDir || harnessSkillsDir();
+
+  if (typeof name !== 'string' || name.trim() === '') {
+    throw new Error('skills deactivate requires a <name>');
+  }
+
+  // Guard against path traversal: name must be a plain basename with no
+  // directory separators, null bytes, or drive-letter prefixes.
+  if (/[/\\]/.test(name) || name.includes('\0') || /^[a-zA-Z]:/.test(name)) {
+    throw new Error(`invalid skill name "${name}": must be a simple name with no path separators`);
+  }
+
+  const skillMd = join(storeDir, name, SKILL_FILE);
+  if (!existsSync(skillMd)) {
+    throw new Error(`skill "${name}" is not installed (expected ${skillMd}). Run "skillforge skills add" first.`);
+  }
+
+  const outputFile = join(targetDir, `${name}.md`);
+  // Atomic: let the OS tell us whether the file existed rather than a
+  // separate existsSync check (avoids TOCTOU race).
+  let wasActive = true;
+  try {
+    rmSync(outputFile);
+  } catch (err) {
+    if (err.code === 'ENOENT') wasActive = false;
+    else throw err;
+  }
+  return { deactivated: name, wasActive };
+}
