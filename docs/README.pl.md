@@ -5,6 +5,7 @@
 [![Licencja: Apache 2.0 + Commons Clause](https://img.shields.io/badge/license-Apache--2.0%20%2B%20Commons%20Clause-blue.svg)](../LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](../package.json)
 [![Testy](https://img.shields.io/badge/tests-passing-brightgreen.svg)](#)
+[![Wiki kodu](https://img.shields.io/badge/wiki-cubic.dev-8b5cf6.svg)](https://www.cubic.dev/wiki/hretheum/skillforge?page=page-intro)
 
 Inne języki: [English](../README.md) · [Русский](README.ru.md)
 
