@@ -82,7 +82,13 @@ If the user chooses niche or core + niche, continue to category selection below 
 
 ### 2b: Choose Skill Categories
 
-There are 7 selectable category groups below. The detailed confirmation lists that follow cover 45 skills across 8 categories, plus 1 standalone template. Use `AskUserQuestion` with `multiSelect: true`:
+There are 7 selectable category groups below. The detailed confirmation lists that follow cover the niche skills available in the cloned ECC source. The exact count changes as ECC evolves — before presenting the lists, run:
+
+```bash
+ls "$ECC_ROOT/skills/" | wc -l
+```
+
+to get the live count rather than relying on a number that may have drifted. Use `AskUserQuestion` with `multiSelect: true`:
 
 ```
 Question: "Which skill categories do you want to install?"

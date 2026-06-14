@@ -12,6 +12,15 @@ origin: ECC
 
 Produce thorough, cited research reports from multiple web sources using firecrawl and exa MCP tools.
 
+## Routing Note
+
+Use this skill when you need **multi-source, subagent-parallelized, evidence-graded** research — firecrawl + exa fan-out, adversarial cross-referencing, and a cited report. It is distinct from:
+
+- `research` / `research-ops` — lighter-weight research workflows without the MCP fan-out or subagent parallelism
+- `exa-search` — direct Exa MCP wrapper for a single targeted search query, not a full research pipeline
+
+If you only need a quick web lookup, `exa-search` is cheaper. If you need systematic, multi-angle evidence synthesis, use this skill.
+
 ## When to Activate
 
 - User asks to research any topic in depth

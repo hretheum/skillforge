@@ -15,6 +15,22 @@ Use this skill when agents are being managed like a team rather than a single as
 - A project needs shared workflow state across people and agents.
 - Existing agent fan-out is producing output but not mergeable product.
 
+## Claude Code Native Tooling
+
+When running inside Claude Code's Agent SDK harness, the platform provides first-class team primitives. Prefer these over ad-hoc subprocess management:
+
+- **TeamCreate** — creates a named team and returns a `team_name` that scopes all subsequent work
+- **Task (with `team_name`)** — spawns a teammate into the team; teammates self-claim shared tasks and communicate via `SendMessage`
+- **TaskCreate / TaskGet / TaskUpdate** — shared task list that all teammates can read and update; use for status (pending → in_progress → completed), ownership, and blocking relationships
+- **SendMessage** — the only way teammates communicate with each other; plain text output is not visible across agent boundaries
+
+Pattern:
+```
+TeamCreate → TaskCreate (shared tasks) → Task (spawn teammates with team_name) → teammates self-claim tasks → lead merges artifacts
+```
+
+One team per session. Teammates cannot spawn sub-teams. For initial team composition and role assignment, see also `team-builder`.
+
 ## Operating Model
 
 Treat every agent as a teammate with a narrow contract:
@@ -108,3 +124,9 @@ Finish each orchestration pass with:
 - Tests and eval evidence.
 - Blockers with owner and next action.
 - New shared skill candidates.
+
+## Related Skills
+
+- `team-builder` — role design and team composition; useful before shaping the board
+- `parallel-execution-optimizer` — patterns for maximising parallelism and avoiding write conflicts
+- `superpowers:dispatching-parallel-agents` — Claude Code built-in guidance for fanning out concurrent agents
