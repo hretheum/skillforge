@@ -1,0 +1,76 @@
+packages/ecc-bundle/skills/browser-qa/SKILL.md
+  s_34cb8667adb65c::t_e743250a5f4459 83
+packages/ecc-bundle/skills/documentation-lookup/SKILL.md
+  s_34cb8667adb65c::t_07aeb480e9fb36 9
+packages/ecc-bundle/skills/brand-voice/SKILL.md
+  s_34cb8667adb65c::t_aeb8125ac378be 55,57-58
+packages/ecc-bundle/skills/remotion-video-creation/SKILL.md
+  s_34cb8667adb65c::t_a8620c56f492c7 3-7
+packages/ecc-bundle/skills/visa-doc-translate/SKILL.md
+  s_34cb8667adb65c::t_0670aa2ce97e62 3-7
+packages/ecc-bundle/skills/jira-integration/SKILL.md
+  s_34cb8667adb65c::t_607031e1d1a35f 36
+  s_34cb8667adb65c::t_3d082a49d5c2dc 47-48
+packages/ecc-bundle/skills/workspace-surface-audit/SKILL.md
+  s_34cb8667adb65c::t_eb68b8ec2c8317 3,11-16
+packages/ecc-bundle/skills/safety-guard/SKILL.md
+  s_34cb8667adb65c::t_b6312df5dbe589 71-130
+packages/ecc-bundle/skills/enterprise-agent-ops/SKILL.md
+  s_34cb8667adb65c::t_ab0a219c674dfa 44-70
+packages/ecc-bundle/skills/design-system/SKILL.md
+  s_34cb8667adb65c::t_ca32268ce125bd 7-13,21
+packages/ecc-bundle/skills/agent-eval/SKILL.md
+  s_34cb8667adb65c::t_cee8ecbb6c0e1c 21-29
+  s_34cb8667adb65c::t_6aaff8f213b865 151,153
+packages/ecc-bundle/skills/blueprint/SKILL.md
+  s_34cb8667adb65c::t_9e459f20ede86a 78
+packages/ecc-bundle/skills/api-design/SKILL.md
+  s_34cb8667adb65c::t_bf703e2bcf10ec 11-16,19-20,22,24
+packages/ecc-bundle/skills/deep-research/SKILL.md
+  s_34cb8667adb65c::t_6c7d588a480fe8 15-23
+packages/ecc-bundle/skills/team-agent-orchestration/SKILL.md
+  s_34cb8667adb65c::t_86355694147e74 127-132
+  s_34cb8667adb65c::t_135bca97ec8dd4 18-33
+packages/ecc-bundle/skills/ralphinho-rfc-pipeline/SKILL.md
+  s_34cb8667adb65c::t_180efe1a995af4 13-24
+packages/ecc-bundle/skills/verification-loop/SKILL.md
+  s_34cb8667adb65c::t_7099ba810e984a 69-102,106
+  s_34cb8667adb65c::t_4c9091c2e6c304 3,9,16-18
+test/ecc-bundle/skill-hygiene.test.js
+  s_34cb8667adb65c::t_b23964ee536972 1-221
+packages/ecc-bundle/skills/strategic-compact/SKILL.md
+  s_34cb8667adb65c::t_0d737357154ca3 102
+  s_34cb8667adb65c::t_6d921e388019e9 125
+packages/ecc-bundle/skills/security-scan/SKILL.md
+  s_34cb8667adb65c::t_9c2e5746f9c30a 90
+packages/ecc-bundle/skills/agentic-engineering/SKILL.md
+  s_34cb8667adb65c::t_6efa0a9bcccba7 64-69
+packages/ecc-bundle/skills/frontend-patterns/SKILL.md
+  s_34cb8667adb65c::t_19408f710a5e99 670-675
+  s_34cb8667adb65c::t_11615ccb3cde4a 9-22
+packages/ecc-bundle/skills/configure-ecc/SKILL.md
+  s_34cb8667adb65c::t_100844e2e5728b 85-91
+packages/ecc-bundle/skills/continuous-agent-loop/SKILL.md
+  s_34cb8667adb65c::t_c44222b1302e94 9-13
+  s_34cb8667adb65c::t_436051b9fd1650 33,37
+packages/ecc-bundle/skills/hipaa-compliance/SKILL.md
+  s_34cb8667adb65c::t_7ecb8de6898290 10,19-53,55-59,61,63-66,68,81-83,94-95,99-102
+packages/ecc-bundle/skills/motion-patterns/SKILL.md
+  s_34cb8667adb65c::t_1e19fae6ecd09c 407-430
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "01c0f5db44da71470c04ab152d83a560f103951f",
+  "prompts": {},
+  "sessions": {
+    "s_34cb8667adb65c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "419b813a-aaa3-4f7a-9d1e-a5f8f81fbffe",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
