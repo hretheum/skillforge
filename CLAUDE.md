@@ -22,7 +22,7 @@ dependencies (SAST/semgrep, sonatype) remain out of scope until `package.json` g
 | Dimension | State |
 |---|---|
 | Public API | `runSkill()` in `src/engine/run.js` — sole entry point |
-| Test suite | **1076 pass, 1 skip, 0 fail** (`node --test`) |
+| Test suite | **1103 pass, 1 skip, 0 fail** (`node --test`) |
 | Skill kinds | 6 registered: `artifact` · `instruction` · `validation` · `analysis` · `transformation` · `sync` |
 | Skills in registry | 6: `create-component` · `sync-example` · `verdex-create-component` · `verdex-form-builder` · `verdex-analytics` · `verdex-disclosure-check` |
 | Clients | 4: `example-studio` · `glasshouse` · `verdex` · `verdex-advisor` |

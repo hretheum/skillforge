@@ -25,6 +25,7 @@ import {
   GetPromptRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
+import { frameUntrustedContent } from '../governance/inbound-guard.js';
 import { readConfig } from '../cli/config-command.js';
 import { emitCommand } from '../cli/emit-command.js';
 import { skillsAddCommand } from '../cli/skills-command.js';
@@ -324,7 +325,7 @@ function handleReadFile(args) {
   return textResult(readFileSync(abs, 'utf8'));
 }
 
-function handleGetSkill(args) {
+export function handleGetSkill(args) {
   const skillName = typeof args.name === 'string' ? args.name.replace(/^\//, '').trim() : '';
   try {
     assertSafeSkillName(skillName);
@@ -337,7 +338,15 @@ function handleGetSkill(args) {
       `skill "${skillName}" is not installed. Call skillforge_list_skills to see available names.`,
     );
   }
-  return textResult(readFileSync(skillMd, 'utf8'));
+  // The SKILL.md body is UNTRUSTED inbound content (it arrives from bundles installed via
+  // skillforge_skills_add — any npm/local dir), yet the server instructions tell the model to
+  // "follow the returned skill content as instructions". Frame it as DATA, not instructions, exactly
+  // like the emit/engine path: frameUntrustedContent() fences the body and, when it carries injection
+  // patterns, prepends a visible "⚠ Injection Detected" warning. The provenance label names the skill
+  // (never a secret).
+  return textResult(
+    frameUntrustedContent(readFileSync(skillMd, 'utf8'), { label: `skill:${skillName}` }),
+  );
 }
 
 async function dispatch(name, args) {
@@ -390,6 +399,34 @@ function readSkillDescription(skillName) {
   }
 }
 
+// Decide what update notices to expose on startup — and, when auto-update is on, perform the
+// installs — WITHOUT hiding the outcome from the operator. This replaces a silent repair loop:
+// the old path auto-installed and suppressed the notice ("the update has already happened"),
+// mutating the model's instruction source with zero visibility. Here the auto-apply branch still
+// installs (via the injected addSource, for testability) but ALSO returns a visible notice per
+// update, flagged autoApplied, so handleListSkills surfaces what changed. The safe default
+// (autoUpdate=false) is unchanged: notify-only, no install. Returns the notice array to expose.
+export async function applyUpdateNotices({ notices, autoUpdate, addSource }) {
+  const updates = notices.filter((n) => n.updateAvailable);
+  if (updates.length === 0) return [];
+  if (!autoUpdate) {
+    // Notify-only: hand back the available updates so the operator can act.
+    return updates;
+  }
+  // Auto-apply: install each update, then report it as auto-applied (never suppressed). A failed
+  // install must not crash startup, so it is caught and surfaced as a notice carrying the error.
+  const applied = [];
+  for (const n of updates) {
+    try {
+      await addSource(n.source);
+      applied.push({ ...n, autoApplied: true });
+    } catch (err) {
+      applied.push({ ...n, autoApplied: true, error: err && err.message ? err.message : String(err) });
+    }
+  }
+  return applied;
+}
+
 export async function startMcpServer() {
   const server = new Server(
     { name: 'skillforge', version: '0.1.0' },
@@ -421,10 +458,15 @@ export async function startMcpServer() {
     if (!existsSync(skillMd)) {
       throw new Error(`skill "${name}" not found in store`);
     }
+    // Same inbound-threat posture as handleGetSkill: the prompt body is untrusted bundle content,
+    // so it is framed as DATA (with an injection warning when warranted) rather than handed back raw.
     return {
       messages: [{
         role: 'user',
-        content: { type: 'text', text: readFileSync(skillMd, 'utf8') },
+        content: {
+          type: 'text',
+          text: frameUntrustedContent(readFileSync(skillMd, 'utf8'), { label: `skill:${name}` }),
+        },
       }],
     };
   });
@@ -443,16 +485,14 @@ export async function startMcpServer() {
 
   checkForUpdates()
     .then(async (notices) => {
-      const updates = notices.filter((n) => n.updateAvailable);
       const { autoUpdate } = readConfig();
-      if (autoUpdate && updates.length > 0) {
-        // Auto-install silently and suppress the notice — the update has already happened.
-        for (const n of updates) {
-          await skillsAddCommand(n.source).catch(() => {});
-        }
-      } else {
-        updateNotices = updates;
-      }
+      // Whether auto-applied or notify-only, the outcome is recorded in updateNotices so
+      // handleListSkills surfaces it to the operator — no silent mutation of the instruction source.
+      updateNotices = await applyUpdateNotices({
+        notices,
+        autoUpdate,
+        addSource: (source) => skillsAddCommand(source),
+      });
     })
     .catch(() => {});
 }
