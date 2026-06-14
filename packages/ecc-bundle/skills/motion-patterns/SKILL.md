@@ -404,6 +404,30 @@ export function AnimatedList({ items, onRemove }: {
 }
 ```
 
+## Device Adaptation
+
+<!-- Folded in from motion-ui (merged 2026-06-14 — operator confirmed). -->
+
+Adjust motion intensity based on hardware capability. The heuristic combines
+CPU core count **and** available memory for a more reliable signal.
+`deviceMemory` is available on Chrome/Android; the fallback covers Safari and Firefox.
+
+```ts
+const isLowEnd =
+  typeof navigator !== "undefined" && (
+    // Low memory (Chrome/Android only; undefined elsewhere → treat as capable)
+    (navigator.deviceMemory !== undefined && navigator.deviceMemory <= 2) ||
+    // Few cores AND no memory API (covers Safari/Firefox on weak hardware)
+    (navigator.deviceMemory === undefined && navigator.hardwareConcurrency <= 4)
+  )
+
+const duration = isLowEnd ? 0.2 : 0.4
+```
+
+Rule: **responsiveness > smoothness**. On low-end devices, prefer shorter
+durations and simpler easing rather than removing motion entirely — keeping
+state communication intact while reducing render cost.
+
 ## Constraints / Non-Goals
 
 This skill does **not** cover:

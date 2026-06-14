@@ -99,7 +99,7 @@ Understanding what persists helps you compact with confidence:
 ## Token Optimization Patterns
 
 ### Trigger-Table Lazy Loading
-Instead of loading full skill content at session start, use a trigger table that maps keywords to skill paths. Skills load only when triggered, reducing baseline context by 50%+:
+Instead of loading full skill content at session start, use a trigger table that maps keywords to skill paths. Skills load only when triggered, reducing baseline context:
 
 | Trigger | Skill | Load When |
 |---------|-------|-----------|
@@ -121,11 +121,10 @@ Common sources of duplicate context:
 - Multiple skills covering overlapping domains
 
 ### Context Optimization Tools
-- `token-optimizer` MCP — Automated 95%+ token reduction via content deduplication
-- `context-mode` — Context virtualization (315KB to 5.4KB demonstrated)
+
+If your setup includes MCP servers for context deduplication or virtualization, they can complement strategic compaction. Evaluate any such tool against your actual context measurements before relying on vendor-claimed reduction figures.
 
 ## Related
 
-- [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) — Token optimization section
 - Memory persistence hooks — For state that survives compaction
 - `continuous-learning` skill — Extracts patterns before session ends

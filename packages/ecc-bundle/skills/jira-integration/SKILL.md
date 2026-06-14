@@ -33,7 +33,7 @@ Install the `mcp-atlassian` MCP server. This exposes Jira tools directly to your
 {
   "jira": {
     "command": "uvx",
-    "args": ["mcp-atlassian==0.21.0"],
+    "args": ["mcp-atlassian"],
     "env": {
       "JIRA_URL": "https://YOUR_ORG.atlassian.net",
       "JIRA_EMAIL": "your.email@example.com",
@@ -43,6 +43,8 @@ Install the `mcp-atlassian` MCP server. This exposes Jira tools directly to your
   }
 }
 ```
+
+> **Version:** Use the latest stable `mcp-atlassian` release. Omit a version pin so `uvx` resolves the newest compatible version automatically; pin only if your project requires reproducibility.
 
 > **Security:** Never hardcode secrets. Prefer setting `JIRA_URL`, `JIRA_EMAIL`, and `JIRA_API_TOKEN` in your system environment (or a secrets manager). Only use the MCP `env` block for local, uncommitted config files.
 

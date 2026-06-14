@@ -18,7 +18,15 @@ A lightweight CLI tool for comparing coding agents head-to-head on reproducible 
 
 ## Installation
 
-> **Note:** Install agent-eval from its repository after reviewing the source.
+Clone and install from the repository:
+
+```bash
+git clone https://github.com/joaquinhuigomez/agent-eval
+cd agent-eval
+pip install -e ".[dev]"
+```
+
+The `agent-eval` CLI is then available on your `PATH`.
 
 ## Core Concepts
 
@@ -140,6 +148,6 @@ judge:
 - **Track cost alongside pass rate** — a 95% agent at 10x the cost may not be the right choice
 - **Version your task definitions** — they are test fixtures, treat them as code
 
-## Links
+## Repository
 
-- Repository: [github.com/joaquinhuigomez/agent-eval](https://github.com/joaquinhuigomez/agent-eval)
+[github.com/joaquinhuigomez/agent-eval](https://github.com/joaquinhuigomez/agent-eval) — MIT license, Python, public.

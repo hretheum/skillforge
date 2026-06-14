@@ -6,13 +6,7 @@ origin: ECC
 
 # Documentation Lookup (Context7)
 
-When the user asks about libraries, frameworks, or APIs, fetch current documentation via the Context7 MCP (tools `resolve-library-id` and `query-docs`) instead of relying on training data.
-
-## Core Concepts
-
-- **Context7**: MCP server that exposes live documentation; use it instead of training data for libraries and APIs.
-- **resolve-library-id**: Returns Context7-compatible library IDs (e.g. `/vercel/next.js`) from a library name and query.
-- **query-docs**: Fetches documentation and code snippets for a given library ID and question. Always call resolve-library-id first to get a valid library ID.
+When the user asks about libraries, frameworks, or APIs, fetch current documentation via the Context7 MCP tools (`resolve-library-id` and `query-docs`) instead of relying on training data. Always call `resolve-library-id` first to get a valid library ID before calling `query-docs`.
 
 ## When to use
 

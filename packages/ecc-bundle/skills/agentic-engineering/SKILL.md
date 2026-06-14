@@ -61,3 +61,9 @@ Track per task:
 - success/failure
 
 Escalate model tier only when lower tier fails with a clear reasoning gap.
+
+## Boundary Note
+
+This skill owns the **individual-execution lane**: one agent, one task unit, single-session discipline. It covers how to operate as an agentic engineer on a concrete implementation task — decomposition, model routing, cost tracking, and eval loops for that unit of work.
+
+For **team-level process** — multi-agent workflows, team orchestration, agent roles, and cross-agent coordination — use `ai-first-engineering` instead.
