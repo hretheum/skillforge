@@ -1,0 +1,29 @@
+test/mcp/get-skill-framing.test.js
+  s_34cb8667adb65c::t_48be8aaf0d1089 1-140
+src/mcp/server.js
+  s_34cb8667adb65c::t_44c416a4567b0c 28
+  s_34cb8667adb65c::t_d599fb1dd57c20 341-346
+  s_34cb8667adb65c::t_b01cdd97e0690d 347-349
+  s_34cb8667adb65c::t_19529728fcb773 402-429
+  s_34cb8667adb65c::t_e8960535bee8eb 489-495
+  s_34cb8667adb65c::t_00b31ac6fed112 461-462,466-469
+  s_34cb8667adb65c::t_098c1263248829 328
+test/mcp/auto-update-notice.test.js
+  s_34cb8667adb65c::t_8624d6af9bf877 1-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "102b1893aacc42997daa1df7cc6aea58121e40a4",
+  "prompts": {},
+  "sessions": {
+    "s_34cb8667adb65c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "419b813a-aaa3-4f7a-9d1e-a5f8f81fbffe",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
