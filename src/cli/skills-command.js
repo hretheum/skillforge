@@ -14,6 +14,7 @@ import { execFileSync } from 'node:child_process';
 import {
   cpSync,
   existsSync,
+  lstatSync,
   mkdirSync,
   mkdtempSync,
   readFileSync,
@@ -80,13 +81,18 @@ function bundleSkills(bundleDir) {
     if (!entry.isDirectory()) continue;
     const dir = join(skillsRoot, entry.name);
     const skillMd = join(dir, SKILL_FILE);
-    let isFile = false;
+    let lst;
     try {
-      isFile = statSync(skillMd).isFile();
+      lst = lstatSync(skillMd);
     } catch {
-      isFile = false;
+      continue; // SKILL.md absent
     }
-    if (!isFile) continue;
+    // Reject symlinks: a malicious bundle could point SKILL.md at ~/.ssh/id_rsa or /etc/passwd,
+    // which skillforge_get_skill would then return verbatim to the MCP client.
+    if (lst.isSymbolicLink()) {
+      throw new Error(`symlink not allowed in bundle: ${skillMd}`);
+    }
+    if (!lst.isFile()) continue;
     skills.push({ name: entry.name, dir, skillMd, version: readSkillVersion(skillMd) });
   }
   skills.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
@@ -103,7 +109,10 @@ function bundleSkills(bundleDir) {
 function installNpmPackage(source) {
   const tmpDir = mkdtempSync(join(tmpdir(), 'sf-skills-'));
   try {
-    execFileSync('npm', ['install', '--prefix', tmpDir, '--no-save', '--silent', source], {
+    // --ignore-scripts: bundles are pure data (skills/<name>/SKILL.md) and never need build
+    // steps. Without this flag, npm runs preinstall/install/postinstall hooks from the package
+    // and its entire transitive closure — a supply-chain vector for arbitrary code execution.
+    execFileSync('npm', ['install', '--ignore-scripts', '--prefix', tmpDir, '--no-save', '--silent', source], {
       stdio: 'pipe',
     });
   } catch (cause) {
