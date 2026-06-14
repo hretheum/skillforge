@@ -12,7 +12,7 @@ Conventions and best practices for designing consistent, developer-friendly REST
 
 This skill is the **REST-focused canonical** reference. It covers resource naming, HTTP methods, status codes, pagination, filtering, error responses, versioning, and rate limiting for REST APIs.
 
-For **GraphQL** (schema design, resolvers, subscriptions) and **gRPC** (proto definitions, streaming, service mesh patterns), use `api-design-patterns` instead. For server-side framework conventions (middleware, route organization, ORM patterns), see `backend-patterns`.
+For **GraphQL** (schema design, resolvers, subscriptions) and **gRPC** (proto definitions, streaming, service mesh patterns), use a dedicated GraphQL/gRPC API skill (e.g. `api-design-patterns`, available in a full ECC install) instead. For server-side framework conventions (middleware, route organization, ORM patterns), see `backend-patterns`.
 
 ## When to Activate
 

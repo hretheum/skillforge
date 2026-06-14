@@ -95,7 +95,8 @@ Add the following to `.claude/settings.json` to install the guard hook:
 ```js
 // PreToolUse hook — blocks destructive commands in careful/guard mode.
 // Reads SAFETY_GUARD_MODE from env: "careful", "freeze:<dir>", or "guard:<dir>".
-import { readFileSync } from 'node:fs';
+// CommonJS so `node ~/.claude/hooks/safety-guard.js` runs as-is (no "type":"module" needed).
+const { readFileSync } = require('node:fs');
 
 const input = JSON.parse(readFileSync('/dev/stdin', 'utf8'));
 const mode  = process.env.SAFETY_GUARD_MODE || '';

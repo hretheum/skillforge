@@ -10,7 +10,7 @@ origin: ECC
 
 This skill covers **auditing** an existing design system and **detecting** problems in it — consistency scoring, AI slop detection, and visual review. It also offers a generation mode (Mode 1) for bootstrapping a token set, but its distinctive value is the audit and quality-detection tooling.
 
-For **defining and emitting design system rules** (a codified ruleset that constrains how components should be built), use `create-design-system-rules`. For **Tailwind-specific token configuration**, use `tailwind-design-system`.
+For **defining and emitting design system rules** (a codified ruleset that constrains how components should be built), use a rule-emission skill such as `create-design-system-rules` (full ECC install). For **Tailwind-specific token configuration**, use a Tailwind token skill such as `tailwind-design-system` (full ECC install).
 
 ## When to Use
 
@@ -18,7 +18,7 @@ For **defining and emitting design system rules** (a codified ruleset that const
 - Before a redesign — understand what you have
 - When the UI looks "off" but you can't pinpoint why
 - Reviewing PRs that touch styling
-- Detecting AI-generated design patterns that need a design hand
+- Detecting AI-generated design patterns that lack design intention
 
 ## How It Works
 
