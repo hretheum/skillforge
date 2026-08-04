@@ -30,7 +30,7 @@ const __dir = dirname(fileURLToPath(import.meta.url));
  */
 export function composeInstruction({ references, request = null } = {}) {
   const instructions = readFileSync(
-    resolve(__dir, '../../../packages/ecc-bundle/skills/brand-discovery/SKILL.md'),
+    resolve(__dir, '../../../packages/plugins/skillforge-skills/skills/brand-discovery/SKILL.md'),
     'utf8',
   );
   const ref = references?.brandState;
@@ -39,7 +39,7 @@ export function composeInstruction({ references, request = null } = {}) {
   const isFreshStart = !state || state.session == null;
   if (isFreshStart) {
     const bootstrap = readFileSync(
-      resolve(__dir, '../../../packages/ecc-bundle/skills/brand-discovery/BOOTSTRAP.md'),
+      resolve(__dir, '../../../packages/plugins/skillforge-skills/skills/brand-discovery/BOOTSTRAP.md'),
       'utf8',
     );
     return {

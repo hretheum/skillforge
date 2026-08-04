@@ -1,0 +1,90 @@
+{
+  "name": "skillforge",
+  "owner": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  },
+  "metadata": {
+    "description": "Skillforge — własne skille + bundle ECC podzielony tematycznie",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "ecc-ai-agents",
+      "source": "./packages/plugins/ecc-ai-agents",
+      "description": "Agenty AI, orkiestracja, workflow, narzędzia konfiguracji Claude (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-backend-data",
+      "source": "./packages/plugins/ecc-backend-data",
+      "description": "Backend, bazy danych, wzorce językowe server-side (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-cloud-infra",
+      "source": "./packages/plugins/ecc-cloud-infra",
+      "description": "Chmura, Kubernetes, Docker, networking, homelab (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-docs-research",
+      "source": "./packages/plugins/ecc-docs-research",
+      "description": "Research, dokumentacja, pisanie, warsztat naukowy (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-frontend-design",
+      "source": "./packages/plugins/ecc-frontend-design",
+      "description": "Frontend, design, motion, media, dostępność (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-misc",
+      "source": "./packages/plugins/ecc-misc",
+      "description": "Skille domenowe: logistyka, healthcare, produkcja, energia (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-mobile",
+      "source": "./packages/plugins/ecc-mobile",
+      "description": "Mobile: Swift/iOS, Kotlin/Android, Flutter, multiplatform (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-product-biz",
+      "source": "./packages/plugins/ecc-product-biz",
+      "description": "Produkt, marketing, sprzedaż, inwestorzy, trading (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-security",
+      "source": "./packages/plugins/ecc-security",
+      "description": "Bezpieczeństwo, compliance, threat modeling, pentesting (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "ecc-testing-quality",
+      "source": "./packages/plugins/ecc-testing-quality",
+      "description": "Testy, TDD, benchmarki, jakość kodu, weryfikacja (ECC)",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    },
+    {
+      "name": "skillforge-skills",
+      "source": "./packages/plugins/skillforge-skills",
+      "description": "Skille własne skillforge: brand discovery, analiza konkurencji, metodyka benchmarków",
+      "version": "0.3.0",
+      "license": "SEE LICENSE IN LICENSE"
+    }
+  ]
+}

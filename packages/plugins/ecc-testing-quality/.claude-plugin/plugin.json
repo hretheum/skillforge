@@ -1,0 +1,9 @@
+{
+  "name": "ecc-testing-quality",
+  "version": "0.3.0",
+  "description": "Testy, TDD, benchmarki, jakość kodu, weryfikacja (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}

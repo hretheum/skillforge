@@ -1,0 +1,9 @@
+{
+  "name": "ecc-ai-agents",
+  "version": "0.3.0",
+  "description": "Agenty AI, orkiestracja, workflow, narzędzia konfiguracji Claude (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}

@@ -25,6 +25,7 @@
   "scripts": {
     "prepublishOnly": "node tools/gates.js",
     "test": "node --test",
+    "build:ecc-bundle": "node tools/build-ecc-bundle.js",
     "test:ci": "node --test --test-concurrency=1",
     "gate:determinism": "node tools/determinism-gate.js",
     "gate:genericity": "node tools/genericity-proof.js",

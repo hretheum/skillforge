@@ -1,0 +1,9 @@
+{
+  "name": "ecc-cloud-infra",
+  "version": "0.3.0",
+  "description": "Chmura, Kubernetes, Docker, networking, homelab (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}

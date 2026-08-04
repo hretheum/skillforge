@@ -1,0 +1,9 @@
+{
+  "name": "ecc-security",
+  "version": "0.3.0",
+  "description": "Bezpieczeństwo, compliance, threat modeling, pentesting (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}
