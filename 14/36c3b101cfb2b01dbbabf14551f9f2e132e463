@@ -1,0 +1,949 @@
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/lottie.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-67
+packages/plugins/ecc-product-biz/skills/lead-intelligence/agents/outreach-drafter.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-98
+packages/plugins/ecc-testing-quality/skills/eval-harness/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-270
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/route-animations.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-56
+packages/plugins/ecc-docs-research/skills/exa-search/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-107
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/rendering-strategies.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-44
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/effects.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-83
+packages/plugins/ecc-ai-agents/skills/autonomous-agent-harness/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-273
+packages/plugins/ecc-ai-agents/skills/ck/commands/save.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-210
+packages/plugins/ecc-testing-quality/skills/laravel-verification/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-179
+packages/plugins/ecc-testing-quality/skills/perl-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-475
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/grader.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-124
+packages/plugins/ecc-testing-quality/skills/skill-stocktake/results.json
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-1241
+packages/plugins/skillforge-skills/skills/competitive-platform-analysis/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-170
+packages/plugins/ecc-backend-data/skills/kotlin-exposed-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-719
+package.json
+  s_7796623e0892b8::t_4306eec4bb7e75 28
+packages/plugins/ecc-frontend-design/skills/manim-video/assets/network_graph_scene.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-52
+packages/plugins/ecc-ai-agents/skills/ck/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-147
+packages/plugins/ecc-product-biz/skills/brand-voice/references/voice-profile-schema.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-55
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/boundary-rules.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-53
+packages/plugins/ecc-testing-quality/skills/healthcare-eval-harness/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-207
+packages/plugins/ecc-mobile/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-ai-agents/skills/ck/commands/forget.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-44
+packages/plugins/ecc-cloud-infra/skills/homelab-vlan-segmentation/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-311
+packages/plugins/ecc-testing-quality/skills/skill-comply/pyproject.toml
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-15
+packages/plugins/ecc-mobile/skills/flutter-dart-code-review/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-435
+packages/plugins/skillforge-skills/skills/brand-discovery/references/20_positioning.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-46
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/data-handling.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-60
+packages/plugins/ecc-frontend-design/skills/video-editing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-310
+packages/plugins/ecc-ai-agents/skills/regex-vs-llm-structured-text/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-220
+packages/plugins/ecc-frontend-design/skills/nextjs-turbopack/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-57
+packages/plugins/ecc-misc/skills/evm-token-decimals/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-130
+packages/plugins/ecc-docs-research/skills/scientific-thinking-scholar-evaluation/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-160
+packages/plugins/ecc-product-biz/skills/ito-basket-compare/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-63
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/routing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-64
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/runner.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-186
+packages/plugins/ecc-backend-data/skills/hexagonal-architecture/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-276
+src/skills/benchmark-methodology/compose.js
+  s_7796623e0892b8::t_7952f3f158b21c 22
+packages/plugins/ecc-testing-quality/skills/laravel-tdd/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-674
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/testing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-72
+packages/plugins/ecc-frontend-design/skills/videodb/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-374
+packages/plugins/ecc-ai-agents/skills/token-budget-advisor/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-133
+.claude-plugin/marketplace.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-90
+packages/plugins/ecc-docs-research/skills/codebase-onboarding/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-233
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/text-animations.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-20
+packages/plugins/ecc-backend-data/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-testing-quality/skills/skill-comply/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-58
+packages/plugins/ecc-frontend-design/skills/react-performance/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-574
+packages/plugins/skillforge-skills/skills/competitive-platform-analysis/INTERVIEW.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-132
+packages/ecc-bundle/bundle-manifest.json
+  s_7796623e0892b8::t_4306eec4bb7e75 5,10-11,16-17,22-23,28-29,34-35,40-41,46-47,50,52-53,56,58-59,62,64-65,68,70-71,74,76-77,80,82-83,86,88-89,92,94-95,98,100-101,104,106-107,110,112-113,116,118-119,122,124-125,128,130-131,134,136-137,140,142-143,146,148-149,152,154-155,158,160-161,164,166-167,170,172-173,176,178-179,182,184-185,188,190-191,194,196-197,200,202-203,206,208-209,212,214-215,218,220-221,224,226-227,230,232-233,236,238-239,242,244-245,248,250-251,254,256-257,260,262-263,266,268-269,272,274-275,278,280-281,284,286-287,290,292-293,296,298-299,302,304-305,308,310-311,314,316-317,320,322-323,326,328-329,332,334-335,338,340-341,344,346-347,350,352-353,356,358-359,362,364-365,368,370-371,374,376-377,380,382-383,386,388-389,392,394-395,398,400-401,404,406-407,410,412-413,416,418-419,422,424-425,428,430-431,434,436-437,440,442-443,446,448-449,452,454-455,458,460-461,464,466-467,470,472-473,476,478-479,482,484-485,488,490-491,494,496-497,500,502-503,506,508-509,512,514-515,518,520-521,524,526-527,530,532-533,536,538-539,542,544-545,548,550-551,554,556-557,560,562-563,566,568-569,572,574-575,578,580-581,584,586-587,590,592-593,596,598-599,602,604-605,608,610-611,614,616-617,620,622-623,626,628-629,632,634-635,638,640-641,644,646-647,650,652-653,656,658-659,662,664-665,668,670-671,674,676-677,682-683,688-689,694-695,700-701,706-707,710,712-713,716,718-719,722,724-725,728,730-731,734,736-737,740,742-743,746,748-749,752,754-755,758,760-761,764,766-767,770,772-773,776,778-779,782,784-785,788,790-791,794,796-797,800,802-803,806,808-809,812,814-815,818,820-821,824,826-827,830,832-833,836,838-839,842,844-845,848,850-851,854,856-857,860,862-863,866,868-869,872,874-875,878,880-881,884,886-887,890,892-893,896,898-899,902,904-905,908,910-911,914,916-917,920,922-923,926,928-929,932,934-935,938,940-941,944,946-947,950,952-953,956,958-959,962,964-965,968,970-971,974,976-977,980,982-983,986,988-989,992,994-995,998,1000-1001,1004,1006-1007,1010,1012-1013,1016,1018-1019,1022,1024-1025,1028,1030-1031,1034,1036-1037,1040,1042-1043,1046,1048-1049,1052,1054-1055,1058,1060-1061,1064,1066-1067,1070,1072-1073,1076,1078-1079,1082,1084-1085,1088,1090-1091,1094,1096-1097,1100,1102-1103,1106,1108-1109,1112,1114-1115,1118,1120-1121,1124,1126-1127,1130,1132-1133,1136,1138-1139,1142,1144-1145,1148,1150-1151,1154,1156-1157,1160,1162-1163,1166,1168-1169,1172,1174-1175,1178,1180-1181,1184,1186-1187,1190,1192-1193,1196,1198-1199,1202,1204-1205,1208,1210-1211,1214,1216-1217,1220,1222-1223,1226,1228-1229,1232,1234-1235,1238,1240-1241,1244,1246-1247,1250,1252-1253,1256,1258-1259,1262,1264-1265,1268,1270-1271,1274,1276-1277,1280,1282-1283,1286,1288-1289,1292,1294-1295,1298,1300-1301,1304,1306-1307,1310,1312-1313,1316,1318-1319,1322,1324-1325,1328,1330-1331,1334,1336-1337,1340,1342-1343,1346,1348-1349,1352,1354-1355,1358,1360-1361,1364,1366-1367,1370,1372-1373,1376,1378-1379,1382,1384-1385,1388,1390-1391,1394,1396-1397,1400,1402-1403,1406,1408-1409,1412,1414-1415,1418,1420-1421,1424,1426-1427,1430,1432-1433,1436,1438-1439,1442,1444-1445,1448,1450-1451,1454,1456-1457,1460,1462-1463,1466,1468-1469,1472,1474-1475,1478,1480-1481,1484,1486-1487,1490,1492-1493,1496,1498-1499,1502,1504-1505,1508,1510-1511,1514,1516-1517,1520,1522-1523,1526,1528-1529,1532,1534-1535,1538,1540-1541,1544,1546-1547,1550,1552-1553,1556,1558-1565,1570-1571,1574,1576-1577,1580-1592,1594-1595
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/naming-system.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-39
+packages/plugins/ecc-security/skills/safety-guard/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-70,132-136
+  s_7796623e0892b8::t_b24a3ef0f94008 71-131
+packages/plugins/ecc-ai-agents/skills/hookify-rules/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-128
+packages/plugins/ecc-product-biz/skills/jira-integration/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-35,37-45,48-304
+  s_7796623e0892b8::t_b24a3ef0f94008 36,46-47
+packages/plugins/ecc-frontend-design/skills/videodb/reference/search.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-230
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/spec_generator.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-72
+packages/plugins/ecc-product-biz/skills/ito-market-intelligence/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-60
+packages/plugins/ecc-frontend-design/skills/videodb/reference/api-reference.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-550
+packages/plugins/ecc-testing-quality/skills/quarkus-verification/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-479
+packages/plugins/ecc-testing-quality/skills/csharp-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-321
+packages/plugins/ecc-backend-data/skills/bun-runtime/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-84
+packages/plugins/ecc-ai-agents/skills/configure-ecc/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-84,92-390
+  s_7796623e0892b8::t_b24a3ef0f94008 85-91
+packages/plugins/ecc-ai-agents/skills/architecture-decision-records/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-179
+packages/plugins/ecc-misc/skills/energy-procurement/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-228
+packages/plugins/ecc-testing-quality/skills/skill-comply/tests/test_runner.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-172
+packages/plugins/skillforge-skills/skills/brand-discovery/references/90_SYNTHESIS.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-133
+packages/plugins/ecc-ai-agents/skills/dynamic-workflow-mode/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-123
+packages/plugins/ecc-ai-agents/skills/agentic-engineering/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-63
+  s_7796623e0892b8::t_b24a3ef0f94008 64-69
+packages/plugins/ecc-testing-quality/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/reactive-forms.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-122
+packages/plugins/ecc-ai-agents/skills/continuous-learning/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-131
+packages/plugins/ecc-product-biz/skills/content-engine/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-131
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/define-routes.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-67
+packages/plugins/ecc-testing-quality/skills/windows-desktop-e2e/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-887
+packages/plugins/ecc-frontend-design/skills/frontend-slides/STYLE_PRESETS.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-330
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/parser.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-107
+packages/plugins/ecc-ai-agents/skills/inherit-legacy-style/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-156
+packages/plugins/ecc-ai-agents/skills/ck/commands/init.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-143
+packages/plugins/ecc-backend-data/skills/content-hash-cache-pattern/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-161
+packages/plugins/ecc-testing-quality/skills/parallel-execution-optimizer/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-72
+packages/plugins/ecc-cloud-infra/skills/homelab-wireguard-vpn/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-305
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/mcp.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-108
+packages/plugins/ecc-testing-quality/skills/cpp-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-324
+packages/plugins/ecc-ai-agents/skills/strategic-compact/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-101,103-124,127-130
+  s_7796623e0892b8::t_b24a3ef0f94008 102,125-126
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/measuring-dom-nodes.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-34
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/router-lifecycle.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-45
+packages/plugins/ecc-frontend-design/skills/blender-motion-state-inspection/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-164
+packages/plugins/ecc-docs-research/skills/nutrient-document-processing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-167
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/navigate-to-routes.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-ai-agents/skills/hermes-imports/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-88
+packages/plugins/ecc-backend-data/skills/fastapi-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-513
+packages/plugins/ecc-product-biz/skills/customer-billing-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-140
+packages/plugins/ecc-frontend-design/skills/liquid-glass-design/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-279
+packages/plugins/ecc-testing-quality/skills/skill-stocktake/scripts/quick-diff.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-87
+packages/plugins/ecc-ai-agents/skills/orch-change-feature/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-42
+packages/plugins/ecc-ai-agents/skills/continuous-learning/evaluate-session.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-ai-agents/skills/ck/commands/resume.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-36
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/audio.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-172
+packages/plugins/ecc-cloud-infra/skills/deployment-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-427
+packages/plugins/ecc-ai-agents/skills/github-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-144
+packages/plugins/ecc-ai-agents/skills/continuous-learning/config.json
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-18
+packages/plugins/ecc-testing-quality/skills/cpp-coding-standards/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-723
+packages/plugins/ecc-ai-agents/skills/agent-harness-construction/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-73
+packages/plugins/ecc-ai-agents/skills/rules-distill/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-264
+packages/plugins/ecc-frontend-design/skills/design-system/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-6,8,15-20,22-88
+  s_7796623e0892b8::t_b24a3ef0f94008 7,9-14,21
+packages/plugins/ecc-product-biz/skills/x-api/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-234
+packages/plugins/ecc-ai-agents/skills/agent-payment-x402/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-224
+packages/plugins/ecc-testing-quality/skills/browser-qa/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-82,84-87
+  s_7796623e0892b8::t_b24a3ef0f94008 83
+packages/plugins/ecc-ai-agents/skills/blueprint/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-77
+  s_7796623e0892b8::t_b24a3ef0f94008 78
+packages/plugins/skillforge-skills/skills/brand-discovery/references/60_narrative-story.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-54
+packages/plugins/ecc-ai-agents/skills/iterative-retrieval/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-211
+packages/plugins/ecc-misc/skills/data-throughput-accelerator/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-72
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/host-elements.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-80
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/architecture.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-90
+packages/plugins/ecc-testing-quality/skills/santa-method/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-306
+packages/plugins/ecc-testing-quality/skills/skill-stocktake/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-194
+packages/plugins/ecc-backend-data/skills/scientific-db-uspto-database/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-177
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/outputs.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-86
+packages/plugins/ecc-testing-quality/skills/skill-comply/prompts/spec_generator.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-42
+packages/plugins/ecc-ai-agents/skills/context-budget/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-135
+packages/plugins/ecc-ai-agents/skills/ck/hooks/session-start.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-224
+packages/plugins/ecc-ai-agents/skills/ck/commands/shared.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-387
+packages/plugins/skillforge-skills/skills/competitive-report-structure/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-152
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/scripts/detect-project.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-322
+packages/plugins/ecc-backend-data/skills/api-connector-builder/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-120
+packages/plugins/ecc-ai-agents/skills/cost-aware-llm-pipeline/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-183
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-288
+packages/plugins/ecc-backend-data/skills/dotnet-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-321
+packages/plugins/ecc-testing-quality/skills/java-coding-standards/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-383
+packages/plugins/ecc-backend-data/skills/postgres-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-147
+packages/plugins/ecc-product-biz/skills/finance-billing-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-127
+packages/plugins/ecc-security/skills/django-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-593
+src/skills/brand-discovery/compose.js
+  s_7796623e0892b8::t_7952f3f158b21c 33,42
+packages/plugins/ecc-frontend-design/skills/accessibility/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-146
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/assets/charts-bar-chart.tsx
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-173
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/components.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-117
+packages/plugins/ecc-cloud-infra/skills/canary-watch/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-107
+packages/plugins/skillforge-skills/skills/brand-discovery/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-124
+packages/plugins/ecc-ai-agents/skills/continuous-agent-loop/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-8,10,15-32,34-35,38-51
+  s_7796623e0892b8::t_b24a3ef0f94008 9,11-14,33,36-37
+packages/plugins/ecc-docs-research/skills/visa-doc-translate/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 3-7
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-2,8-121
+packages/plugins/ecc-frontend-design/skills/frontend-a11y/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-445
+packages/plugins/ecc-product-biz/skills/investor-materials/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-96
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/defining-providers.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-72
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/route-guards.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-52
+packages/plugins/ecc-ai-agents/skills/foundation-models-on-device/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-243
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/transcribe-captions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-19
+packages/plugins/ecc-frontend-design/skills/videodb/scripts/ws_listener.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-282
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/creating-services.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-97
+packages/plugins/ecc-frontend-design/skills/angular-developer/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-154
+packages/plugins/ecc-backend-data/skills/nodejs-keccak256/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-102
+packages/plugins/ecc-ai-agents/skills/search-first/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-182
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/animations.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-29
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/component-harnesses.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-59
+packages/plugins/ecc-backend-data/skills/perl-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-504
+packages/plugins/ecc-ai-agents/skills/ck/commands/migrate.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-202
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/import-srt-captions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-67
+packages/plugins/ecc-ai-agents/skills/rules-distill/scripts/scan-skills.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-129
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/scenario_generator.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-70
+packages/plugins/ecc-mobile/skills/kotlin-coroutines-flows/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-284
+packages/plugins/ecc-testing-quality/skills/tdd-workflow/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-463
+packages/plugins/ecc-ai-agents/skills/messages-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-104
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/scripts/test_parse_instinct.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-1045
+packages/plugins/ecc-security/skills/gateguard/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-132
+packages/plugins/ecc-testing-quality/skills/skill-comply/prompts/classifier.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-24
+.gitignore
+  s_7796623e0892b8::t_4306eec4bb7e75 12
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-2,8-47
+  s_7796623e0892b8::t_b24a3ef0f94008 3-7
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/gifs.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-138
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/trimming.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-52
+packages/plugins/ecc-misc/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-backend-data/skills/jpa-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-151
+packages/plugins/ecc-mobile/skills/dart-flutter-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-563
+packages/plugins/ecc-ai-agents/skills/unified-notifications-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-187
+packages/plugins/ecc-frontend-design/skills/videodb/reference/rtstream-reference.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-564
+packages/plugins/ecc-cloud-infra/skills/uncloud/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-343
+packages/plugins/ecc-security/skills/defi-amm-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-166
+packages/plugins/ecc-testing-quality/skills/skill-comply/fixtures/noncompliant_trace.jsonl
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-3
+packages/plugins/ecc-ai-agents/skills/ck/commands/list.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-40
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/identity-tension.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-48
+packages/plugins/skillforge-skills/skills/brand-discovery/references/10_purpose-why.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-42
+packages/plugins/ecc-misc/skills/quality-nonconformance/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-260
+packages/plugins/ecc-ai-agents/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-ai-agents/skills/rules-distill/scripts/scan-rules.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-58
+packages/plugins/ecc-docs-research/skills/knowledge-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-154
+packages/plugins/ecc-backend-data/skills/backend-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-561
+packages/plugins/ecc-ai-agents/skills/email-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-121
+packages/plugins/ecc-frontend-design/skills/nuxt4-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-100
+packages/plugins/ecc-frontend-design/skills/videodb/reference/capture-reference.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-407
+packages/plugins/ecc-mobile/skills/ios-icon-gen/scripts/generate_icons.swift
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-258
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/angular-aria.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-410
+src/skills/competitive-platform-analysis/compose.js
+  s_7796623e0892b8::t_7952f3f158b21c 37,47
+  s_7796623e0892b8::t_851f1b222900bf 11
+packages/plugins/ecc-frontend-design/skills/frontend-slides/html-template.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-419
+packages/plugins/ecc-mobile/skills/kotlin-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-824
+packages/plugins/ecc-testing-quality/skills/coding-standards/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-550
+packages/plugins/ecc-security/skills/springboot-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-272
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/angular-animations.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-160
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/assets/text-animations-typewriter.tsx
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-100
+packages/plugins/ecc-frontend-design/skills/make-interfaces-feel-better/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-151
+packages/plugins/ecc-mobile/skills/swiftui-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-259
+packages/plugins/ecc-testing-quality/skills/verification-loop/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 3,9,16-18,68-70,72-102,105-106
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-2,4-8,10-15,19-67,71,103-104,107-158
+packages/plugins/ecc-misc/skills/returns-reverse-logistics/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-240
+packages/plugins/ecc-testing-quality/skills/springboot-tdd/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-158
+packages/plugins/ecc-backend-data/skills/redis-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-403
+packages/plugins/ecc-misc/skills/production-scheduling/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-238
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/hierarchical-injectors.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-43
+plugin-split-proposal.json
+  s_7796623e0892b8::t_bcedb5406f3d8e 1-13,15-25,27-29,31,33-35,37-38,40,42-52,54-56,59,61-62,64-66,68-69,125-127,129-131,133-138,140-144,146,150-153,155-158,160-164,166-169,171-175,179-180,182-190,192-198,200-211,213-214,216-219,228-237,239-246,248-258,260-265,282-289
+  s_7796623e0892b8::t_60e66ac47d26a6 14,26,30,32,36,39,41,53,57-58,60,63,67,70-124,128,132,139,145,147-149,154,159,165,170,176-178,181,191,199,212,215,220-227,238,247,259,266-281
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/config.json
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-8
+packages/plugins/ecc-cloud-infra/skills/network-interface-health/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-152
+packages/plugins/ecc-product-biz/skills/ito-trade-planner/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-67
+packages/plugins/ecc-backend-data/skills/nestjs-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-230
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/compositions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-146
+packages/plugins/ecc-backend-data/skills/kotlin-ktor-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-689
+packages/plugins/ecc-ai-agents/skills/ck/commands/info.mjs
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-24
+packages/plugins/ecc-ai-agents/skills/dmux-workflows/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-191
+packages/plugins/ecc-product-biz/skills/investor-outreach/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-91
+packages/plugins/ecc-testing-quality/skills/skill-stocktake/scripts/scan.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-170
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/tailwind-css.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/agents/observer.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-198
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/database.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-99
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/injection-context.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-63
+packages/plugins/ecc-backend-data/skills/springboot-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-314
+packages/plugins/skillforge-skills/skills/benchmark-methodology/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-190
+packages/plugins/ecc-product-biz/skills/product-lens/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-92
+packages/plugins/ecc-docs-research/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-misc/skills/healthcare-emr-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-159
+packages/plugins/skillforge-skills/skills/brand-discovery/references/70_founder-tension.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-49
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/cli.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-86
+packages/plugins/ecc-backend-data/skills/rust-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-499
+packages/plugins/ecc-ai-agents/skills/ecc-tools-cost-audit/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-160
+packages/plugins/ecc-ai-agents/skills/opensource-pipeline/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-255
+packages/plugins/ecc-cloud-infra/skills/cisco-ios-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-163
+packages/plugins/ecc-product-biz/skills/prediction-market-risk-review/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-60
+packages/plugins/ecc-frontend-design/skills/ui-to-vue/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-134
+packages/plugins/ecc-frontend-design/skills/motion-advanced/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-596
+packages/plugins/ecc-ai-agents/skills/enterprise-agent-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-43,71-77
+  s_7796623e0892b8::t_b24a3ef0f94008 44-70
+packages/plugins/ecc-security/skills/security-scan/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-89,91-165
+  s_7796623e0892b8::t_b24a3ef0f94008 90
+packages/plugins/ecc-backend-data/skills/cost-tracking/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-147
+packages/plugins/ecc-testing-quality/skills/quarkus-tdd/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-811
+packages/plugins/ecc-security/skills/laravel-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-947
+packages/plugins/ecc-ai-agents/skills/team-agent-orchestration/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-17,34-126
+  s_7796623e0892b8::t_b24a3ef0f94008 18-33,127-132
+packages/plugins/ecc-ai-agents/skills/agent-architecture-audit/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-256
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/assets.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-78
+packages/plugins/ecc-security/skills/healthcare-phi-compliance/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-145
+packages/plugins/ecc-security/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-ai-agents/skills/automation-audit-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-142
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/hooks/observe.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-498
+packages/plugins/ecc-ai-agents/skills/team-builder/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-168
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/transitions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-122
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/videos.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-171
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/3d.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-86
+packages/plugins/ecc-testing-quality/skills/skill-comply/fixtures/tdd_spec.yaml
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-44
+packages/plugins/ecc-cloud-infra/skills/netmiko-ssh-automation/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-173
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/scripts/lib/homunculus-dir.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-31
+packages/plugins/ecc-security/skills/hipaa-compliance/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 10,18-51,53,55-59,61,63-66,68,81-83,94-95,99-102
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-9,11-17,52,54,60,62,67,69-80,84-93,96-98
+packages/plugins/ecc-backend-data/skills/rust-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-500
+packages/plugins/ecc-frontend-design/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-ai-agents/skills/council/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-203
+packages/plugins/ecc-cloud-infra/skills/network-config-validation/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-210
+packages/plugins/ecc-testing-quality/skills/codehealth-mcp/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-166
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/utils.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-13
+packages/plugins/ecc-mobile/skills/kotlin-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-711
+packages/plugins/ecc-backend-data/skills/error-handling/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-376
+packages/plugins/ecc-mobile/skills/swift-actor-persistence/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-143
+packages/plugins/ecc-testing-quality/skills/benchmark-optimization-loop/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-product-biz/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+tools/build-ecc-bundle.js
+  s_7796623e0892b8::t_bbdcd3f636647b 1-55
+packages/plugins/ecc-ai-agents/skills/google-workspace-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-95
+packages/plugins/ecc-frontend-design/skills/vite-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-449
+packages/plugins/ecc-docs-research/skills/scientific-thinking-literature-review/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-192
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/assets/text-animations-word-highlight.tsx
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-108
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/run.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-127
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/calculate-metadata.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-104
+packages/plugins/ecc-backend-data/skills/mysql-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-412
+packages/plugins/ecc-testing-quality/skills/agent-introspection-debugging/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-153
+packages/plugins/ecc-testing-quality/skills/benchmark/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-93
+packages/plugins/skillforge-skills/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-ai-agents/skills/config-gc/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-119
+packages/plugins/ecc-testing-quality/skills/agent-eval/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 21,23-30,151,153
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-20,22,31-150,152
+packages/plugins/ecc-testing-quality/skills/repo-scan/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-78
+packages/plugins/ecc-misc/skills/healthcare-cdss-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-245
+packages/plugins/ecc-cloud-infra/skills/homelab-pihole-dns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-274
+packages/plugins/ecc-mobile/skills/ios-icon-gen/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-157
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/di-fundamentals.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-120
+packages/plugins/ecc-product-biz/skills/market-research/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-75
+packages/plugins/ecc-product-biz/skills/connections-optimizer/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-189
+packages/plugins/ecc-security/skills/llm-trading-agent-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-146
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/data-resolvers.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-testing-quality/skills/skill-comply/fixtures/compliant_trace.jsonl
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-5
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/agents/session-guardian.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-150
+packages/plugins/ecc-docs-research/skills/deep-research/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-14,24-168
+  s_7796623e0892b8::t_b24a3ef0f94008 15-23
+packages/plugins/ecc-product-biz/skills/ito-data-atlas-agent/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-63
+packages/plugins/ecc-ai-agents/skills/orch-build-mvp/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-48
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/references/system-usage.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-97
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/testing-fundamentals.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-65
+packages/plugins/ecc-ai-agents/skills/orch-add-feature/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-44
+packages/plugins/ecc-security/skills/perl-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-503
+packages/plugins/ecc-backend-data/skills/django-verification/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-469
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/display-captions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-126
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/timing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-179
+packages/plugins/ecc-frontend-design/skills/videodb/reference/editor.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-443
+packages/plugins/skillforge-skills/skills/brand-discovery/references/30_audience-niche.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-52
+packages/plugins/ecc-backend-data/skills/django-tdd/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-729
+packages/plugins/ecc-product-biz/skills/product-capability/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-141
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/agents/observer-loop.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-335
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/extract-frames.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-229
+packages/plugins/ecc-frontend-design/skills/ui-demo/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-465
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/loading-strategies.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-61
+packages/plugins/ecc-misc/skills/inventory-demand-planning/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-247
+packages/plugins/ecc-mobile/skills/compose-multiplatform-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-299
+packages/plugins/ecc-product-biz/skills/lead-intelligence/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-321
+packages/plugins/ecc-ai-agents/skills/orch-refine-code/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-43
+packages/plugins/ecc-backend-data/skills/python-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-750
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/sequencing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-106
+packages/plugins/ecc-backend-data/skills/golang-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-720
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/linked-signal.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-59
+packages/plugins/ecc-misc/skills/project-flow-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-111
+packages/plugins/ecc-mobile/skills/swift-protocol-di-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-190
+packages/plugins/ecc-product-biz/skills/lead-intelligence/agents/signal-scorer.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-60
+packages/plugins/ecc-frontend-design/skills/motion-foundations/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-299
+packages/plugins/ecc-ai-agents/skills/ecc-guide/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-189
+packages/plugins/skillforge-skills/skills/brand-discovery/references/40_personality-archetype.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-59
+packages/plugins/ecc-backend-data/skills/mcp-server-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-69
+packages/plugins/ecc-product-biz/skills/lead-intelligence/agents/mutual-mapper.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-75
+packages/plugins/ecc-ai-agents/skills/skill-scout/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-140
+packages/plugins/ecc-frontend-design/skills/frontend-slides/scripts/export-pdf.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-418
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/agents/start-observer.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-248
+packages/plugins/ecc-frontend-design/skills/frontend-slides/animation-patterns.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-122
+packages/plugins/ecc-ai-agents/skills/workspace-surface-audit/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 3,11-16
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-2,4-10,17-130
+packages/plugins/ecc-product-biz/skills/marketing-campaign/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-113
+packages/plugins/ecc-product-biz/skills/social-publisher/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-116
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/output-template.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-166
+packages/plugins/ecc-frontend-design/skills/frontend-slides/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-184
+packages/plugins/skillforge-skills/skills/brand-discovery/references/50_voice-tone.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-61
+packages/plugins/ecc-frontend-design/skills/react-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-341
+packages/plugins/ecc-testing-quality/skills/ai-regression-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-385
+packages/plugins/ecc-ai-agents/skills/autonomous-loops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-610
+packages/plugins/ecc-testing-quality/skills/skill-comply/tests/test_parser.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-90
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/measuring-text.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-143
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/get-video-duration.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-58
+packages/plugins/ecc-frontend-design/skills/videodb/reference/use-cases.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-118
+packages/plugins/ecc-frontend-design/skills/frontend-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-8,10,24-669
+  s_7796623e0892b8::t_b24a3ef0f94008 9,11-23,670-675
+packages/plugins/ecc-security/skills/quarkus-security/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-467
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/router-testing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-87
+packages/plugins/ecc-backend-data/skills/django-celery/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-457
+packages/plugins/ecc-frontend-design/skills/frontend-slides/scripts/extract-pptx.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-96
+packages/plugins/ecc-ai-agents/skills/orch-pipeline/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-120
+packages/plugins/ecc-ai-agents/skills/agent-sort/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-215
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/classifier.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-85
+packages/plugins/ecc-product-biz/skills/social-graph-ranker/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-154
+packages/plugins/ecc-testing-quality/skills/plankton-code-quality/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-236
+packages/plugins/ecc-ai-agents/skills/git-workflow/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-715
+packages/plugins/ecc-product-biz/skills/seo/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-154
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/scripts/instinct-cli.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-1914
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/fonts.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-152
+packages/plugins/ecc-cloud-infra/skills/flox-environments/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-496
+packages/plugins/ecc-mobile/skills/android-clean-architecture/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-339
+packages/plugins/ecc-frontend-design/skills/videodb/reference/rtstream.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-65
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/template-driven-forms.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-114
+packages/plugins/ecc-frontend-design/skills/manim-video/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-89
+packages/plugins/ecc-ai-agents/skills/pytorch-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-396
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/show-routes-with-outlets.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-68
+packages/plugins/ecc-testing-quality/skills/skill-comply/prompts/scenario_generator.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-62
+packages/plugins/ecc-testing-quality/skills/e2e-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-326
+packages/plugins/ecc-testing-quality/skills/fsharp-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-280
+test/ecc-bundle/skill-hygiene.test.js
+  s_7796623e0892b8::t_32a408d517c369 11,14-26,29-30
+  s_7796623e0892b8::t_2172f7f36f12aa 44
+packages/plugins/ecc-ai-agents/skills/agentic-os/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-387
+packages/plugins/ecc-frontend-design/skills/videodb/reference/capture.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-101
+packages/plugins/ecc-backend-data/skills/tinystruct-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-203
+packages/plugins/ecc-docs-research/skills/scientific-pkg-gget/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-166
+packages/plugins/ecc-frontend-design/skills/motion-patterns/SKILL.md
+  s_7796623e0892b8::t_b24a3ef0f94008 407-430
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-406,431-458
+packages/plugins/ecc-testing-quality/skills/code-tour/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-236
+packages/plugins/ecc-frontend-design/skills/videodb/reference/streaming.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-406
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/get-audio-duration.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-58
+packages/plugins/ecc-frontend-design/skills/react-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-423
+packages/plugins/ecc-docs-research/skills/visa-doc-translate/README.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-86
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-360
+packages/plugins/ecc-ai-agents/skills/nanoclaw-repl/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-33
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/error-handling.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-53
+packages/plugins/ecc-cloud-infra/.claude-plugin/plugin.json
+  s_7796623e0892b8::t_60e66ac47d26a6 1-9
+packages/plugins/ecc-docs-research/skills/documentation-lookup/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-8,10-84
+  s_7796623e0892b8::t_b24a3ef0f94008 9
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/inputs.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-101
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/gacha.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-5
+packages/plugins/ecc-backend-data/skills/python-testing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-816
+packages/plugins/ecc-backend-data/skills/golang-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-674
+packages/plugins/ecc-backend-data/skills/database-migrations/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-429
+packages/plugins/ecc-security/skills/security-bounty-hunter/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-99
+packages/plugins/ecc-docs-research/skills/article-writing/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-79
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/signal-forms.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-795
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/tailwind.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-11
+packages/plugins/ecc-misc/skills/logistics-exception-management/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-222
+packages/plugins/ecc-product-biz/skills/lead-intelligence/agents/enrichment-agent.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-85
+packages/plugins/ecc-ai-agents/skills/fal-ai-media/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-288
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/signals-overview.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-94
+packages/plugins/ecc-cloud-infra/skills/homelab-network-readiness/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-169
+packages/plugins/ecc-cloud-infra/skills/latency-critical-systems/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-73
+packages/plugins/ecc-ai-agents/skills/gan-style-harness/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-278
+packages/plugins/ecc-cloud-infra/skills/kubernetes-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-755
+packages/plugins/ecc-backend-data/skills/prisma-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-371
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/component-styling.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-91
+packages/plugins/ecc-frontend-design/skills/dashboard-builder/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-108
+packages/plugins/ecc-testing-quality/skills/skill-comply/tests/test_grader.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-197
+packages/plugins/ecc-ai-agents/skills/ai-first-engineering/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-51
+src/skills/competitive-report-structure/compose.js
+  s_7796623e0892b8::t_7952f3f158b21c 22
+packages/plugins/ecc-product-biz/skills/prediction-market-oracle-research/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-63
+packages/plugins/ecc-backend-data/skills/quarkus-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-722
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/get-video-dimensions.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-68
+packages/plugins/ecc-mobile/skills/ios-icon-gen/scripts/iconify_gen.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-235
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/references/avatar-style.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-124
+packages/plugins/ecc-ai-agents/skills/recursive-decision-ledger/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-79
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/images.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-130
+packages/plugins/ecc-backend-data/skills/django-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-734
+packages/plugins/ecc-security/skills/security-review/cloud-infrastructure-security.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-361
+packages/plugins/ecc-security/skills/security-review/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-503
+packages/plugins/ecc-testing-quality/skills/skill-comply/scripts/report.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-170
+packages/plugins/ecc-ai-agents/skills/continuous-learning-v2/scripts/migrate-homunculus.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-62
+packages/plugins/ecc-ai-agents/skills/openclaw-persona-forge/gacha.py
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-224
+packages/plugins/ecc-frontend-design/skills/frontend-design-direction/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-92
+packages/plugins/ecc-frontend-design/skills/frontend-slides/viewport-base.css
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-153
+packages/plugins/ecc-testing-quality/skills/skill-comply/.gitignore
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-7
+packages/plugins/ecc-misc/skills/customs-trade-compliance/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-263
+packages/plugins/ecc-ai-agents/skills/terminal-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-109
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/resource.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-77
+packages/plugins/ecc-backend-data/skills/scientific-db-pubmed-database/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-175
+packages/plugins/ecc-misc/skills/carrier-relationship-management/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-212
+packages/plugins/ecc-testing-quality/skills/click-path-audit/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-244
+packages/plugins/ecc-testing-quality/skills/skill-stocktake/scripts/save-results.sh
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-56
+packages/plugins/ecc-testing-quality/skills/intent-driven-development/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-360
+packages/plugins/ecc-ai-agents/skills/data-scraper-agent/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-764
+packages/plugins/ecc-product-biz/skills/crosspost/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-111
+packages/plugins/ecc-testing-quality/skills/production-audit/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-206
+packages/plugins/ecc-cloud-infra/skills/docker-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-364
+packages/plugins/ecc-ai-agents/skills/ralphinho-rfc-pipeline/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-12,25-79
+  s_7796623e0892b8::t_b24a3ef0f94008 13-24
+packages/plugins/ecc-ai-agents/skills/mle-workflow/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-346
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/charts.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-58
+packages/plugins/ecc-mobile/skills/swift-concurrency-6-2/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-216
+packages/plugins/ecc-testing-quality/skills/springboot-verification/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-231
+packages/plugins/skillforge-skills/skills/brand-discovery/BOOTSTRAP.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-104
+packages/plugins/ecc-frontend-design/skills/remotion-video-creation/rules/can-decode.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-75
+packages/plugins/ecc-frontend-design/skills/videodb/reference/generative.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-331
+packages/plugins/ecc-cloud-infra/skills/homelab-network-setup/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-129
+packages/plugins/ecc-ai-agents/skills/prompt-optimizer/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-398
+packages/plugins/ecc-backend-data/skills/clickhouse-io/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-439
+packages/plugins/ecc-backend-data/skills/laravel-plugin-discovery/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-229
+packages/plugins/ecc-docs-research/skills/research-ops/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-112
+packages/plugins/ecc-frontend-design/skills/angular-developer/references/e2e-testing.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-56
+packages/plugins/ecc-ai-agents/skills/orch-fix-defect/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-42
+packages/plugins/ecc-ai-agents/skills/plan-orchestrate/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-262
+packages/plugins/ecc-ai-agents/skills/claude-devfleet/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-111
+packages/plugins/ecc-backend-data/skills/api-design/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-10,17-18,21,23,25-529
+  s_7796623e0892b8::t_b24a3ef0f94008 11-16,19-20,22,24
+packages/plugins/ecc-product-biz/skills/brand-voice/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-54,56,59-98
+  s_7796623e0892b8::t_b24a3ef0f94008 55,57-58
+packages/plugins/ecc-cloud-infra/skills/network-bgp-diagnostics/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-167
+packages/plugins/ecc-backend-data/skills/laravel-patterns/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-415
+packages/plugins/ecc-ai-agents/skills/recsys-pipeline-architect/SKILL.md
+  s_7796623e0892b8::t_2eb5fd64629d5a 1-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "1436c3b101cfb2b01dbbabf14551f9f2e132e463",
+  "prompts": {},
+  "sessions": {
+    "s_7796623e0892b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "935ba10a-ca5d-4c2b-a28c-4dcb9f9fd44e",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
