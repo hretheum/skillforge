@@ -1,0 +1,183 @@
+packages/ecc-bundle/skills/agent-eval/SKILL.md
+  s_7796623e0892b8::t_3a3a948be5ce2a 3,14,21,76,98,143,145
+packages/ecc-bundle/skills/agent-payment-x402/SKILL.md
+  s_7796623e0892b8::t_2d5f0b4f19a50d 51
+packages/ecc-bundle/skills/agent-sort/SKILL.md
+  s_7796623e0892b8::t_ecf912ac354046 144,156
+packages/ecc-bundle/skills/agentic-os/SKILL.md
+  s_7796623e0892b8::t_2253ebd063a71f 3,9,13-14,25,27,36,38,44,49,84,104,126,130,160,213,227,255,278,345,353,374,378,385,387
+packages/ecc-bundle/skills/ai-regression-testing/SKILL.md
+  s_7796623e0892b8::t_2bb6e680b3c8f4 13,200
+packages/ecc-bundle/skills/api-design/SKILL.md
+  s_7796623e0892b8::t_2b9e70b6b44ae2 13-14,16,18
+packages/ecc-bundle/skills/architecture-decision-records/SKILL.md
+  s_7796623e0892b8::t_ba5a06f64accfe 3
+packages/ecc-bundle/skills/autonomous-agent-harness/SKILL.md
+  s_7796623e0892b8::t_f8a7e450f62efe 3,9,30,58,60,77,87,96,100-101,116,127,130,135,156,178-179,190,215,218,225
+packages/ecc-bundle/skills/autonomous-loops/SKILL.md
+  s_7796623e0892b8::t_633f7dcc243e14 3,14,31,34,40,42,48,57,60,63,66,71,81,84,87,93-95,101,104,111,123-124,170,172,211,213,219,221-224,227,238,244,247,250,253,259-260,279,283,285-286,291,294,342,345,360,363,366,369,541,557,569,576,579,590,608
+packages/ecc-bundle/skills/benchmark-methodology/SKILL.md
+  s_7796623e0892b8::t_c29c944f6a46de 4-21,32-38,40,42-43,84-86,106-108,111-112,116,123-124,126,128-129,132,147-148,161-162,180-181
+packages/ecc-bundle/skills/blueprint/SKILL.md
+  s_7796623e0892b8::t_b680cef37b398e 71-96,100,103-105
+packages/ecc-bundle/skills/brand-discovery/SKILL.md
+  s_7796623e0892b8::t_c7a329ee740f9b 4-20,26-27,29-30,37-41,61-65,72,92-93,95-96,98-101,105-107,112,120-124
+packages/ecc-bundle/skills/brand-voice/SKILL.md
+  s_7796623e0892b8::t_5899a7485b8f10 55,57
+packages/ecc-bundle/skills/browser-qa/SKILL.md
+  s_7796623e0892b8::t_c1e0cb1ac2d815 19,83
+packages/ecc-bundle/skills/canary-watch/SKILL.md
+  s_7796623e0892b8::t_e35f366d21d8e0 80
+packages/ecc-bundle/skills/ck/SKILL.md
+  s_7796623e0892b8::t_c43ca9ec600410 3,14,21,34,48,66,75,84,92,103,111,115,124-125,131,138
+packages/ecc-bundle/skills/claude-devfleet/SKILL.md
+  s_7796623e0892b8::t_1c9732acecfe36 2-3,7,11,16,20
+packages/ecc-bundle/skills/codebase-onboarding/SKILL.md
+  s_7796623e0892b8::t_740fc5811cb095 3,9,13,16,170,172,207,213,222-233
+packages/ecc-bundle/skills/codehealth-mcp/SKILL.md
+  s_7796623e0892b8::t_56cf64af32452b 42,113
+packages/ecc-bundle/skills/competitive-platform-analysis/SKILL.md
+  s_7796623e0892b8::t_505feba2f39ae3 4-14,16-20,30-36,38,40-41,53-65,83-84,88-108,119,121-123,127-133,136-139,144-145,153-154,156,169
+packages/ecc-bundle/skills/competitive-report-structure/SKILL.md
+  s_7796623e0892b8::t_4b191c66c69a4a 4-21,31,33-34,51-55,67,81-82,100,109-110,116,143-144
+packages/ecc-bundle/skills/config-gc/SKILL.md
+  s_7796623e0892b8::t_2e5924e9915786 3,7,13,18,25,27,33-35,37,39,48,56,58,66-68,76,84-86,92-95,104
+packages/ecc-bundle/skills/configure-ecc/SKILL.md
+  s_7796623e0892b8::t_ff7a5e29f924e7 3,7,9,13,20,22,31-32,35,48-49,54-56,85,93,172,267,272-274,284,298-299,341,373,375-376,380,383-384
+packages/ecc-bundle/skills/context-budget/SKILL.md
+  s_7796623e0892b8::t_4879257781c463 3,9,45-46,55-56,65,67,78,89,110
+packages/ecc-bundle/skills/continuous-agent-loop/SKILL.md
+  s_7796623e0892b8::t_f60d0985f6017e 9,29
+packages/ecc-bundle/skills/continuous-learning-v2/SKILL.md
+  s_7796623e0892b8::t_a7d89849cbc601 11,17,29,139,145,157,159,161,170,177,329,339-340,360
+packages/ecc-bundle/skills/continuous-learning/SKILL.md
+  s_7796623e0892b8::t_6c0bf3ca67a5d4 17,21,23,37,48,76,85
+packages/ecc-bundle/skills/cost-aware-llm-pipeline/SKILL.md
+  s_7796623e0892b8::t_373483c2b3e6e3 13,25-26,180
+packages/ecc-bundle/skills/cost-tracking/SKILL.md
+  s_7796623e0892b8::t_b6905fa9834803 3,9,11,30,48,60,73,84,95,107
+packages/ecc-bundle/skills/council/SKILL.md
+  s_7796623e0892b8::t_df9fbeedd801d7 10,156
+packages/ecc-bundle/skills/deep-research/SKILL.md
+  s_7796623e0892b8::t_8683addcf27453 29,131
+packages/ecc-bundle/skills/design-system/SKILL.md
+  s_7796623e0892b8::t_83dad46fb45f3f 7,11
+packages/ecc-bundle/skills/dmux-workflows/SKILL.md
+  s_7796623e0892b8::t_5f3c0ee85c9f43 3,14,23,87,89,122-123,136,177
+packages/ecc-bundle/skills/documentation-lookup/SKILL.md
+  s_7796623e0892b8::t_8973a261dbddf8 9-15,26
+packages/ecc-bundle/skills/dynamic-workflow-mode/SKILL.md
+  s_7796623e0892b8::t_a2d99cda641e7a 3,13
+packages/ecc-bundle/skills/ecc-guide/SKILL.md
+  s_7796623e0892b8::t_f20abef037d95d 9,109-110,116-117,128,137,189
+packages/ecc-bundle/skills/ecc-tools-cost-audit/SKILL.md
+  s_7796623e0892b8::t_42ced323600324 33
+packages/ecc-bundle/skills/eval-harness/SKILL.md
+  s_7796623e0892b8::t_b71c9a604da87d 3,10,15,31,34,70,171,189,268-269
+packages/ecc-bundle/skills/exa-search/SKILL.md
+  s_7796623e0892b8::t_1ed2fd41426b9a 26
+packages/ecc-bundle/skills/fal-ai-media/SKILL.md
+  s_7796623e0892b8::t_a944287fea937a 25
+packages/ecc-bundle/skills/flox-environments/SKILL.md
+  s_7796623e0892b8::t_b4183cd6e84678 469,488
+packages/ecc-bundle/skills/frontend-patterns/SKILL.md
+  s_7796623e0892b8::t_b27e2a399a12c5 9
+packages/ecc-bundle/skills/gan-style-harness/SKILL.md
+  s_7796623e0892b8::t_08deb961c95a32 30,177,181,184,187,190,257
+packages/ecc-bundle/skills/gateguard/SKILL.md
+  s_7796623e0892b8::t_4e85632afcdb55 9,16
+packages/ecc-bundle/skills/hipaa-compliance/SKILL.md
+  s_7796623e0892b8::t_8633d29491b2b9 10-14,23,25,27-34,36,38-43,56-58,69-70,74-78
+packages/ecc-bundle/skills/hookify-rules/SKILL.md
+  s_7796623e0892b8::t_af0a7a49ae501a 10,24,106-108
+packages/ecc-bundle/skills/inherit-legacy-style/SKILL.md
+  s_7796623e0892b8::t_6dfb109ba92257 26,91,105,113,118,136,140,154
+packages/ecc-bundle/skills/jira-integration/SKILL.md
+  s_7796623e0892b8::t_df824f1181d042 30,36
+packages/ecc-bundle/skills/knowledge-ops/SKILL.md
+  s_7796623e0892b8::t_05589d93bb7c8a 33-34,80,92,112,124
+packages/ecc-bundle/skills/mcp-server-patterns/SKILL.md
+  s_7796623e0892b8::t_5aa4061d73bdf5 23-24
+packages/ecc-bundle/skills/nanoclaw-repl/SKILL.md
+  s_7796623e0892b8::t_f824a1d96ce27c 3
+packages/ecc-bundle/skills/openclaw-persona-forge/SKILL.md
+  s_7796623e0892b8::t_d7e32e663604ae 281
+packages/ecc-bundle/skills/opensource-pipeline/SKILL.md
+  s_7796623e0892b8::t_78a5016a4638f0 9,24,137,156,214,232
+packages/ecc-bundle/skills/orch-pipeline/SKILL.md
+  s_7796623e0892b8::t_41a540a83ad767 97
+packages/ecc-bundle/skills/plan-orchestrate/SKILL.md
+  s_7796623e0892b8::t_46f4045bd8b844 49,53-54,56,89-90,101,163-164,205,223,244
+packages/ecc-bundle/skills/plankton-code-quality/SKILL.md
+  s_7796623e0892b8::t_b98d4560c9b5bb 3,9,22,36,84-85,88,94-95,141
+packages/ecc-bundle/skills/product-capability/SKILL.md
+  s_7796623e0892b8::t_d35782165b07c2 141
+packages/ecc-bundle/skills/product-lens/SKILL.md
+  s_7796623e0892b8::t_e0de54115e36fa 46
+packages/ecc-bundle/skills/prompt-optimizer/SKILL.md
+  s_7796623e0892b8::t_335cb23bdf3cdc 30,65,271
+packages/ecc-bundle/skills/regex-vs-llm-structured-text/SKILL.md
+  s_7796623e0892b8::t_65015a23f3e304 138
+packages/ecc-bundle/skills/remotion-video-creation/SKILL.md
+  s_7796623e0892b8::t_2ddb2a5425a0c5 3
+packages/ecc-bundle/skills/repo-scan/SKILL.md
+  s_7796623e0892b8::t_17edae50af6087 22,28
+packages/ecc-bundle/skills/rules-distill/SKILL.md
+  s_7796623e0892b8::t_e2e3402ff9f1a1 28,34
+packages/ecc-bundle/skills/safety-guard/SKILL.md
+  s_7796623e0892b8::t_850c0990f7bbd2 75
+packages/ecc-bundle/skills/santa-method/SKILL.md
+  s_7796623e0892b8::t_d3301c6a02b4e3 118,207,212
+packages/ecc-bundle/skills/search-first/SKILL.md
+  s_7796623e0892b8::t_0bc7c7b1aff7b9 75,83-84,97,102,114
+packages/ecc-bundle/skills/security-scan/SKILL.md
+  s_7796623e0892b8::t_f488dcff9c0d1b 3,9,13-14,16,23,48,55,90,107,115,149
+packages/ecc-bundle/skills/skill-comply/SKILL.md
+  s_7796623e0892b8::t_3a2dc2c7a03981 13,35,38
+packages/ecc-bundle/skills/skill-scout/SKILL.md
+  s_7796623e0892b8::t_6d9c4a688b8ea7 44-45,51,59,66,68
+packages/ecc-bundle/skills/skill-stocktake/SKILL.md
+  s_7796623e0892b8::t_065e2d8880ce7e 3,9,17-18,31,40,46-49,54-55,61,64,69-70,110,128,165,181
+packages/ecc-bundle/skills/skill-stocktake/results.json
+  s_7796623e0892b8::t_9b1088c9b128c9 1-1241
+packages/ecc-bundle/skills/social-publisher/SKILL.md
+  s_7796623e0892b8::t_ca135ba2037503 9
+packages/ecc-bundle/skills/strategic-compact/SKILL.md
+  s_7796623e0892b8::t_245434dd221acb 41,49,53,84,86,102,112,119-120,124-125,129
+packages/ecc-bundle/skills/team-agent-orchestration/SKILL.md
+  s_7796623e0892b8::t_b2b87735a56076 14
+packages/ecc-bundle/skills/team-builder/SKILL.md
+  s_7796623e0892b8::t_06f7a0793a346b 52,55,63-65,74,131,138,149,157
+packages/ecc-bundle/skills/token-budget-advisor/SKILL.md
+  s_7796623e0892b8::t_0496e93c377599 21,132
+packages/ecc-bundle/skills/unified-notifications-ops/SKILL.md
+  s_7796623e0892b8::t_b9b197d13ddf8f 177
+packages/ecc-bundle/skills/verification-loop/SKILL.md
+  s_7796623e0892b8::t_d60e6eea500646 3,9,16-17,68-72
+packages/ecc-bundle/skills/videodb/SKILL.md
+  s_7796623e0892b8::t_d1ef97e7a6c248 108
+packages/ecc-bundle/skills/visa-doc-translate/SKILL.md
+  s_7796623e0892b8::t_10dfbd9a994d34 3
+packages/ecc-bundle/skills/windows-desktop-e2e/SKILL.md
+  s_7796623e0892b8::t_8881aadbaa6eb4 28
+packages/ecc-bundle/skills/workspace-surface-audit/SKILL.md
+  s_7796623e0892b8::t_880c5d6d7a00aa 3,11,15,37-38,69-70
+packages/ecc-bundle/skills/x-api/SKILL.md
+  s_7796623e0892b8::t_8ab19f53eed6fc 46,84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "b4244c7cfc7c03591363a9c934bcc44132bc5c27",
+  "prompts": {},
+  "sessions": {
+    "s_7796623e0892b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "935ba10a-ca5d-4c2b-a28c-4dcb9f9fd44e",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
