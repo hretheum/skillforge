@@ -66,6 +66,31 @@ claude plugin disable <plugin>                # switch off without uninstalling
 
 Everything above is also available interactively via `/plugin` inside a Claude Code session.
 
+### opencode
+
+[opencode](https://opencode.ai) has no plugin-marketplace mechanism, but it natively discovers
+`SKILL.md` skills — including from the Claude-compatible locations `~/.claude/skills/` and
+`~/.agents/skills/`. Two paths:
+
+- **No git**: the ZIP path below works verbatim — it unpacks into `~/.claude/skills/`, which
+  opencode reads.
+- **With updates** (the marketplace equivalent): clone the repo and symlink the buckets you want
+  into opencode's native skills directory:
+
+  ```bash
+  git clone https://github.com/hretheum/skillforge.git ~/dev/skillforge
+  mkdir -p ~/.config/opencode/skills
+  ln -s ~/dev/skillforge/packages/plugins/skillforge-skills/skills/* ~/.config/opencode/skills/
+  ln -s ~/dev/skillforge/packages/plugins/ecc-testing-quality/skills/* ~/.config/opencode/skills/
+  ```
+
+  Update later with `git -C ~/dev/skillforge pull` — the symlinks follow the repo.
+
+Two caveats: skill names must be unique across locations (don't symlink buckets whose skills
+already sit in `~/.claude/skills/`), and skills installed as Claude Code *plugins* live in
+`~/.claude/plugins/cache/`, which opencode does **not** read — on a plugin-based machine opencode
+needs its own install via the symlink path above.
+
 ### "I don't know what git is — and I don't want to"
 
 You just want the skills as `/skill-name` slash commands in **Claude Code**. No terminal, no git,

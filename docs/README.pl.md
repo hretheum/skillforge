@@ -68,6 +68,31 @@ claude plugin disable <plugin>                # wyłącz bez odinstalowania
 
 Wszystko powyższe jest też dostępne interaktywnie przez `/plugin` w sesji Claude Code.
 
+### opencode
+
+[opencode](https://opencode.ai) nie ma mechanizmu marketplace pluginów, ale natywnie wykrywa
+umiejętności `SKILL.md` — także z lokalizacji zgodnych z Claude: `~/.claude/skills/` oraz
+`~/.agents/skills/`. Dwie ścieżki:
+
+- **Bez gita**: ścieżka ZIP poniżej działa bez zmian — rozpakowuje do `~/.claude/skills/`,
+  które opencode czyta.
+- **Z aktualizacjami** (odpowiednik marketplace): sklonuj repozytorium i podlinkuj wybrane
+  koszyki do natywnego katalogu umiejętności opencode:
+
+  ```bash
+  git clone https://github.com/hretheum/skillforge.git ~/dev/skillforge
+  mkdir -p ~/.config/opencode/skills
+  ln -s ~/dev/skillforge/packages/plugins/skillforge-skills/skills/* ~/.config/opencode/skills/
+  ln -s ~/dev/skillforge/packages/plugins/ecc-testing-quality/skills/* ~/.config/opencode/skills/
+  ```
+
+  Aktualizacja później: `git -C ~/dev/skillforge pull` — symlinki podążają za repozytorium.
+
+Dwie pułapki: nazwy umiejętności muszą być unikalne między lokalizacjami (nie linkuj koszyków,
+których skille już leżą w `~/.claude/skills/`), a umiejętności zainstalowane jako *pluginy*
+Claude Code żyją w `~/.claude/plugins/cache/`, którego opencode **nie** czyta — na maszynie
+„pluginowej" opencode potrzebuje własnej instalacji ścieżką z symlinkami powyżej.
+
 ### „Nie wiem co to git i nie wiem co to homebrew — i nie chcę wiedzieć"
 
 Chcesz po prostu używać umiejętności jako komend `/nazwa-skilla` w **Claude Code**. Bez terminala,
