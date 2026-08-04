@@ -39,6 +39,33 @@ confidential data is carried in — only ideas and "how it should work".
 
 ## Quick start
 
+### Claude Code plugins (recommended)
+
+This repository is a self-hosted Claude Code **plugin marketplace**. The skills ship as 11 thematic
+plugins, so you install only the buckets you need — with versioned, one-command updates:
+
+```bash
+claude plugin marketplace add hretheum/skillforge
+
+claude plugin install skillforge-skills@skillforge     # skillforge's own skills (brand discovery, competitive analysis, benchmarking)
+claude plugin install ecc-testing-quality@skillforge   # ...plus any ECC buckets you want
+```
+
+Available plugins: `skillforge-skills`, `ecc-ai-agents`, `ecc-backend-data`, `ecc-cloud-infra`,
+`ecc-docs-research`, `ecc-frontend-design`, `ecc-misc`, `ecc-mobile`, `ecc-product-biz`,
+`ecc-security`, `ecc-testing-quality`. Inspect any of them before installing with
+`claude plugin details <name>@skillforge` (also shows the projected token cost).
+
+Skills are active from the next Claude Code session. Day-to-day management:
+
+```bash
+claude plugin marketplace update skillforge   # refresh the catalog from GitHub
+claude plugin update <plugin>                 # pick up a new plugin version
+claude plugin disable <plugin>                # switch off without uninstalling
+```
+
+Everything above is also available interactively via `/plugin` inside a Claude Code session.
+
 ### "I don't know what git is — and I don't want to"
 
 You just want the skills as `/skill-name` slash commands in **Claude Code**. No terminal, no git,

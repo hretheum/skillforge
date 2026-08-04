@@ -40,6 +40,34 @@ poufnych nie jest przenoszona — tylko idee i „jak to ma działać".
 
 ## Szybki start
 
+### Pluginy Claude Code (zalecane)
+
+To repozytorium jest samodzielnym **marketplace pluginów** Claude Code. Umiejętności są podzielone
+na 11 pluginów tematycznych — instalujesz tylko te koszyki, których potrzebujesz, z wersjonowanymi
+aktualizacjami jedną komendą:
+
+```bash
+claude plugin marketplace add hretheum/skillforge
+
+claude plugin install skillforge-skills@skillforge     # własne skille skillforge (brand discovery, analiza konkurencji, benchmarking)
+claude plugin install ecc-testing-quality@skillforge   # ...oraz dowolne koszyki ECC
+```
+
+Dostępne pluginy: `skillforge-skills`, `ecc-ai-agents`, `ecc-backend-data`, `ecc-cloud-infra`,
+`ecc-docs-research`, `ecc-frontend-design`, `ecc-misc`, `ecc-mobile`, `ecc-product-biz`,
+`ecc-security`, `ecc-testing-quality`. Zawartość każdego z nich obejrzysz przed instalacją przez
+`claude plugin details <nazwa>@skillforge` (pokazuje też przewidywany koszt tokenów).
+
+Umiejętności działają od następnej sesji Claude Code. Codzienne zarządzanie:
+
+```bash
+claude plugin marketplace update skillforge   # odśwież katalog z GitHuba
+claude plugin update <plugin>                 # pobierz nową wersję pluginu
+claude plugin disable <plugin>                # wyłącz bez odinstalowania
+```
+
+Wszystko powyższe jest też dostępne interaktywnie przez `/plugin` w sesji Claude Code.
+
 ### „Nie wiem co to git i nie wiem co to homebrew — i nie chcę wiedzieć"
 
 Chcesz po prostu używać umiejętności jako komend `/nazwa-skilla` w **Claude Code**. Bez terminala,
