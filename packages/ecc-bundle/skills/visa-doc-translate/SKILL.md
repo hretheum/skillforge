@@ -1,10 +1,6 @@
 ---
 name: visa-doc-translate
-description: >-
-  Translate visa application documents (images) to English and create a bilingual PDF with
-  original and translation. Platform note: OCR via macOS Vision framework (sips) is macOS-only;
-  EasyOCR and Tesseract provide cross-platform fallbacks.
-origin: community
+description: Translate visa application documents (images) to English and create a bilingual PDF with original and translation
 ---
 
 You are helping translate visa application documents for visa applications.

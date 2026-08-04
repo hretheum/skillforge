@@ -10,18 +10,6 @@ Inspired by [humanplane](https://github.com/humanplane) style RFC decomposition 
 
 Use this skill when a feature is too large for a single agent pass and must be split into independently verifiable work units.
 
-## Skill Routing: This vs Related Skills
-
-Three skills share the orchestration space — pick the right one:
-
-| Skill | Best for |
-|-------|----------|
-| **ralphinho-rfc-pipeline** (this skill) | A defined RFC or feature spec exists; work must be decomposed into a formal DAG with unit specs, quality gates per unit, and a merge queue. The structure is the point — you want a traceable, replayable pipeline with scorecards. |
-| `autonomous-loops` | You need a self-driving, continuous feedback loop that keeps running without human checkpoints — the emphasis is on autonomy and persistence, not formal DAG decomposition. |
-| `team-agent-orchestration` | You are managing multiple agents as a Kanban team with ownership, board state, and control pane visibility — the emphasis is on agent coordination and branch/worktree management rather than a formal RFC pipeline. |
-
-When in doubt: if you have an RFC document and want each work unit to produce a scorecard and merge-queue entry, use this skill. If you just want agents running in parallel without a formal spec, reach for `team-agent-orchestration`.
-
 ## Pipeline Stages
 
 1. RFC intake

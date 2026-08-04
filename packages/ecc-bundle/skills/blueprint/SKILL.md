@@ -68,11 +68,38 @@ Produces a plan with parallel steps where possible (e.g., "implement Anthropic p
 - **Branch/PR/CI workflow** — Built into every step. Degrades gracefully to direct mode when git/gh is absent.
 - **Parallel step detection** — Dependency graph identifies steps with no shared files or output dependencies.
 - **Plan mutation protocol** — Steps can be split, inserted, skipped, reordered, or abandoned with formal protocols and audit trail.
-- **Zero runtime risk** — Pure Markdown skill. The entire repository contains only `.md` files — no hooks, no shell scripts, no executable code, no `package.json`, no build step. Nothing runs on install or invocation beyond Claude Code's native Markdown skill loader.
+- **Zero runtime risk** — Pure Markdown skill. The entire repository contains only `.md` files — no hooks, no shell scripts, no executable code, no `package.json`, no build step. Nothing runs on install or invocation beyond Codex's native Markdown skill loader.
+
+## Installation
+
+This skill ships with Everything Codex. No separate installation is needed when ECC is installed.
+
+### Full ECC install
+
+If you are working from the ECC repository checkout, verify the skill is present with:
+
+```bash
+test -f skills/blueprint/SKILL.md
+```
+
+To update later, review the ECC diff before updating:
+
+```bash
+cd /path/to/everything-Codex
+git fetch origin main
+git log --oneline HEAD..origin/main       # review new commits before updating
+git checkout <reviewed-full-sha>          # pin to a specific reviewed commit
+```
+
+### Vendored standalone install
+
+If you are vendoring only this skill outside the full ECC install, copy the reviewed file from the ECC repository into `~/.Codex/skills/blueprint/SKILL.md`. Vendored copies do not have a git remote, so update them by re-copying the file from a reviewed ECC commit rather than running `git pull`.
 
 ## Requirements
 
-- Claude Code (for `/blueprint` slash command)
+- Codex (for `/blueprint` slash command)
 - Git + GitHub CLI (optional — enables full branch/PR/CI workflow; Blueprint detects absence and auto-switches to direct mode)
 
-> Inspired by antbotlab/blueprint. Ships with ECC — no separate installation needed.
+## Source
+
+Inspired by antbotlab/blueprint — upstream project and reference design.

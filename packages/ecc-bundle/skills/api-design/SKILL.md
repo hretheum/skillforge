@@ -8,20 +8,14 @@ origin: ECC
 
 Conventions and best practices for designing consistent, developer-friendly REST APIs.
 
-## Scope Note
-
-This skill is the **REST-focused canonical** reference. It covers resource naming, HTTP methods, status codes, pagination, filtering, error responses, versioning, and rate limiting for REST APIs.
-
-For **GraphQL** (schema design, resolvers, subscriptions) and **gRPC** (proto definitions, streaming, service mesh patterns), use a dedicated GraphQL/gRPC API skill (e.g. `api-design-patterns`, available in a full ECC install) instead. For server-side framework conventions (middleware, route organization, ORM patterns), see `backend-patterns`.
-
 ## When to Activate
 
-- Designing new REST API endpoints
-- Reviewing existing REST API contracts
+- Designing new API endpoints
+- Reviewing existing API contracts
 - Adding pagination, filtering, or sorting
-- Implementing error handling for REST APIs
+- Implementing error handling for APIs
 - Planning API versioning strategy
-- Building public or partner-facing REST APIs
+- Building public or partner-facing APIs
 
 ## Resource Design
 

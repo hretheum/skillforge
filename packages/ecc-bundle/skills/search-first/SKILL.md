@@ -72,7 +72,7 @@ that are relevant to the task and project in front of you.
 | Package registry | `npm --version`, `python -m pip --version`, or project package manager | Use web/docs search and avoid claiming registry coverage |
 | GitHub CLI | `gh auth status` | Use public web or local git history only |
 | MCP/docs tools | Available tool list or local MCP config | Fall back to official docs/web search |
-| Skills directory | `ls ~/.claude/skills ~/.codex/skills` where applicable | Say no local skill catalog was available |
+| Skills directory | `ls ~/.Codex/skills ~/.codex/skills` where applicable | Say no local skill catalog was available |
 
 ### Quick Mode (inline)
 
@@ -80,8 +80,8 @@ Before writing a utility or adding functionality, mentally run through:
 
 0. Does this already exist in the repo? → `rg` through relevant modules/tests first
 1. Is this a common problem? → Search npm/PyPI
-2. Is there an MCP for this? → Check `~/.claude/settings.json` and search
-3. Is there a skill for this? → Check `~/.claude/skills/`
+2. Is there an MCP for this? → Check `~/.Codex/settings.json` and search
+3. Is there a skill for this? → Check `~/.Codex/skills/`
 4. Is there a GitHub implementation/template? → Run GitHub code search for maintained OSS before writing net-new code
 
 ### Full Mode (agent)
@@ -94,12 +94,12 @@ Agent(subagent_type="general-purpose", prompt="
   Language/framework: [LANG]
   Constraints: [ANY]
 
-  Search: npm/PyPI, MCP servers, Claude Code skills, GitHub
+  Search: npm/PyPI, MCP servers, Codex skills, GitHub
   Return: Structured comparison with recommendation
 ")
 ```
 
-Older Claude Code docs may call this `Task(...)`; use the current agent/subagent
+Older Codex docs may call this `Task(...)`; use the current agent/subagent
 tool name exposed by the active harness.
 
 ## Search Shortcuts by Category
@@ -111,7 +111,7 @@ tool name exposed by the active harness.
 - Pre-commit → `husky`, `lint-staged`, `pre-commit`
 
 ### AI/LLM Integration
-- Claude SDK → Context7 for latest docs
+- Codex SDK → Context7 for latest docs
 - Prompt management → Check MCP servers
 - Document processing → `unstructured`, `pdfplumber`, `mammoth`
 

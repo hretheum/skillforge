@@ -1,21 +1,20 @@
 ---
 name: verification-loop
-description: "Six-phase quality gate for Claude Code sessions: build, types, lint, tests, secret scan, and diff review. Use before creating a PR, after a feature lands, or after any significant refactor to confirm quality gates pass before integration."
+description: "A comprehensive verification system for Codex sessions."
 origin: ECC
 ---
 
 # Verification Loop Skill
 
-A six-phase verification system for Claude Code sessions. Runs build, type-check, lint, test suite, secret scan, and diff review in sequence, then emits a structured report with an overall READY/NOT READY verdict.
+A comprehensive verification system for Codex sessions.
 
 ## When to Use
 
 Invoke this skill:
 - After completing a feature or significant code change
 - Before creating a PR
-- When you want to ensure quality gates pass before integration
-- After refactoring to confirm nothing regressed
-- When an automated CI check is not yet available locally and you need confidence before pushing
+- When you want to ensure quality gates pass
+- After refactoring
 
 ## Verification Phases
 
@@ -65,45 +64,14 @@ Report:
 - Coverage: X%
 
 ### Phase 5: Security Scan
-
-Scan for hardcoded secrets across common source file types:
-
 ```bash
-# OpenAI / Anthropic / generic API keys
-grep -rn "sk-[a-zA-Z0-9]" \
-  --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" \
-  --include="*.py" --include="*.rb" --include="*.go" --include="*.java" \
-  --include="*.env" --include="*.env.*" --include="*.yaml" --include="*.yml" \
-  . 2>/dev/null | grep -v ".env.example" | head -20
+# Check for secrets
+grep -rn "sk-" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
+grep -rn "api_key" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
 
-# Generic secret patterns
-grep -rn -iE "(api_key|api_secret|secret_key|private_key|access_token|auth_token|client_secret)\s*=\s*['\"][^'\"]{8,}" \
-  --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" \
-  --include="*.py" --include="*.rb" --include="*.go" --include="*.java" \
-  --include="*.json" --include="*.yaml" --include="*.yml" \
-  . 2>/dev/null | grep -v ".env.example" | head -20
-
-# AWS credentials
-grep -rn "AKIA[0-9A-Z]{16}" \
-  --include="*.ts" --include="*.js" --include="*.py" --include="*.json" \
-  --include="*.yaml" --include="*.yml" \
-  . 2>/dev/null | head -10
-
-# GitHub personal access tokens / fine-grained tokens
-grep -rn -E "ghp_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9_]{82}" \
-  --include="*.ts" --include="*.js" --include="*.py" --include="*.yaml" \
-  . 2>/dev/null | head -10
-
-# Stripe secret keys
-grep -rn "sk_live_[a-zA-Z0-9]" \
-  --include="*.ts" --include="*.js" --include="*.py" \
-  . 2>/dev/null | head -10
-
-# Check for console.log left in source
+# Check for console.log
 grep -rn "console.log" --include="*.ts" --include="*.tsx" src/ 2>/dev/null | head -10
 ```
-
-Report any hits. For each hit: file path, line number, pattern matched, and recommended action (move to environment variable, rotate key, or confirm it is a safe placeholder).
 
 ### Phase 6: Diff Review
 ```bash

@@ -1,14 +1,14 @@
 ---
 name: cost-tracking
-description: Track and report Claude Code token usage, spending, and budgets from a local cost-tracking database. Use when the user asks about costs, spending, usage, tokens, budgets, or cost breakdowns by project, tool, session, or date.
+description: Track and report Codex token usage, spending, and budgets from a local cost-tracking database. Use when the user asks about costs, spending, usage, tokens, budgets, or cost breakdowns by project, tool, session, or date.
 origin: community
 ---
 
 # Cost Tracking
 
-Use this skill to analyze Claude Code cost and usage history from a local SQLite
+Use this skill to analyze Codex cost and usage history from a local SQLite
 database. It is intended for users who already have a cost-tracking hook or
-plugin writing usage rows to `~/.claude-cost-tracker/usage.db`.
+plugin writing usage rows to `~/.Codex-cost-tracker/usage.db`.
 
 Source: salvaged from stale community PR #1304 by `MayurBhavsar`.
 
@@ -27,7 +27,7 @@ First verify prerequisites:
 
 ```bash
 command -v sqlite3 >/dev/null && echo "sqlite3 available" || echo "sqlite3 missing"
-test -f ~/.claude-cost-tracker/usage.db && echo "Database found" || echo "Database not found"
+test -f ~/.Codex-cost-tracker/usage.db && echo "Database found" || echo "Database not found"
 ```
 
 If the database is missing, do not fabricate usage data. Tell the user that cost
@@ -45,7 +45,7 @@ interaction. Column names vary by tracker, but the examples below assume:
 | `input_tokens` | Input token count, when recorded |
 | `output_tokens` | Output token count, when recorded |
 | `cost_usd` | Precomputed cost in USD |
-| `session_id` | Claude Code session identifier |
+| `session_id` | Codex session identifier |
 | `model` | Model used for the event |
 
 Prefer `cost_usd` over hand-calculating pricing. Model prices and cache pricing
@@ -57,7 +57,7 @@ was priced.
 ### Quick Summary
 
 ```bash
-sqlite3 ~/.claude-cost-tracker/usage.db "
+sqlite3 ~/.Codex-cost-tracker/usage.db "
   SELECT
     'Today: $' || ROUND(COALESCE(SUM(CASE WHEN date(timestamp) = date('now') THEN cost_usd END), 0), 4) ||
     ' | Total: $' || ROUND(COALESCE(SUM(cost_usd), 0), 4) ||
@@ -70,7 +70,7 @@ sqlite3 ~/.claude-cost-tracker/usage.db "
 ### Cost By Project
 
 ```bash
-sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
+sqlite3 -header -column ~/.Codex-cost-tracker/usage.db "
   SELECT project, ROUND(SUM(cost_usd), 4) AS cost, COUNT(*) AS calls
   FROM usage
   GROUP BY project
@@ -81,7 +81,7 @@ sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
 ### Cost By Tool
 
 ```bash
-sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
+sqlite3 -header -column ~/.Codex-cost-tracker/usage.db "
   SELECT tool_name, ROUND(SUM(cost_usd), 4) AS cost, COUNT(*) AS calls
   FROM usage
   GROUP BY tool_name
@@ -92,7 +92,7 @@ sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
 ### Last Seven Days
 
 ```bash
-sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
+sqlite3 -header -column ~/.Codex-cost-tracker/usage.db "
   SELECT date(timestamp) AS date, ROUND(SUM(cost_usd), 4) AS cost, COUNT(*) AS calls
   FROM usage
   GROUP BY date(timestamp)
@@ -104,7 +104,7 @@ sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
 ### Session Drilldown
 
 ```bash
-sqlite3 -header -column ~/.claude-cost-tracker/usage.db "
+sqlite3 -header -column ~/.Codex-cost-tracker/usage.db "
   SELECT session_id,
     MIN(timestamp) AS started,
     MAX(timestamp) AS ended,

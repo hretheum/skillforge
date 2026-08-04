@@ -41,14 +41,14 @@ Search installed and marketplace skill names first. Local sources are preferred
 because they are already part of the user's environment.
 
 ```bash
-find ~/.claude/skills -maxdepth 2 -name SKILL.md 2>/dev/null | grep -iE "keyword|synonym"
-find ~/.claude/plugins/marketplaces -path '*/skills/*/SKILL.md' 2>/dev/null | grep -iE "keyword|synonym"
+find ~/.Codex/skills -maxdepth 2 -name SKILL.md 2>/dev/null | grep -iE "keyword|synonym"
+find ~/.Codex/plugins/marketplaces -path '*/skills/*/SKILL.md' 2>/dev/null | grep -iE "keyword|synonym"
 ```
 
 Then search frontmatter descriptions:
 
 ```bash
-grep -RilE "keyword|synonym" ~/.claude/skills ~/.claude/plugins/marketplaces 2>/dev/null
+grep -RilE "keyword|synonym" ~/.Codex/skills ~/.Codex/plugins/marketplaces 2>/dev/null
 ```
 
 ### Step 3 - Search Remote Sources
@@ -56,16 +56,16 @@ grep -RilE "keyword|synonym" ~/.claude/skills ~/.claude/plugins/marketplaces 2>/
 Use available GitHub and web search tools. Prefer concise queries:
 
 ```bash
-gh search repos "claude code skill keyword" --limit 10 --sort stars
+gh search repos "Codex skill keyword" --limit 10 --sort stars
 gh search code "name: keyword" --filename SKILL.md --limit 10
 ```
 
 For web search, use at most three targeted queries such as:
 
 ```text
-"claude code skill" keyword
+"Codex skill" keyword
 "SKILL.md" keyword
-"everything-claude-code" keyword
+"everything-Codex" keyword
 ```
 
 ### Step 4 - Vet External Matches

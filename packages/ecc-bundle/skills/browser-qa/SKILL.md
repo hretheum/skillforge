@@ -16,7 +16,7 @@ origin: ECC
 
 ## How It Works
 
-Uses the browser automation MCP (claude-in-chrome, Playwright, or Puppeteer) to interact with live pages like a real user.
+Uses the browser automation MCP (Codex-in-chrome, Playwright, or Puppeteer) to interact with live pages like a real user.
 
 ### Phase 1: Smoke Test
 ```
@@ -80,7 +80,7 @@ Uses the browser automation MCP (claude-in-chrome, Playwright, or Puppeteer) to 
 ## Integration
 
 Works with any browser MCP:
-- `mcp__plugin_chrome-devtools-mcp_chrome-devtools__*` tools (preferred — uses your actual Chrome)
+- `mChild__claude-in-chrome__*` tools (preferred — uses your actual Chrome)
 - Playwright via `mcp__browserbase__*`
 - Direct Puppeteer scripts
 

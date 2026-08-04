@@ -1,0 +1,1241 @@
+{
+  "evaluated_at": "2026-06-13T21:48:03Z",
+  "mode": "full",
+  "batch_progress": {
+    "total": 205,
+    "evaluated": 205,
+    "status": "completed"
+  },
+  "skills": {
+    "agent-architecture-audit": {
+      "path": "~/.claude/skills/agent-architecture-audit/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinctive 12-layer agent-stack diagnostic with concrete rg anti-pattern searches, severity model, and JSON report schema; explicitly delineates boundaries vs agent-introspection-debugging, agent-eval, and security-review so overlap is intentional and scoped. Current and actionable.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agent-eval": {
+      "path": "~/.claude/skills/agent-eval/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Solid head-to-head coding-agent benchmark workflow (YAML tasks, worktree isolation, pass/cost/time/consistency), but references an external repo (github.com/joaquinhuigomez/agent-eval) with no verified install path and a placeholder Installation section; tighten or remove the unverified repo link and clarify whether the CLI actually exists. Distinct from agent-architecture-audit and benchmark.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agent-harness-construction": {
+      "path": "~/.claude/skills/agent-harness-construction/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concise 73-line design guide for action spaces, observation shapes, error-recovery contracts, and ReAct/function-calling tradeoffs; complements (not duplicates) agent-architecture-audit (audit) and autonomous-loops (orchestration) by focusing on tool/observation design. Current.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agent-introspection-debugging": {
+      "path": "~/.claude/skills/agent-introspection-debugging/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Self-contained four-phase agent self-debug workflow (capture/diagnose/recover/report) with a failure-pattern table and explicit scope handoffs to verification-loop and continuous-learning-v2; no other roster skill covers runtime agent self-debugging at this granularity. Honest about not claiming unsupported auto-healing.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agent-payment-x402": {
+      "path": "~/.claude/skills/agent-payment-x402/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Niche but actionable x402/agent-payment integration with fail-closed budget enforcement code, security warnings on key handling and version pinning, and a decision tree across agentwallet-sdk/OKX; references are kept current by instructing the agent to fetch live SDK docs before generating code. No roster overlap.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agent-sort": {
+      "path": "~/.claude/skills/agent-sort/SKILL.md",
+      "verdict": "Keep",
+      "reason": "ECC-specific evidence-based DAILY-vs-LIBRARY install classifier with grep-backed decisions and handoffs to configure-ecc, skill-stocktake, strategic-compact; distinct from context-budget (token audit) and config-gc (deletion) by producing an install plan. Current and self-contained.",
+      "mtime": "2026-06-12T08:07:27Z"
+    },
+    "agentic-engineering": {
+      "path": "~/.claude/skills/agentic-engineering/SKILL.md",
+      "verdict": "Improve",
+      "reason": "63-line operating-principles skill (eval-first loop, 15-min decomposition, Haiku/Sonnet/Opus routing, cost discipline) that heavily overlaps ai-first-engineering and dynamic-workflow-mode; keep but add an explicit boundary note pointing at ai-first-engineering (team process) to clarify it owns the individual-execution lane. Borderline merge candidate.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "agentic-os": {
+      "path": "~/.claude/skills/agentic-os/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Detailed (387-line) architecture for a persistent file-based multi-agent OS on Claude Code with kernel/agents/commands/scripts/data layers, real cron examples (LaunchAgent/systemd/pm2), and anti-patterns; distinct from autonomous-agent-harness (which uses native crons/MCP) by deliberately favoring external cron and file-DB state. Current.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "ai-first-engineering": {
+      "path": "~/.claude/skills/ai-first-engineering/SKILL.md",
+      "verdict": "Merge into agentic-engineering",
+      "reason": "51-line team-process skill (planning>typing, eval coverage, review-for-behavior, hiring signals, testing bar) substantially duplicates agentic-engineering's review-focus and eval-first themes; fold the team-process and hiring-signal sections into agentic-engineering as a 'team operating model' subsection rather than maintaining two thin near-identical skills.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "ai-regression-testing": {
+      "path": "~/.claude/skills/ai-regression-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Specific, non-obvious thesis (AI writes and reviews with the same blind spot; sandbox/production path drift is the #1 regression) with a concrete Vitest+Next.js App Router DB-free testing setup and a real worked bug-chain example; not covered by python-testing/react-testing/e2e-testing which are framework-test mechanics. Current.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "angular-developer": {
+      "path": "~/.claude/skills/angular-developer/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Up-to-date Angular guide covering signals, linkedSignal, resource, signal forms, Angular Aria, and an ng-version-aware ng new decision tree, with a large references/ tree; the only Angular skill on the roster (frontend-patterns is React/Next). Modern and actionable.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "api-connector-builder": {
+      "path": "~/.claude/skills/api-connector-builder/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Match-the-house-style integration builder (learn existing connectors first, mirror config/auth/error/test/registry wiring) with provider/connector/TS-plugin reference shapes; distinct from api-design (contract design) and mcp-server-patterns (MCP servers) by targeting repo-native integration parity. Self-contained.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "api-design": {
+      "path": "~/.claude/skills/api-design/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Comprehensive 523-line REST design reference (naming, status codes, pagination, errors, versioning, rate limiting) that overlaps api-design-patterns (REST+GraphQL+gRPC) and the API section of backend-patterns; keep as the REST-focused canonical but add a boundary note delegating GraphQL/gRPC to api-design-patterns to reduce three-way duplication.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "architecture-decision-records": {
+      "path": "~/.claude/skills/architecture-decision-records/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Nygard-format ADR capture skill with clear decision-moment triggers, status lifecycle, and an ADR log; no roster overlap (recursive-decision-ledger tracks rollout/search decisions, not architectural ADRs). Actionable and current.",
+      "mtime": "2026-06-12T08:07:28Z"
+    },
+    "article-writing": {
+      "path": "~/.claude/skills/article-writing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Focused long-form writing skill with banned-AI-phrase list, proof-over-adjectives rules, and medium-specific structure; explicitly defers voice analysis to brand-voice to avoid duplication, distinguishing it from content-engine (multi-platform social) and brand-voice (profile building). Self-contained.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "automation-audit-ops": {
+      "path": "~/.claude/skills/automation-audit-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Evidence-first ECC automation inventory (configured/authenticated/verified/stale/missing taxonomy, read-only-first) that orchestrates workspace-surface-audit, github-ops, ecc-tools-cost-audit; overlap with those is by-design composition, not duplication, and it owns the keep/merge/cut/fix recommendation lane. Current.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "autonomous-agent-harness": {
+      "path": "~/.claude/skills/autonomous-agent-harness/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Native-feature autonomous harness (crons, dispatch, memory, computer use, MCP layer) with strong consent/safety boundaries and dry-run-first guidance; deliberately contrasts with agentic-os (external cron + file DB) so the pair are complementary rather than redundant. Current.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "autonomous-loops": {
+      "path": "~/.claude/skills/autonomous-loops/SKILL.md",
+      "verdict": "Retire",
+      "reason": "Self-declared compatibility shim (v1.8.0 header) stating the canonical skill is now continuous-agent-loop and that new guidance should be authored there; it is a deprecated alias retained 'for one release', so retire once dependents migrate. Its content (loop pattern spectrum) is superseded by continuous-agent-loop and ralphinho-rfc-pipeline.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "backend-patterns": {
+      "path": "~/.claude/skills/backend-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Broad Node/Express/Next backend patterns (repository/service/controller layers, query optimization, caching, background jobs, middleware) anchored to code examples; the API-design overlap with api-design is a small subsection of a wider scope, so keep but it is the natural home for server-layer architecture vs api-design's contract focus.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "benchmark": {
+      "path": "~/.claude/skills/benchmark/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Covers four distinct perf modes (page Core Web Vitals, API p50/p95/p99, build feedback loop, before/after baseline diff stored in .ecc/benchmarks). Current targets (LCP<2.5s, INP<200ms) are accurate as of 2026. Forms a complementary triad with browser-qa (pre-ship) and canary-watch (post-deploy), explicitly cross-referenced; no real redundancy.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "benchmark-methodology": {
+      "path": "~/.claude/skills/benchmark-methodology/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Well-structured skillforge-platform skill: scores competitors across 9 weighted dimensions with explicit 1-5 rubrics, bias controls, and a profile-card output format. Second step of the competitive pipeline (competitive-platform-analysis -> this -> competitive-report-structure); client knowledge correctly externalized to competitive-context resource. Current and unique.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "benchmark-optimization-loop": {
+      "path": "~/.claude/skills/benchmark-optimization-loop/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinct from 'benchmark' (which measures static baselines): this is a bounded recursive variant-search loop with correctness gate, variant ledger, promotion gate, and 'best measured safe variant' discipline. Actionable and self-contained; no stale references.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "blender-motion-state-inspection": {
+      "path": "~/.claude/skills/blender-motion-state-inspection/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Highly specific niche skill (Blender rig/pose/retargeting inspection via bpy Python) with concrete thresholds, worked examples, and report shape. No overlap with any other roster skill; tooling note correctly flags bpy is unavailable in system Python. Current.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "blueprint": {
+      "path": "~/.claude/skills/blueprint/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Solid multi-PR construction-plan generator with cold-start briefs and adversarial review gate. But it overlaps in purpose with roster skills writing-plans, plan-orchestrate, and the orch-* family; the SKILL.md is padded with Installation/Vendored-install/Requirements/Source boilerplate (lines 74-105, ~30%) that belongs in a README, not the loaded skill. Trim the install/source sections to reduce SessionStart token cost.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "brand-discovery": {
+      "path": "~/.claude/skills/brand-discovery/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Adaptive multi-session brand interview with rigorous state-checkpoint protocol, laddering/5-Whys/projective techniques, and a defined module sequence with named frameworks. Skillforge-platform skill reading brandState resource; no client knowledge embedded. Unique and current.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "brand-voice": {
+      "path": "~/.claude/skills/brand-voice/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful source-derived voice-profile builder feeding content-engine/crosspost/lead-intelligence. Partial conceptual overlap with brand-discovery's voice module, but operates at a different layer (writing-style fingerprint vs full brandbook). Defect: contains hardcoded 'Affaan / ECC Defaults' personal voice block (lines 55-66) that is author-specific and should be moved to a reference file or generalized.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "browser-qa": {
+      "path": "~/.claude/skills/browser-qa/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Good 4-phase visual/interaction/regression/a11y QA flow, complementary to benchmark and canary-watch. Defect: Integration section references a garbled/stale MCP tool name 'mChild__claude-in-chrome__*' (line 83) — should be the correct chrome MCP namespace (e.g. mcp__plugin_chrome-devtools-mcp_chrome-devtools__*). Fix the tool reference.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "bun-runtime": {
+      "path": "~/.claude/skills/bun-runtime/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Accurate, current Bun reference: correctly notes bun.lock (text) is now default with bun.lockb (binary) as legacy, covers runtime/install/bundler/test/Vercel. Concise and unique; no other roster skill covers Bun. Technical references are fresh.",
+      "mtime": "2026-06-12T08:07:29Z"
+    },
+    "canary-watch": {
+      "path": "~/.claude/skills/canary-watch/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Post-deploy/canary monitoring with HTTP/console/network/CWV/SSE/static-asset checks, watch modes, and alert thresholds. Distinct post-deploy slot in the verification triad (vs browser-qa pre-ship, benchmark regression). Current and actionable.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "ck": {
+      "path": "~/.claude/skills/ck/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Persistent per-project memory tool (context-keeper) driven by deterministic Node.js scripts with a clear command set and SessionStart hook. Differs from roster session-management/project-session-management by being a concrete versioned tool (v2.0.0) with its own data layout; commands invoke real scripts. Current.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "claude-devfleet": {
+      "path": "~/.claude/skills/claude-devfleet/SKILL.md",
+      "verdict": "Keep",
+      "reason": "MCP-backed multi-agent orchestration via external DevFleet server with a precise tool table, DAG/auto-dispatch workflow, and concurrency notes. Overlaps conceptually with claude-code Agent Teams and dmux-workflows but targets a specific external product; well-documented and current.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "click-path-audit": {
+      "path": "~/.claude/skills/click-path-audit/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Specialized behavioural-flow audit for state-interaction bugs (sequential undo, async race, stale closure, useEffect interference) that static debugging misses. Concrete store side-effect mapping, 6 bug patterns, real worked example, and clean integration with superpowers debugging skills. Unique and actionable.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "clickhouse-io": {
+      "path": "~/.claude/skills/clickhouse-io/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Standard DB-pattern skill peer to postgres-patterns/mysql-patterns/redis-patterns, covering MergeTree engine selection, query optimization, partitioning, and ingestion. ClickHouse-specific content not duplicated elsewhere in roster; current SQL patterns.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "code-tour": {
+      "path": "~/.claude/skills/code-tour/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Produces CodeTour .tour JSON artifacts (persona-targeted guided walkthroughs) — a concrete artifact type distinct from codebase-onboarding (which generates a prose guide + CLAUDE.md). Has an explicit 'When NOT to Use' table delegating to codebase-onboarding/documentation-lookup, so boundaries are clean.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "codebase-onboarding": {
+      "path": "~/.claude/skills/codebase-onboarding/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Generates a structured onboarding guide (architecture map, entry points, conventions, starter CLAUDE.md) via reconnaissance/fingerprinting phases. Distinct artifact and trigger from code-tour (.tour files); the two cross-reference rather than duplicate. Current detection lists.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "codehealth-mcp": {
+      "path": "~/.claude/skills/codehealth-mcp/SKILL.md",
+      "verdict": "Keep",
+      "reason": "CodeScene MCP integration for structural Code Health scores and regression gates, explicitly positioned as complement to coding-standards/plankton-code-quality (design-level vs style/lint). Strong security/boundaries section (opt-in, no bundled token, MCP-down fallback). Current upstream package @codescene/codehealth-mcp.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "coding-standards": {
+      "path": "~/.claude/skills/coding-standards/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Baseline cross-project conventions explicitly scoped as the shared floor, with clear delegation to frontend-patterns/backend-patterns/api-design and rules/common/coding-style.md to avoid overlap. Long (550 lines) but the scope-boundary section prevents redundancy with framework skills. Useful and current.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "competitive-platform-analysis": {
+      "path": "~/.claude/skills/competitive-platform-analysis/SKILL.md",
+      "verdict": "Keep",
+      "reason": "First step of the competitive pipeline: scopes/tiers a competitor set via 8-category taxonomy, selection criteria, and a selection-stage scoring matrix, with a Brand-Discovery fallback when no competitive-context exists. Skillforge-platform skill, no embedded client knowledge; hands off cleanly to benchmark-methodology. Current and unique.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "competitive-report-structure": {
+      "path": "~/.claude/skills/competitive-report-structure/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Final step of a coherent 3-skill competitive pipeline (competitive-platform-analysis -> benchmark-methodology -> this), reads a client competitive-context resource and produces a decision-grade report with explicit sections, bias controls (no blended total column), and citation discipline. Distinct, well-scoped, no overlap.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "config-gc": {
+      "path": "~/.claude/skills/config-gc/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Backs the live /config-gc skill (referenced in user CLAUDE.md and the _gc_trash soft-delete workflow). Cleanly scoped to subtractive ~/.claude cleanup with human-in-loop confirm-each-deletion; explicitly disjoint from skill-stocktake (quality) and workspace-surface-audit (additive). Commands are current and macOS-safe.",
+      "mtime": "2026-06-12T08:07:30Z"
+    },
+    "configure-ecc": {
+      "path": "~/.claude/skills/configure-ecc/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful interactive ECC installer, but the embedded skill catalog (Step 2c) is a hardcoded snapshot that will drift from the actual repo; the niche-skill category list and counts ('45 skills across 8 categories') need to be regenerated from the live ECC source or replaced with a dynamic scan to stay accurate.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "connections-optimizer": {
+      "path": "~/.claude/skills/connections-optimizer/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinct review-first network-pruning workflow (X/LinkedIn prune+grow+warm-outreach) with clear safety defaults, modes, and scoring model. Delegates voice to brand-voice and targeting to lead-intelligence rather than duplicating them; no overlapping skill covers graph rebalancing.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "content-engine": {
+      "path": "~/.claude/skills/content-engine/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Core platform-native content authoring skill (X/LinkedIn/video/YT/newsletter) with concrete hard-bans and per-platform rules; cleanly separated from crosspost (distribution) and brand-voice (voice layer), which it delegates to. Anchor of the content cluster.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "content-hash-cache-pattern": {
+      "path": "~/.claude/skills/content-hash-cache-pattern/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Self-contained Python implementation pattern for SHA-256 content-hash file caching with service-layer separation and clear when/when-not guidance. Concrete, actionable, no overlap with any other skill in the roster.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "context-budget": {
+      "path": "~/.claude/skills/context-budget/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Backs the /context-budget command; audits token overhead across agents/skills/rules/MCP/CLAUDE.md and emits ranked savings. Distinct from config-gc (deletion) and skill-stocktake (quality) — this is token-consumption measurement. Estimation heuristics (~500 tokens/MCP tool, words x1.3) remain reasonable.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "continuous-agent-loop": {
+      "path": "~/.claude/skills/continuous-agent-loop/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Thin (45-line) router declaring itself the 'v1.8+ canonical loop skill' superseding autonomous-loops, but it mostly points at other skills (ralphinho-rfc-pipeline, plankton-code-quality, eval-harness, nanoclaw-repl) and references undefined commands (/harness-audit, /quality-gate). Overlaps conceptually with autonomous-loops and continuous-agent-loop family; either flesh out the patterns or fold into autonomous-loops, and verify the referenced commands exist.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "continuous-learning": {
+      "path": "~/.claude/skills/continuous-learning/SKILL.md",
+      "verdict": "Retire",
+      "reason": "Self-declares DEPRECATED 2026-04-28 and instructs routing all continuous-learning requests to continuous-learning-v2, which is a strict superset (instinct-based, project-scoped, hook-reliable). Kept only for archival/back-compat; continuous-learning-v2 fully covers the need.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "continuous-learning-v2": {
+      "path": "~/.claude/skills/continuous-learning-v2/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Active successor to continuous-learning: instinct-based session learning via PreToolUse/PostToolUse hooks with confidence scoring, project-scoped storage (v2.1), and evolution to skills/commands. Has its own config/hooks/scripts. The canonical learning skill — keep.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "cost-aware-llm-pipeline": {
+      "path": "~/.claude/skills/cost-aware-llm-pipeline/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Implementation-pattern skill for LLM cost control (model routing, immutable budget tracking, narrow retry, prompt caching) with runnable Python. Distinct from cost-tracking (reporting from a DB) and token-budget-advisor (context planning). Pricing table dated 2025-2026 and model ids (sonnet-4-6, haiku-4-5, opus-4-5) are current.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "cost-tracking": {
+      "path": "~/.claude/skills/cost-tracking/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Reads/reports Claude Code spend from a local SQLite cost-tracker DB with safe sqlite3 queries and a no-fabrication guard; backs /cost-report. Complements rather than duplicates cost-aware-llm-pipeline (build-time patterns) and token-budget-advisor (context). Correctly defers pricing to the tracker.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "council": {
+      "path": "~/.claude/skills/council/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinct decision-under-ambiguity skill: four-voice (Architect/Skeptic/Pragmatist/Critic) parallel-subagent council with anti-anchoring discipline and bias guardrails. Explicitly scoped away from santa-method (verification), planner, and code-review; no roster overlap.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "cpp-coding-standards": {
+      "path": "~/.claude/skills/cpp-coding-standards/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive modern C++ (17/20/23) standards grounded in the C++ Core Guidelines with rule tables and cross-cutting principles. Sibling to other language *-coding-standards skills; no C++ overlap exists elsewhere. Current and reference-grade.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "cpp-testing": {
+      "path": "~/.claude/skills/cpp-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Focused C++ testing workflow (GoogleTest/GoogleMock + CMake/CTest, sanitizers, TDD loop) with a tight when/when-not scope. Complements cpp-coding-standards; no other skill covers C++ tests. Tooling references (gtest_discover_tests, --output-on-failure) are current.",
+      "mtime": "2026-06-12T08:07:31Z"
+    },
+    "crosspost": {
+      "path": "~/.claude/skills/crosspost/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distribution-focused companion to content-engine, covering X/LinkedIn/Threads/Bluesky adaptation with anti-duplication rules and banned phrases; explicitly delegates voice to brand-voice and shaping to content-engine. Distinct enough (multi-platform distribution vs authoring) to stand alone.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "customer-billing-ops": {
+      "path": "~/.claude/skills/customer-billing-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operator-facing customer billing workflow (identify-classify-act-handoff) over connected tools like Stripe with PII guardrails and a structured handoff format. Distinct from finance-billing-ops (revenue/pricing truth audit) and customer-billing API design; targets per-customer remediation. No redundancy.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "dashboard-builder": {
+      "path": "~/.claude/skills/dashboard-builder/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Question-first monitoring dashboard skill for Grafana/SigNoz with concrete panel sets (Kafka, Elasticsearch, gateway) and a quality checklist. No observability skill in the roster covers dashboard construction specifically; distinct from observability-setup and implementing-observability.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "data-scraper-agent": {
+      "path": "~/.claude/skills/data-scraper-agent/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Self-contained build guide for a free automated scraping agent (requests/Playwright + Gemini Flash + GitHub Actions + Notion/Sheets/Supabase) with model fallback chain and feedback learning. Distinct from deep-research and exa-search (read-time research); this is durable scheduled collection infra. Gemini Flash quota numbers may drift but core stack is sound.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "data-throughput-accelerator": {
+      "path": "~/.claude/skills/data-throughput-accelerator/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Coherent ECC-native skill for ETL/backfill/warehouse-load speedups with a correctness-gate accounting block and clear guardrails (no silent skips, separate backfill from live tail). No roster overlap; the closest skills (database-migrations, clickhouse-io) cover schema/query not throughput pipelines.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "database-migrations": {
+      "path": "~/.claude/skills/database-migrations/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Multi-ORM (Prisma, Drizzle, Django, golang-migrate) zero-downtime migration patterns with a concrete safety checklist and Postgres CONCURRENTLY examples. Distinct from database-schema-design/postgres-patterns which cover design not migration safety; references are current.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "deep-research": {
+      "path": "~/.claude/skills/deep-research/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Solid firecrawl/exa multi-source research workflow with a self-aware drift warning, but it overlaps the roster's research, research-ops, and exa-search; clarify the boundary (deep-research = firecrawl+exa fan-out with subagents) in its description so routing is unambiguous rather than leaving three near-duplicate research entries.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "deployment-patterns": {
+      "path": "~/.claude/skills/deployment-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Rolling/blue-green/canary strategies plus health checks and rollback checklists for web apps; references are evergreen. Overlaps docker-patterns and cicd-pipeline-setup only at the edges (it owns deployment strategy, they own containers/pipeline mechanics).",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "design-system": {
+      "path": "~/.claude/skills/design-system/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful three-mode skill (generate tokens, 10-dimension visual audit, AI-slop detection) but overlaps create-design-system-rules and tailwind-design-system on token generation; tighten scope toward the audit/slop-check modes which are unique and cross-reference create-design-system-rules for rule emission.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "django-celery": {
+      "path": "~/.claude/skills/django-celery/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Focused Django+Celery async-task skill (beat scheduling, retries, canvas, testing) with current install line ('celery[redis]', django-celery-beat). Distinct from django-patterns; no roster duplicate for Celery specifically.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "django-patterns": {
+      "path": "~/.claude/skills/django-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive Django/DRF architecture, ORM, caching, signals, middleware reference (734 lines) with standard config/settings layout. Anchors the Django family; no overlap with the narrower django-security/tdd/celery siblings.",
+      "mtime": "2026-06-12T08:07:32Z"
+    },
+    "django-security": {
+      "path": "~/.claude/skills/django-security/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Django-specific security settings (DEBUG, ALLOWED_HOSTS, CSRF, XSS, SQLi) at framework depth that the generic security-review/appsec-expert skills do not provide; complements rather than duplicates them.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "django-tdd": {
+      "path": "~/.claude/skills/django-tdd/SKILL.md",
+      "verdict": "Keep",
+      "reason": "pytest-django + factory_boy + DRF testing with red-green-refactor examples; framework-specific depth distinct from the generic tdd-workflow and python-testing skills in the roster.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "django-verification": {
+      "path": "~/.claude/skills/django-verification/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Pre-PR/pre-deploy verification pipeline (env → mypy/lint → tests+coverage → security scan → migration safety) specific to Django; orchestrates the other django-* skills' checks rather than duplicating their content.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "dm-apply": {
+      "path": "~/.claude/skills/dm-apply/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operator decision loop for Figma design-token drift (research → recommend → Accept/Reject/Skip → apply) with operator-email access gating and audit trace; bespoke ORLEN/Multiportal token-drift tool with no roster equivalent. Polish body is intentional per owner's workflow.",
+      "mtime": "2026-05-18T22:33:38Z"
+    },
+    "dm-ds": {
+      "path": "~/.claude/skills/dm-ds/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Sets/shows the active Figma Design System (file key or URL) persisted to dm-active-ds.json, shared state for the whole dm-* family; small, single-purpose config command with no overlap.",
+      "mtime": "2026-05-18T21:16:37Z"
+    },
+    "dm-scan": {
+      "path": "~/.claude/skills/dm-scan/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Scans Figma Variables vs SoT repo (orlen-design-tokens), detects token drift, writes records to the Notion Diff DB — the producer half of the dm-* drift pipeline; distinct role from dm-tickets (lister) and dm-apply (resolver).",
+      "mtime": "2026-05-18T21:28:11Z"
+    },
+    "dm-tickets": {
+      "path": "~/.claude/skills/dm-tickets/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Interactive lister of token drifts from the Notion Diff DB with Quick Wins/severity/type filters that hands selection to dm-apply; completes the dm-scan → dm-tickets → dm-apply loop, no overlap.",
+      "mtime": "2026-05-18T22:03:46Z"
+    },
+    "dmux-workflows": {
+      "path": "~/.claude/skills/dmux-workflows/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Multi-agent orchestration via the external dmux tmux pane manager across Claude Code/Codex/OpenCode; tool-specific patterns distinct from native team-builder/parallel-execution-optimizer which do not cover dmux. Install instruction points to the live repo, current.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "docker-patterns": {
+      "path": "~/.claude/skills/docker-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Docker/Compose patterns for local dev, multi-stage builds, networking, volumes, container security; standard and current. Overlaps deployment-patterns only at the containerization edge (it owns Dockerfiles/Compose, deployment owns release strategy).",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "documentation-lookup": {
+      "path": "~/.claude/skills/documentation-lookup/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Clean Context7 MCP workflow (resolve-library-id → query-docs, 3-call cap, secret redaction), but its content substantially restates the project's standing Context7 MCP server instructions; trim the redundant 'what is Context7' framing and keep only the routing/redaction guidance that adds value beyond the MCP's own instructions.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "dynamic-workflow-mode": {
+      "path": "~/.claude/skills/dynamic-workflow-mode/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Decision tree and harness contract (objective/inputs/outputs/eval/handoff) for building task-local agent harnesses; complements agent-harness-construction (action-space design) and gan-style-harness (generator-evaluator) rather than duplicating them.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "e2e-testing": {
+      "path": "~/.claude/skills/e2e-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Playwright E2E patterns — Page Object Model, config, CI integration, artifacts, flaky-test strategies; framework-specific and distinct from react-testing (component-level) and the generic tdd-workflow. References current.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "ecc-guide": {
+      "path": "~/.claude/skills/ecc-guide/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Read-the-live-repo guidance for navigating Everything Claude Code components; deliberately avoids hard-coded catalog counts and instructs inspecting files via catalog.js and install-plan.js, so it stays current by design. Unique navigation role with no roster overlap.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "ecc-tools-cost-audit": {
+      "path": "~/.claude/skills/ecc-tools-cost-audit/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Narrowly-scoped operator workflow for auditing cost/PR-recursion/quota-bypass burn in the sibling ECC-Tools repo, with specific failure patterns (one-queue-for-all-triggers, post-enqueue usage reservation). Distinct from generic billing skills which it explicitly excludes.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "email-ops": {
+      "path": "~/.claude/skills/email-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Evidence-first mailbox triage/draft/send-verification workflow emphasizing Sent-folder proof and account selection; cleanly bounded against messages-ops (DM/iMessage) which it hands off to. No content overlap in roster.",
+      "mtime": "2026-06-12T08:07:33Z"
+    },
+    "enterprise-agent-ops": {
+      "path": "~/.claude/skills/enterprise-agent-ops/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful lifecycle/observability/safety checklist for long-lived agent workloads, but at 50 lines it is thin and generic (bullet lists only, no concrete tooling or examples); overlaps conceptually with autonomous-agent-harness and continuous-agent-loop. Improve by adding concrete kill-switch/rollback patterns and cross-linking those skills to clarify its operations-vs-construction niche.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "error-handling": {
+      "path": "~/.claude/skills/error-handling/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete multi-language (TS/Python/Go) error-handling patterns — typed error hierarchies, retries, circuit breakers — with working code. No direct roster duplicate; complements but does not overlap silent-failure-hunter (a reviewer agent).",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "eval-harness": {
+      "path": "~/.claude/skills/eval-harness/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Formal eval-driven-development framework for Claude Code sessions with capability/regression eval templates and grader types. Distinct from agent-eval (cross-agent comparison) and benchmark (perf baselines); fills the EDD pass@k niche.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "exa-search": {
+      "path": "~/.claude/skills/exa-search/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Exa MCP tool reference (web_search_exa, get_code_context_exa) with explicit drift warning and instruction to reverify the tool surface, keeping it self-protecting against staleness. References Node.js 22 / 2026 examples, current. Distinct from deep-research/exa orchestration.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "fal-ai-media": {
+      "path": "~/.claude/skills/fal-ai-media/SKILL.md",
+      "verdict": "Keep",
+      "reason": "fal.ai media-generation MCP reference (image/video/audio) with a prominent drift warning instructing reverification of model IDs and pricing before promising specifics, so listed models (Nano Banana, Veo 3) being potentially stale is self-mitigated. No roster overlap.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "fastapi-patterns": {
+      "path": "~/.claude/skills/fastapi-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Production FastAPI guide covering current Pydantic v2 schemas, async DI, transactional services, and httpx/pytest testing with project-structure scaffolding. Framework-specific, no overlap with python-patterns or fastapi alternatives in roster.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "finance-billing-ops": {
+      "path": "~/.claude/skills/finance-billing-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operator-truth billing workflow (revenue snapshots, pricing comparisons, code-backed entitlement verification) explicitly differentiated from customer-billing-ops (remediation) in its own body. Distinct scope, well-bounded.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "flox-environments": {
+      "path": "~/.claude/skills/flox-environments/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Detailed Flox/Nix reproducible-environment skill with manifest.toml paths, FLOX_ENV vars, and multi-language coverage; live docs link for install. Unique tooling, no roster overlap. Description is over-long but content is actionable and current.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "foundation-models-on-device": {
+      "path": "~/.claude/skills/foundation-models-on-device/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Apple FoundationModels (iOS 26) on-device LLM patterns — availability checks, @Generable guided generation, tool calling, snapshot streaming with real Swift. Unique platform niche; no overlap with liquid-glass-design or other iOS roster skills.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "frontend-a11y": {
+      "path": "~/.claude/skills/frontend-a11y/SKILL.md",
+      "verdict": "Keep",
+      "reason": "React/Next-specific accessibility code patterns (htmlFor/id pairing, ARIA, focus management) targeting issues flagged in code review. Narrower and more code-actionable than the broad WCAG-audit skills (accessibility, accessibility-compliance, fixing-accessibility), so distinct rather than redundant.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "frontend-design-direction": {
+      "path": "~/.claude/skills/frontend-design-direction/SKILL.md",
+      "verdict": "Keep",
+      "reason": "ECC-specific design-judgment direction (purpose/audience/tone, anti-slop anti-patterns) explicitly positioned as a salvage that does NOT rebundle the canonical Anthropic frontend-design skill. Distinct intent from make-interfaces-feel-better (concrete polish details) and web-design-guidelines.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "frontend-patterns": {
+      "path": "~/.claude/skills/frontend-patterns/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Broad React/Next umbrella (components, state, data fetching, perf) that substantially overlaps the more specific react-patterns, react-performance, and frontend-a11y skills in the roster. Improve by narrowing to a router/index that defers to those specialized skills instead of duplicating their content, to avoid divergence.",
+      "mtime": "2026-06-12T08:07:34Z"
+    },
+    "frontend-slides": {
+      "path": "~/.claude/skills/frontend-slides/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Zero-dependency animation-rich HTML presentation builder with PPT-to-web conversion and a STYLE_PRESETS.md reference; viewport-fit and anti-template constraints are concrete. No roster overlap with content or design skills.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "fsharp-testing": {
+      "path": "~/.claude/skills/fsharp-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "F#-specific testing patterns (xUnit, FsUnit, Unquote, FsCheck property-based) with current .NET tooling. Language-specific, no overlap with other *-testing roster skills which target different languages.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "gan-style-harness": {
+      "path": "~/.claude/skills/gan-style-harness/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Generator/Evaluator adversarial app-building harness citing Anthropic's March 2026 harness-design paper. Conceptually adjacent to santa-method (dual-reviewer convergence) but focused on autonomous full-app generation with cost guidance, a distinct use case; reference is recent.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "gateguard": {
+      "path": "~/.claude/skills/gateguard/SKILL.md",
+      "verdict": "Keep",
+      "reason": "PreToolUse fact-forcing hook (deny/force/allow) that compels investigation before Edit/Write/Bash, backed by A/B evidence (+2.25 pts). Distinct mechanism from safety-guard (destructive-op prevention); concrete hook implementation, no overlap.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "git-workflow": {
+      "path": "~/.claude/skills/git-workflow/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive, current Git reference covering GitHub Flow, trunk-based, GitFlow, commit conventions, and conflict resolution; no stale tooling and distinct from github-ops (which is gh-CLI repo operations, not branching strategy).",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "github-ops": {
+      "path": "~/.claude/skills/github-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operational gh-CLI playbook for issue triage, PR/CI management, releases, and security alerts; commands are current and the only illustrative dates (2026-03-01) are example filters, not stale references. Distinct from git-workflow.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "golang-patterns": {
+      "path": "~/.claude/skills/golang-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Idiomatic Go patterns (zero values, error wrapping with %w, simplicity) that are current and language-canonical; pairs with but does not overlap golang-testing.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "golang-testing": {
+      "path": "~/.claude/skills/golang-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Go testing reference with table-driven tests, subtests, benchmarks, fuzzing and TDD cycle; current stdlib testing idioms, no stale APIs, distinct from golang-patterns.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "google-workspace-ops": {
+      "path": "~/.claude/skills/google-workspace-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Workflow-surface skill for operating Drive/Docs/Sheets/Slides as a system with inspect-before-edit discipline and a structured output contract; no stale tech and no overlap with other roster skills.",
+      "mtime": "2026-06-12T08:07:35Z"
+    },
+    "hermes-imports": {
+      "path": "~/.claude/skills/hermes-imports/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Narrow but coherent sanitization workflow for converting private Hermes operator prompts into shippable ECC skills (path/credential/PII scrubbing checklist); unique niche, no overlap with opensource-pipeline which forks repos rather than operator prompts.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "hexagonal-architecture": {
+      "path": "~/.claude/skills/hexagonal-architecture/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Solid Ports-and-Adapters reference (domain/use-case/inbound-outbound ports, composition root) across TS/Java/Kotlin/Go; architectural content that does not age and is not covered by any other roster skill.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "hipaa-compliance": {
+      "path": "~/.claude/skills/hipaa-compliance/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Thin entrypoint that routes all real work to healthcare-phi-compliance, healthcare-reviewer, healthcare-emr-patterns, and healthcare-eval-harness — none of which are in the 205-skill roster, so the delegation chain is broken; either install those dependency skills or inline the PHI/BAA implementation guidance so the skill stands alone.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "hookify-rules": {
+      "path": "~/.claude/skills/hookify-rules/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Self-contained reference for hookify rule syntax (frontmatter fields, multi-condition format, event types, regex tips) with working /hookify command list; current and unique to the hookify tool.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "inherit-legacy-style": {
+      "path": "~/.claude/skills/inherit-legacy-style/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinctive language-agnostic skill that scans a legacy codebase for implicit meta-architecture conventions and crystallizes them into .ai-style-rules.md to prevent AI style drift; no roster overlap and a concrete generated artifact.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "intent-driven-development": {
+      "path": "~/.claude/skills/intent-driven-development/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Acceptance-criteria/de-risking skill with observable AC-NNN format, risk-tiered depth selection, and revision handling; tighter trigger scope than requirements-clarity/requirements-analysis and focused on testable handoff briefs rather than elicitation.",
+      "mtime": "2026-06-12T08:07:36Z"
+    },
+    "investor-materials": {
+      "path": "~/.claude/skills/investor-materials/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Fundraising-artifact skill (decks, memos, models, use-of-funds) anchored on a single-source-of-truth consistency rule; distinct from investor-outreach (messaging) and not covered elsewhere on the roster.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "investor-outreach": {
+      "path": "~/.claude/skills/investor-outreach/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Investor messaging skill (cold/warm/follow-up/update emails) that correctly delegates voice to brand-voice instead of duplicating it; complements investor-materials without overlapping its document-building scope.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "ios-icon-gen": {
+      "path": "~/.claude/skills/ios-icon-gen/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete utility generating Xcode imagesets (1x/2x/3x Contents.json) from SF Symbols or the Iconify API; current sources, unique iOS asset-pipeline niche with no roster overlap.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "iterative-retrieval": {
+      "path": "~/.claude/skills/iterative-retrieval/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Reusable 4-phase dispatch/evaluate/refine pattern for solving the subagent context problem in multi-agent orchestration; conceptual and durable, complements rather than duplicates parallel-execution-optimizer or team-agent-orchestration.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "ito-basket-compare": {
+      "path": "~/.claude/skills/ito-basket-compare/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Read-only Itô prediction-market basket-vs-knowledge-base comparison with strict no-advice guardrails and a fixed output contract; distinct from the other ito-* skills (compare vs research vs plan vs agent-design), though all four share a missing prediction-market-risk-review dependency.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "ito-data-atlas-agent": {
+      "path": "~/.claude/skills/ito-data-atlas-agent/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Architecture/workflow-design skill for human-in-the-loop background Itô research agents (four-lane pattern, audit trail, non-execution); covers design planning that the other three ito-* skills do not, distinct scope.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "ito-market-intelligence": {
+      "path": "~/.claude/skills/ito-market-intelligence/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Read-only prediction-market intelligence brief workflow (venues, underliers, liquidity, ITO_API_KEY-gated reads) with source-vs-interpretation separation; distinct research role within the ito-* cluster.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "ito-trade-planner": {
+      "path": "~/.claude/skills/ito-trade-planner/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Non-advisory manual trade-planning worksheet for prediction markets with explicit allowed/forbidden language lists and no-execution guardrails; distinct planning role within the ito-* cluster, references the not-installed prediction-market-risk-review skill.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "java-coding-standards": {
+      "path": "~/.claude/skills/java-coding-standards/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Java 17+ standards for Spring Boot and Quarkus with framework detection from build file; concrete PASS examples for naming, records, immutability, CDI. Java 17+ and these frameworks remain current; no overlap with other roster skills (no general java skill exists).",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "jira-integration": {
+      "path": "~/.claude/skills/jira-integration/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Solid MCP + REST patterns, but pins mcp-atlassian==0.21.0 in the example config which will drift; recommend softening to 'latest stable' guidance like other MCP skills do. Otherwise current and unique on the roster.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "knowledge-ops": {
+      "path": "~/.claude/skills/knowledge-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "6-layer knowledge architecture (memory files, MCP memory graph, GitHub/Linear, KB repo, Supabase) with ingest/dedup/sync workflow; uniquely covers multi-store KB management, no roster overlap. References current MCP memory tools.",
+      "mtime": "2026-06-12T08:07:37Z"
+    },
+    "kubernetes-patterns": {
+      "path": "~/.claude/skills/kubernetes-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive production K8s YAML patterns (Deployments, probes, RBAC, HPA, PDB) plus kubectl debugging cheatsheet; current API surface. Roster has kubernetes-orchestration and kubectl but this is the manifest-patterns focus and stays distinct.",
+      "mtime": "2026-06-12T08:07:38Z"
+    },
+    "latency-critical-systems": {
+      "path": "~/.claude/skills/latency-critical-systems/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concise engineering guidance for realtime/HFT-like systems: metric splitting (p50/p95/p99, freshness, queue depth), hot-path mapping, optimization order, live readback verification. Tech-agnostic and current; no roster duplicate.",
+      "mtime": "2026-06-12T08:07:38Z"
+    },
+    "lead-intelligence": {
+      "path": "~/.claude/skills/lead-intelligence/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Agent-powered lead pipeline (signal scoring, mutual ranking, warm-path discovery, voice-modeled outreach) via Exa MCP and X API; distinct from connections-optimizer (network pruning) and content-engine. Current tool references.",
+      "mtime": "2026-06-12T08:07:38Z"
+    },
+    "liquid-glass-design": {
+      "path": "~/.claude/skills/liquid-glass-design/SKILL.md",
+      "verdict": "Keep",
+      "reason": "iOS 26 Liquid Glass material API (glassEffect, tint, interactive, morphing) for SwiftUI/UIKit/WidgetKit; iOS 26 is current as of the knowledge cutoff and no other roster skill covers Apple glass material. Unique and actionable.",
+      "mtime": "2026-06-12T08:07:38Z"
+    },
+    "make-interfaces-feel-better": {
+      "path": "~/.claude/skills/make-interfaces-feel-better/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete design-engineering polish details (concentric radius, optical alignment, hit areas, states) with before/after framing. Complements rather than duplicates frontend-design/web-design-guidelines which are higher-level; community-salvaged but specific and timeless.",
+      "mtime": "2026-06-12T08:07:38Z"
+    },
+    "market-research": {
+      "path": "~/.claude/skills/market-research/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Decision-oriented research standards (sourced claims, contrarian evidence, TAM/SAM/SOM, investor diligence) with fixed output format and quality gate. Distinct from generic 'research'/'deep-research' web-search skills by its business-decision framing; tech-agnostic, no staleness.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "marketing-campaign": {
+      "path": "~/.claude/skills/marketing-campaign/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Orchestration layer that explicitly delegates to market-research, brand-voice, content-engine, crosspost, seo for a full multi-channel launch; the related-skills wiring shows intentional non-overlap. Current and self-contained with hard bans and quality gate.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "mcp-server-patterns": {
+      "path": "~/.claude/skills/mcp-server-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Node/TS MCP server patterns (tools/resources/prompts, Zod, stdio vs Streamable HTTP) that deliberately defer exact SDK signatures to Context7/official docs, avoiding staleness; Streamable HTTP is the current transport. No roster duplicate.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "messages-ops": {
+      "path": "~/.claude/skills/messages-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Evidence-first live-message retrieval (iMessage/DMs/OTP codes) with source-naming guardrails and a fixed SOURCE/RESULT/STATUS output; explicitly scoped apart from email-ops and connections-optimizer. ECC-native, current.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "mle-workflow": {
+      "path": "~/.claude/skills/mle-workflow/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Production ML engineering workflow (data contracts, reproducible training, eval gates, deploy/monitor/rollback) with scope calibration and clean delegation to python/pytorch/eval-harness skills. Unique on roster, no stale tech.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "motion-advanced": {
+      "path": "~/.claude/skills/motion-advanced/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Advanced motion/react patterns (drag, gestures, SVG path, useAnimate sequences) layered on motion-foundations; part of a clean 3-skill decomposition. Uses current motion/react API, distinct from motion-patterns (basic) by scope.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "motion-foundations": {
+      "path": "~/.claude/skills/motion-foundations/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Base layer of the motion system (tokens, spring presets, reduced-motion gate, SSR safety) that motion-patterns and motion-advanced explicitly inherit; current motion/react. The well-structured foundation of the layered set.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "motion-patterns": {
+      "path": "~/.claude/skills/motion-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Mid layer of the motion system: copy-paste button/modal/toast/stagger/page-transition patterns importing motion-foundations tokens. Clean layering with foundations and advanced, no internal duplication, current API.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "motion-ui": {
+      "path": "~/.claude/skills/motion-ui/SKILL.md",
+      "verdict": "Merge into motion-patterns",
+      "reason": "Standalone 'Motion System v4.2' (575 lines) covers the same React/Next.js production-motion ground — accessibility, reduced-motion, device adaptation, button/modal/transition patterns — already covered more cleanly by the layered motion-foundations/motion-patterns/motion-advanced trio; fold any unique device-adaptation content into motion-foundations/patterns and retire the duplicate standalone.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "mysql-patterns": {
+      "path": "~/.claude/skills/mysql-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "MySQL/MariaDB schema, indexing, keyset pagination, queue transactions, replication and pool patterns with an explicit version-check step accounting for MySQL/MariaDB divergence. Distinct from postgres-patterns/database-patterns; current.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "nanoclaw-repl": {
+      "path": "~/.claude/skills/nanoclaw-repl/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operates ECC's zero-dependency claw.js REPL (sessions, /model, /load, /branch, /compact, /export); tool-specific to a live ECC artifact with no roster overlap. Short but actionable and current.",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "nestjs-patterns": {
+      "path": "~/.claude/skills/nestjs-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Solid production NestJS reference covering module structure, global ValidationPipe, DTO validation, guards, exception filters, env validation, and testing; current APIs (class-validator, ClassSerializerInterceptor) and no roster overlap (closest is backend-patterns/nodejs which is generic Node/Express).",
+      "mtime": "2026-06-12T08:07:39Z"
+    },
+    "network-config-validation": {
+      "path": "~/.claude/skills/network-config-validation/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Unique Cisco IOS/IOS-XE pre-deployment validation skill with working Python regex parsers for dangerous commands, duplicate IPs, subnet overlaps, VTY/management-plane and SNMP hygiene; no overlap in roster and references (NTP, SSHv1, enable secret, SNMPv3) are current.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "network-interface-health": {
+      "path": "~/.claude/skills/network-interface-health/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinct interface-diagnostics skill (CRC/runts/giants/drops/duplex/flaps) with a correct counter reference table, Cisco and Linux ethtool/ip commands, and a safe block-slicing parser; complements network-config-validation with no content overlap.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "nextjs-turbopack": {
+      "path": "~/.claude/skills/nextjs-turbopack/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Current and correctly scoped to Next.js 16+ Turbopack-as-default-dev and the proxy.ts middleware rename; the explicit 'do not flag proxy.ts' guidance is a real, non-obvious gotcha and the skill deliberately defers version-specific flags to official docs. No overlap with frontend-patterns (generic React/Next).",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "nodejs-keccak256": {
+      "path": "~/.claude/skills/nodejs-keccak256/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Tightly scoped bug-prevention skill: Node's sha3-256 is NIST SHA3 not Ethereum Keccak-256, with correct ethers v6/viem/web3 examples and a grep audit; no roster overlap and the technical claim remains accurate.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "nutrient-document-processing": {
+      "path": "~/.claude/skills/nutrient-document-processing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Vendor-specific Nutrient DWS API skill with concrete curl recipes for convert/OCR/extract/redact/sign/fillForm plus MCP server config; unique in roster (no other document-processing skill) and endpoints/presets appear current. Commercial-API note is appropriately disclosed.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "nuxt4-patterns": {
+      "path": "~/.claude/skills/nuxt4-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Focused Nuxt 4 guidance on hydration safety, useFetch/useAsyncData SSR rules, routeRules, and lazy hydration (defineLazyHydrationComponent, hydrate-on-visible); current API surface and no overlap with frontend-patterns or vue-specific roster entries.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "openclaw-persona-forge": {
+      "path": "~/.claude/skills/openclaw-persona-forge/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Unique creative skill for forging OpenClaw 'lobster soul' personas (SOUL.md/IDENTITY.md) with a gacha.py engine, reference files, and graceful degradation; entirely Chinese-language and niche but self-contained with no roster overlap. Note: violates skillforge English-only convention but that governs the skillforge repo, not this personal ~/.claude skill.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "opensource-pipeline": {
+      "path": "~/.claude/skills/opensource-pipeline/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Orchestrates a fork-sanitize-package pipeline via three named ECC agents (opensource-forker/sanitizer/packager) with PASS/FAIL gating and gh publish; unique workflow in roster (hermes-imports is adjacent but for Hermes-to-ECC conversion, not generic open-sourcing). Depends on agents existing but that is the design.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "orch-add-feature": {
+      "path": "~/.claude/skills/orch-add-feature/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Thin, deliberate wrapper over orch-pipeline for net-new features with a distinct phase mask (0-1-2-4-5-6) and first-move rule; the family is intentionally split by operation (add/change/fix/refine/mvp) and this member is the correct entry for new capabilities. Not redundant — it parameterizes the shared engine.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "orch-build-mvp": {
+      "path": "~/.claude/skills/orch-build-mvp/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Wrapper over orch-pipeline for bootstrapping an MVP from an SDD/PRD, uniquely adding the Scaffold phase and a GAN-harness inner loop (/gan-build --skip-planner); distinct from the rest of the orch family and from plan-orchestrate (which only emits prompts).",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "orch-change-feature": {
+      "path": "~/.claude/skills/orch-change-feature/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Wrapper for altering working behavior with the discriminating first-move rule (change the existing tests first, then impl); clearly separated from orch-fix-defect (reproduce-as-failing-test) and orch-add-feature (net-new). Coherent member of the gated family.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "orch-fix-defect": {
+      "path": "~/.claude/skills/orch-fix-defect/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Wrapper for bug fixes whose defining rule is reproduce-as-new-failing-regression-test then fix to green, with code-explorer/build-error-resolver escalation; distinct operation in the orch family and not redundant with orch-change-feature.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "orch-refine-code": {
+      "path": "~/.claude/skills/orch-refine-code/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Wrapper for behavior-preserving refactors (confirm green, add characterization tests if thin, restructure in steps, refactor: commit) delegating to refactor-cleaner; unique role in the orch family separating structure-only changes from behavior changes.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "orch-pipeline": {
+      "path": "~/.claude/skills/orch-pipeline/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Shared engine the entire orch-* family depends on: defines the size classifier, six phases, two human gates, agent/command map, and security trigger. Load-bearing reference, not directly invoked; removing it would break all five wrapper skills.",
+      "mtime": "2026-06-12T08:07:40Z"
+    },
+    "parallel-execution-optimizer": {
+      "path": "~/.claude/skills/parallel-execution-optimizer/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Generic parallelization playbook (lane matrix, write-surface isolation, gated/sequential marking, verification table) with sensible safety rules against parallel migrations/destructive writes; conceptually adjacent to superpowers:dispatching-parallel-agents but this is harness-agnostic methodology with concrete output shapes, low overlap.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "plan-orchestrate": {
+      "path": "~/.claude/skills/plan-orchestrate/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Detailed generative bridge from a plan doc to /orchestrate custom prompts, with ECC plugin-vs-legacy namespace detection, polyglot language detection, a tag-to-agent-chain table, and a self-check phase; distinct from the orch-* family (it emits prompts, never executes) and internally rigorous.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "plankton-code-quality": {
+      "path": "~/.claude/skills/plankton-code-quality/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Integration reference for the external Plankton write-time linting/hook system with three-phase architecture, config-protection hooks, and an ECC pairing matrix; unique in roster and references current tools (ruff, biome, uv, bun, ty). The 'ECC v1.8 Additions' env-var block is the only part at mild risk of version drift.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "postgres-patterns": {
+      "path": "~/.claude/skills/postgres-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Compact PostgreSQL quick-reference (index/type cheat sheets, RLS SELECT-wrap, UPSERT, cursor pagination, FOR UPDATE SKIP LOCKED queue, anti-pattern detection queries) that explicitly defers deep work to the database-reviewer agent; complements rather than overlaps postgresql-database-administration (admin/ops) and database-schema-design.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "prisma-patterns": {
+      "path": "~/.claude/skills/prisma-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Detailed Prisma 5.x/6.x ORM trap reference (updateMany count semantics, $transaction timeouts, serverless connection exhaustion, relationJoins row-explosion) with version-check guidance; current and unique among the roster, no other Prisma skill exists.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "product-capability": {
+      "path": "~/.claude/skills/product-capability/SKILL.md",
+      "verdict": "Keep",
+      "reason": "PRD-to-SRS capability-contract lane producing a durable implementation contract; cleanly distinguished from product-lens (diagnosis) via explicit handoff, so no merge needed and scope is unique in roster.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "product-lens": {
+      "path": "~/.claude/skills/product-lens/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Product diagnostic / why-before-build lane (YC-style questions, ICE prioritization, journey audit) that explicitly hands off to product-capability for spec work; complementary not redundant, distinct from product-manager-toolkit's RICE/PRD execution focus.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "production-audit": {
+      "path": "~/.claude/skills/production-audit/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Local-evidence production-readiness triage with explicit no-external-upload guardrails; clearly bounded against security-review (line-level) and compliance audits via a When Not To Use section, filling a distinct ship/block lane.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "project-flow-ops": {
+      "path": "~/.claude/skills/project-flow-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "GitHub-public / Linear-internal coordination lane for PR and issue triage and work classification; no other roster skill covers GitHub-to-Linear flow routing, distinct from github-ops (gh CLI ops) and jira-integration.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "prompt-optimizer": {
+      "path": "~/.claude/skills/prompt-optimizer/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Advisory-only prompt rewriting that matches drafts to ECC components, with sharp trigger/anti-trigger rules (EN+CN) preventing collision with optimize-code/configure-ecc/skill-stocktake; well-scoped and current.",
+      "mtime": "2026-06-12T08:07:41Z"
+    },
+    "python-patterns": {
+      "path": "~/.claude/skills/python-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Idiomatic Python/PEP 8/type-hint pattern reference using modern syntax (list[User] generics); the patterns-vs-testing split versus python-testing is clean, no overlap, foundational language skill.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "python-testing": {
+      "path": "~/.claude/skills/python-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "pytest/TDD strategy skill (fixtures, mocking, parametrization, coverage) distinct from python-patterns; large but well-scoped to test design, current pytest idioms, no roster duplicate.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "pytorch-patterns": {
+      "path": "~/.claude/skills/pytorch-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "PyTorch training-pipeline/model/data-loading patterns (device-agnostic code, reproducibility) with no overlapping ML skill in roster except mle-workflow which is process-level not framework-level; unique and current.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "ralphinho-rfc-pipeline": {
+      "path": "~/.claude/skills/ralphinho-rfc-pipeline/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful RFC-to-DAG multi-unit orchestration spec, but conceptually overlaps autonomous-loops and team-agent-orchestration; add a short comparison/handoff note clarifying when to use this vs those to prevent operator confusion.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "react-patterns": {
+      "path": "~/.claude/skills/react-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "React 18/19 hooks-discipline, RSC boundary, form-actions and state-decision-tree patterns; current framework version, distinct from react-performance (perf) and react-testing (tests), foundational.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "react-performance": {
+      "path": "~/.claude/skills/react-performance/SKILL.md",
+      "verdict": "Keep",
+      "reason": "70+ priority-ranked React/Next.js perf rules adapted from Vercel Labs react-best-practices (MIT-attributed) covering waterfalls/bundle/re-render; distinct perf focus from react-patterns, current and well-organized.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "react-testing": {
+      "path": "~/.claude/skills/react-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "React Testing Library + Vitest/Jest + MSW + axe testing skill with clear RTL-vs-E2E boundary; current tooling, no overlap with react-patterns/performance, fills the testing slot of the React trio.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "recursive-decision-ledger": {
+      "path": "~/.claude/skills/recursive-decision-ledger/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Append-only evidence ledger for repeated stochastic rollouts with promotion gates and paper/dry-run safety defaults; distinct from council (multi-voice decisions) and benchmark-optimization-loop (perf variants), unique safety-gated search-trail pattern.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "regex-vs-llm-structured-text": {
+      "path": "~/.claude/skills/regex-vs-llm-structured-text/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concise decision framework (regex-first, LLM only for low-confidence edges) for structured-text parsing with cost/accuracy tradeoff; no roster duplicate, actionable and timeless.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "remotion-video-creation": {
+      "path": "~/.claude/skills/remotion-video-creation/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Valid index skill delegating to 29 rule files for Remotion/React video, but frontmatter is missing the origin field present on sibling skills and the description lacks a Use-when trigger clause; add origin and trigger guidance.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "repo-scan": {
+      "path": "~/.claude/skills/repo-scan/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Cross-stack source-asset audit (C++/Android/iOS/Web) detecting embedded third-party libs with four-level verdicts and HTML reports; install pulls a pinned commit, unique cross-ecosystem audit not covered by agent-sort or workspace-surface-audit.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "research-ops": {
+      "path": "~/.claude/skills/research-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Operator wrapper that routes among exa-search/deep-research/market-research/lead-intelligence rather than duplicating them, with explicit no-stale-memory guardrails; orchestration value justifies keeping it separate from the underlying research skills.",
+      "mtime": "2026-06-12T08:07:42Z"
+    },
+    "rules-distill": {
+      "path": "~/.claude/skills/rules-distill/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Scans installed skills to extract cross-cutting principles into rule files via deterministic-collection + LLM-judgment; complements skill-stocktake (quality audit) and config-gc (cleanup) without overlapping, distinct rules-maintenance lane.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "rust-patterns": {
+      "path": "~/.claude/skills/rust-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Idiomatic Rust patterns (ownership, thiserror/anyhow, enums, traits, Arc<Mutex>, tokio async) with good/bad code pairs and a quick-reference table; current crate ecosystem references (Rust 2024+) and no stale tooling. Cleanly paired with rust-testing without overlap.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "rust-testing": {
+      "path": "~/.claude/skills/rust-testing/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive Rust testing coverage (rstest, proptest, mockall, criterion, cargo-llvm-cov, doc tests, tokio async) with TDD RED-GREEN-REFACTOR flow and current CI YAML; complements rust-patterns rather than duplicating it. References are current.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "safety-guard": {
+      "path": "~/.claude/skills/safety-guard/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Useful destructive-op guard (rm -rf, force push, DROP TABLE) via PreToolUse hooks, but the Implementation/Integration sections are vague — it describes modes and a log path without shipping the actual hook script or config, so it reads more like a design note than an installable guard. Add the concrete hook command/script and settings.json snippet.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "santa-method": {
+      "path": "~/.claude/skills/santa-method/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Distinctive dual-independent-reviewer adversarial verification loop with rubric design, convergence cap, batch sampling, and metrics; overlaps verification-loop/eval-harness only at the edges and explicitly delineates the boundary (santa for semantic checks, verification-loop for deterministic). Well-structured and current.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "scientific-db-pubmed-database": {
+      "path": "~/.claude/skills/scientific-db-pubmed-database/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete PubMed/NCBI E-utilities workflow with valid field tags, MeSH syntax, working esearch Python skeleton, rate-limit/API-key hygiene, and reproducible search log; current API endpoints and docs links. Unique biomedical niche not covered by general research skills.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "scientific-db-uspto-database": {
+      "path": "~/.claude/skills/scientific-db-uspto-database/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Official USPTO workflow (PatentSearch/PatentsView, TSDR, ODP file wrapper, assignments) with current endpoints, X-Api-Key header pattern, secret hygiene, and reproducible log table; explicitly disclaims legal advice. Distinct IP-research niche, no roster overlap.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "scientific-pkg-gget": {
+      "path": "~/.claude/skills/scientific-pkg-gget/SKILL.md",
+      "verdict": "Keep",
+      "reason": "gget CLI/Python bioinformatics lookup with install (venv/uv), module list, working examples, and reproducibility log; repeatedly tells the agent to re-check upstream module docs since databases change, mitigating staleness. Unique genomics niche.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "scientific-thinking-literature-review": {
+      "path": "~/.claude/skills/scientific-thinking-literature-review/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Systematic literature-review workflow (PICO, search protocol, dedup order, staged screening, extraction tables, confidence-tiered synthesis, citation verification) with reproducible search logs; broader and more rigorous than deep-research/research, distinct academic focus. Current.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "scientific-thinking-scholar-evaluation": {
+      "path": "~/.claude/skills/scientific-thinking-scholar-evaluation/SKILL.md",
+      "verdict": "Keep",
+      "reason": "9-dimension 1-5 scholarly-work evaluation rubric (problem, method, data, analysis, validity, citations) with structured output template; complements literature-review (find vs. judge) without overlapping it. Self-contained and evergreen.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "search-first": {
+      "path": "~/.claude/skills/search-first/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Research-before-coding workflow with tool-availability preflight, decision matrix (adopt/extend/compose/build), and category shortcuts; distinct from skill-scout (which targets skills specifically) and iterative-retrieval. Already updated to be harness-agnostic re Task vs Agent tool naming.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "security-bounty-hunter": {
+      "path": "~/.claude/skills/security-bounty-hunter/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Tightly scoped exploit-discovery skill (in-scope CWE table, explicit skip list, semgrep triage loop, report template, quality gate) oriented to bounty submissions; distinct from defensive security-review and config-focused security-scan. Current CWE/tooling references.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "security-review": {
+      "path": "~/.claude/skills/security-review/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Hands-on web security checklist (secrets, zod validation, parameterized queries, httpOnly cookies, Supabase RLS, CSP, CSRF, rate limiting, Solana wallet verification) with verification sub-steps; concrete code-level coverage that the more strategic appsec-expert/security-engineer skills do not duplicate. Patterns current.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "security-scan": {
+      "path": "~/.claude/skills/security-scan/SKILL.md",
+      "verdict": "Update",
+      "reason": "Audits .claude/ config via the third-party 'ecc-agentshield' npm/GitHub tool; depends entirely on an external package whose availability/version should be re-verified, and references 'Opus 4.6' as the deep-analysis model which is an outdated model name. Verify the agentshield package still publishes and refresh the model reference.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "seo": {
+      "path": "~/.claude/skills/seo/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Page-specific technical+on-page SEO skill (crawlability, indexability, current Core Web Vitals thresholds LCP/INP/CLS, schema mapping, keyword-to-URL, internal linking) with concrete audit output shape; INP (not FID) confirms it is current. Minor: references a 'seo-specialist' related skill not in the roster, but harmless.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "skill-comply": {
+      "path": "~/.claude/skills/skill-comply/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Compliance-measurement tool that runs claude -p with stream-json traces to check whether skills/rules are actually followed at 3 strictness levels; unique behavioral-verification angle distinct from skill-stocktake (quality audit) and config-gc (cleanup). Current tooling (claude -p, stream-json).",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "skill-scout": {
+      "path": "~/.claude/skills/skill-scout/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Search-before-creating-a-skill workflow with local/marketplace/GitHub/web passes, vetting step for external skills, ranking, and decision table; complements search-first (code) and skill-stocktake (audit) without duplicating either. Current gh/find commands.",
+      "mtime": "2026-06-12T08:07:43Z"
+    },
+    "social-publisher": {
+      "path": "~/.claude/skills/social-publisher/SKILL.md",
+      "verdict": "Keep",
+      "reason": "SocialClaw-backed multi-platform publishing across 13 providers with concrete CLI workflow (accounts/assets/validate/apply/status) and provider key table; depends on the external getsocialclaw.com service but pins a specific CLI version and documents security scoping. Distinct from x-api (single platform) and crosspost (content adaptation).",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "strategic-compact": {
+      "path": "~/.claude/skills/strategic-compact/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Sound strategic-compaction guidance (phase-transition decision table, survives-compaction table, hook setup) but tail sections cite unverified external tooling ('token-optimizer MCP 95%+ reduction', 'context-mode 315KB to 5.4KB') and a Twitter link as authority; trim the promotional/unverifiable tooling claims. Overlaps token-budget-advisor/context-budget only lightly (it is the hook-driven compaction-timing skill).",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "tdd-workflow": {
+      "path": "~/.claude/skills/tdd-workflow/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Generic cross-language TDD enforcer with rigorous RED/GREEN gate definitions, git checkpoint protocol with branch-reachability checks, and unit/integration/E2E patterns; broader than language-specific django-tdd/python-testing/rust-testing and the per-language ones defer to it. Stack examples (Jest/Vitest/Playwright/Next.js) current.",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "team-agent-orchestration": {
+      "path": "~/.claude/skills/team-agent-orchestration/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Solid conceptual model (agent Kanban, merge gates, control pane) but generic and overlaps with parallel-execution-optimizer and superpowers:dispatching-parallel-agents; add a concrete reference to Claude Code's native TeamCreate/Task tooling and cross-link team-builder so it is not just abstract prose.",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "team-builder": {
+      "path": "~/.claude/skills/team-builder/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete, actionable interactive agent-picker workflow driven by `claude agents` discovery with parallel Agent dispatch; distinct from team-agent-orchestration (this is the picker/dispatcher, that is the governance model) and correctly notes when TeamCreate vs parallel Agent calls applies.",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "terminal-ops": {
+      "path": "~/.claude/skills/terminal-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "ECC evidence-first repo-execution operator workflow with exact status vocabulary (inspected/changed/verified/committed/pushed); narrowly scoped and explicitly stacks with verification-loop, github-ops, tdd-workflow rather than duplicating them.",
+      "mtime": "2026-06-12T08:07:44Z"
+    },
+    "token-budget-advisor": {
+      "path": "~/.claude/skills/token-budget-advisor/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Self-contained heuristic for offering depth tiers (25/50/75/100%) before answering with bilingual triggers; distinct purpose from context-budget (which audits config token consumption) and it correctly cross-references that skill for the calibration heuristics.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "ui-demo": {
+      "path": "~/.claude/skills/ui-demo/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Detailed Discover-Rehearse-Record Playwright demo-video workflow (cursor injection, field-map discovery, natural pacing); unique in the roster — no other skill records WebM walkthrough videos, and ui-to-vue/browser-qa serve different goals.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "ui-to-vue": {
+      "path": "~/.claude/skills/ui-to-vue/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Specific batch screenshot-to-Vue3 conversion via the ui-to-vue-converter npm CLI with Vant/Element Plus/Ant Design Vue mapping and good API-key/privacy guardrails; no overlap with implement-design or ui-demo and the pinned version (1.0.2) is a concrete reference, not stale boilerplate.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "uncloud": {
+      "path": "~/.claude/skills/uncloud/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Concrete `uc` CLI reference for the Uncloud self-hosting platform (WireGuard mesh, autogenerated Caddyfile, x-caddy ingress); niche but fully actionable and unique in the roster — no other deployment skill covers Uncloud.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "unified-notifications-ops": {
+      "path": "~/.claude/skills/unified-notifications-ops/SKILL.md",
+      "verdict": "Keep",
+      "reason": "ECC notification-consolidation operator workflow (severity/ownership/routing/digest-first across GitHub, Linear, hooks, desktop); distinct from project-flow-ops and github-ops which manage issues/PRs, this owns the alert-routing/dedup layer specifically.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "verification-loop": {
+      "path": "~/.claude/skills/verification-loop/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Thin one-line description and the secret-scan phase only greps `sk-`/`api_key` in .ts/.js — narrow this overlaps terminal-ops' verification step and the builtin /verify; expand the description and broaden the secret patterns, or it risks redundancy with django-verification's pattern.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "videodb": {
+      "path": "~/.claude/skills/videodb/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Comprehensive See/Understand/Act video+audio workflow over the VideoDB platform (ingest, index, timeline edits, RTSP alerts, desktop capture); unique capability with no roster overlap — fal-ai-media generates media but does not index/search/edit existing video.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "visa-doc-translate": {
+      "path": "~/.claude/skills/visa-doc-translate/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Highly specific and actionable HEIC/OCR/translate/bilingual-PDF pipeline with no roster overlap, but missing `origin:` frontmatter (every other ECC skill has it) and relies on macOS-only `sips`/Vision without flagging non-macOS fallback clearly in the description — add origin and note platform scope.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "vite-patterns": {
+      "path": "~/.claude/skills/vite-patterns/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Current Vite 8+ patterns correctly referencing Rolldown (v7+) vs Rollup (v5-6) and Oxc minification, covering config/env/proxy/lib-mode/pre-bundling; distinct from nextjs-turbopack and frontend-patterns and the tech references are fresh, not stale.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "windows-desktop-e2e": {
+      "path": "~/.claude/skills/windows-desktop-e2e/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Deep pywinauto/UIA E2E guide for WPF/WinForms/Win32/Qt with explicit non-use boundaries pointing Electron/web to e2e-testing and mobile elsewhere; unique platform coverage with no roster overlap.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "workspace-surface-audit": {
+      "path": "~/.claude/skills/workspace-surface-audit/SKILL.md",
+      "verdict": "Improve",
+      "reason": "Read-only environment/capability audit that recommends ECC-native skills/hooks/agents; overlaps partially with context-budget (config audit) and ecc-guide (catalog reading), so sharpen the description to stress it audits the live env surface and recommends additions, distinguishing it from those two.",
+      "mtime": "2026-06-12T08:07:45Z"
+    },
+    "x-api": {
+      "path": "~/.claude/skills/x-api/SKILL.md",
+      "verdict": "Keep",
+      "reason": "Low-level X/Twitter API integration (OAuth patterns, rate limits, endpoints) and already carries a self-aware drift warning telling the reader to verify current docs before quoting quotas; distinct from social-publisher/crosspost which are higher-level multi-platform publishers.",
+      "mtime": "2026-06-12T08:07:45Z"
+    }
+  }
+}

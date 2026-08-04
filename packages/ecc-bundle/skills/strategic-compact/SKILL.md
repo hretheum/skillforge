@@ -38,7 +38,7 @@ The `suggest-compact.js` script runs on PreToolUse (Edit/Write) and:
 
 ## Hook Setup
 
-Add to your `~/.claude/settings.json`:
+Add to your `~/.Codex/settings.json`:
 
 ```json
 {
@@ -46,11 +46,11 @@ Add to your `~/.claude/settings.json`:
     "PreToolUse": [
       {
         "matcher": "Edit",
-        "hooks": [{ "type": "command", "command": "node ~/.claude/scripts/hooks/suggest-compact.js" }]
+        "hooks": [{ "type": "command", "command": "node ~/.Codex/scripts/hooks/suggest-compact.js" }]
       },
       {
         "matcher": "Write",
-        "hooks": [{ "type": "command", "command": "node ~/.claude/scripts/hooks/suggest-compact.js" }]
+        "hooks": [{ "type": "command", "command": "node ~/.Codex/scripts/hooks/suggest-compact.js" }]
       }
     ]
   }
@@ -81,9 +81,9 @@ Understanding what persists helps you compact with confidence:
 
 | Persists | Lost |
 |----------|------|
-| CLAUDE.md instructions | Intermediate reasoning and analysis |
+| AGENTS.md instructions | Intermediate reasoning and analysis |
 | TodoWrite task list | File contents you previously read |
-| Memory files (`~/.claude/memory/`) | Multi-step conversation context |
+| Memory files (`~/.Codex/memory/`) | Multi-step conversation context |
 | Git state (commits, branches) | Tool call history and counts |
 | Files on disk | Nuanced user preferences stated verbally |
 
@@ -99,7 +99,7 @@ Understanding what persists helps you compact with confidence:
 ## Token Optimization Patterns
 
 ### Trigger-Table Lazy Loading
-Instead of loading full skill content at session start, use a trigger table that maps keywords to skill paths. Skills load only when triggered, reducing baseline context:
+Instead of loading full skill content at session start, use a trigger table that maps keywords to skill paths. Skills load only when triggered, reducing baseline context by 50%+:
 
 | Trigger | Skill | Load When |
 |---------|-------|-----------|
@@ -109,22 +109,23 @@ Instead of loading full skill content at session start, use a trigger table that
 
 ### Context Composition Awareness
 Monitor what's consuming your context window:
-- **CLAUDE.md files** — Always loaded, keep lean
+- **AGENTS.md files** — Always loaded, keep lean
 - **Loaded skills** — Each skill adds 1-5K tokens
 - **Conversation history** — Grows with each exchange
 - **Tool results** — File reads, search results add bulk
 
 ### Duplicate Instruction Detection
 Common sources of duplicate context:
-- Same rules in both `~/.claude/rules/` and project `.claude/rules/`
-- Skills that repeat CLAUDE.md instructions
+- Same rules in both `~/.Codex/rules/` and project `.Codex/rules/`
+- Skills that repeat AGENTS.md instructions
 - Multiple skills covering overlapping domains
 
 ### Context Optimization Tools
-
-If your setup includes MCP servers for context deduplication or virtualization, they can complement strategic compaction. Evaluate any such tool against your actual context measurements before relying on vendor-claimed reduction figures.
+- `token-optimizer` MCP — Automated 95%+ token reduction via content deduplication
+- `context-mode` — Context virtualization (315KB to 5.4KB demonstrated)
 
 ## Related
 
+- [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) — Token optimization section
 - Memory persistence hooks — For state that survives compaction
 - `continuous-learning` skill — Extracts patterns before session ends

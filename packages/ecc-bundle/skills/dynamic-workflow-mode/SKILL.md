@@ -1,6 +1,6 @@
 ---
 name: dynamic-workflow-mode
-description: "Design task-local harnesses, eval gates, and reusable skill extraction for Claude dynamic workflow mode and other adaptive agent harnesses."
+description: "Design task-local harnesses, eval gates, and reusable skill extraction for Codex dynamic workflow mode and other adaptive agent harnesses."
 origin: ECC
 ---
 
@@ -10,7 +10,7 @@ Use this skill when a coding agent can generate or adapt a task-local harness in
 
 ## When To Activate
 
-- The user mentions dynamic workflows, custom harnesses, harness-per-task, adaptive workflows, or Claude Code dynamic workflow mode.
+- The user mentions dynamic workflows, custom harnesses, harness-per-task, adaptive workflows, or Codex dynamic workflow mode.
 - A task needs a custom loop, evaluator, crawler, fixture generator, watcher, or local dashboard.
 - Multiple agents need the same repeatable process but the process is not yet captured as a shared skill.
 - A workflow needs durable handoff artifacts, eval evidence, or operator approval before merge.

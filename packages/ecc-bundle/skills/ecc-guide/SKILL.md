@@ -6,7 +6,7 @@ origin: community
 
 # ECC Guide
 
-Use this skill when a user needs help understanding, navigating, installing, or choosing parts of Everything Claude Code.
+Use this skill when a user needs help understanding, navigating, installing, or choosing parts of Everything Codex.
 
 ## When To Use
 
@@ -106,15 +106,15 @@ Use managed install paths:
 
 ```bash
 node scripts/install-plan.js --list-profiles
-node scripts/install-plan.js --profile minimal --target claude --json
-node scripts/install-apply.js --profile minimal --target claude --dry-run
+node scripts/install-plan.js --profile minimal --target Codex --json
+node scripts/install-apply.js --profile minimal --target Codex --dry-run
 ```
 
 For specific skill installs:
 
 ```bash
-node scripts/install-plan.js --skills <skill-id> --target claude --json
-node scripts/install-apply.js --skills <skill-id> --target claude --dry-run
+node scripts/install-plan.js --skills <skill-id> --target Codex --json
+node scripts/install-apply.js --skills <skill-id> --target Codex --dry-run
 ```
 
 Warn users not to stack plugin installs and full manual/profile installs unless they intentionally want duplicate surfaces.
@@ -125,7 +125,7 @@ Use `/project-init` when the user wants ECC configured for a target repo. The ex
 
 1. detect the stack from project files
 2. resolve a dry-run install plan
-3. inspect existing `CLAUDE.md` and settings files
+3. inspect existing `AGENTS.md` and settings files
 4. ask before applying changes
 5. keep generated guidance minimal and repo-specific
 
@@ -134,7 +134,7 @@ Use `/project-init` when the user wants ECC configured for a target repo. The ex
 Ask for the target harness and install path first, then inspect:
 
 - plugin install metadata
-- `.claude/`, `.cursor/`, `.codex/`, `.gemini/`, `.opencode/`, `.codebuddy/`, `.joycode/`, or `.qwen/`
+- `.Codex/`, `.cursor/`, `.codex/`, `.gemini/`, `.opencode/`, `.codebuddy/`, `.joycode/`, or `.qwen/`
 - `hooks/hooks.json`
 - install-state files
 - relevant command/skill files
@@ -186,4 +186,4 @@ Needs approval before apply: <yes/no>
 - `/harness-audit`: deterministic readiness scorecard
 - `/skill-health`: skill quality review
 - `/skill-create`: generate a new skill from local git history
-- `/security-scan`: inspect Claude/OpenCode configuration security
+- `/security-scan`: inspect Codex/OpenCode configuration security

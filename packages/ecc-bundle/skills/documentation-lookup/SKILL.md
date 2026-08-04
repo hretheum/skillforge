@@ -6,7 +6,13 @@ origin: ECC
 
 # Documentation Lookup (Context7)
 
-When the user asks about libraries, frameworks, or APIs, fetch current documentation via the Context7 MCP tools (`resolve-library-id` and `query-docs`) instead of relying on training data. Always call `resolve-library-id` first to get a valid library ID before calling `query-docs`.
+When the user asks about libraries, frameworks, or APIs, fetch current documentation via the Context7 MCP (tools `resolve-library-id` and `query-docs`) instead of relying on training data.
+
+## Core Concepts
+
+- **Context7**: MCP server that exposes live documentation; use it instead of training data for libraries and APIs.
+- **resolve-library-id**: Returns Context7-compatible library IDs (e.g. `/vercel/next.js`) from a library name and query.
+- **query-docs**: Fetches documentation and code snippets for a given library ID and question. Always call resolve-library-id first to get a valid library ID.
 
 ## When to use
 
@@ -17,7 +23,7 @@ Activate when the user:
 - Needs API or reference information ("What are the Supabase auth methods?")
 - Mentions specific frameworks or libraries (React, Vue, Svelte, Express, Tailwind, Prisma, Supabase, etc.)
 
-Use this skill whenever the request depends on accurate, up-to-date behavior of a library, framework, or API. Applies across harnesses that have the Context7 MCP configured (e.g. Claude Code, Cursor, Codex).
+Use this skill whenever the request depends on accurate, up-to-date behavior of a library, framework, or API. Applies across harnesses that have the Context7 MCP configured (e.g. Codex, Cursor, Codex).
 
 ## How it works
 

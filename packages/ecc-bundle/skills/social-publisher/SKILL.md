@@ -6,7 +6,7 @@ origin: community
 
 # Social Publisher (SocialClaw)
 
-Connects Claude Code to [SocialClaw](https://getsocialclaw.com) for agent-driven social media publishing across 13 platforms through a single workspace API key.
+Connects Codex to [SocialClaw](https://getsocialclaw.com) for agent-driven social media publishing across 13 platforms through a single workspace API key.
 
 ## When to Activate
 

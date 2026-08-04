@@ -12,15 +12,6 @@ origin: ECC
 
 Produce thorough, cited research reports from multiple web sources using firecrawl and exa MCP tools.
 
-## Routing Note
-
-Use this skill when you need **multi-source, subagent-parallelized, evidence-graded** research — firecrawl + exa fan-out, adversarial cross-referencing, and a cited report. It is distinct from:
-
-- `research-ops` (and `research` in a full ECC install) — lighter-weight research workflows without the MCP fan-out or subagent parallelism
-- `exa-search` — direct Exa MCP wrapper for a single targeted search query, not a full research pipeline
-
-If you only need a quick web lookup, `exa-search` is cheaper. If you need systematic, multi-angle evidence synthesis, use this skill.
-
 ## When to Activate
 
 - User asks to research any topic in depth
@@ -35,7 +26,7 @@ At least one of:
 - **firecrawl** — `firecrawl_search`, `firecrawl_scrape`, `firecrawl_crawl`
 - **exa** — `web_search_exa`, `web_search_advanced_exa`, `crawling_exa`
 
-Both together give the best coverage. Configure in `~/.claude.json` or `~/.codex/config.toml`.
+Both together give the best coverage. Configure in `~/.Codex.json` or `~/.codex/config.toml`.
 
 ## Workflow
 
@@ -137,7 +128,7 @@ Sub-questions investigated: [list]
 
 ## Parallel Research with Subagents
 
-For broad topics, use Claude Code's Task tool to parallelize:
+For broad topics, use Codex's Task tool to parallelize:
 
 ```
 Launch 3 research agents in parallel:

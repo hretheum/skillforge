@@ -41,33 +41,6 @@ When failure spikes:
 5. run regression + security checks
 6. resume gradually
 
-## Kill-Switch and Rollback Patterns
-
-When an agent workload must be halted or reversed:
-
-**Immediate kill:**
-- Signal the agent process (SIGTERM → SIGKILL with timeout) and drain the task queue.
-- Revoke least-privilege credentials at the IAM/secret-manager level to prevent in-flight calls from completing.
-- Set a feature flag or env var (`AGENT_ENABLED=false`) that the agent process checks at the start of each task loop iteration.
-
-**Rollback:**
-- Keep deployment artifacts immutable. Roll back by redeploying the previous pinned artifact, not by patching in place.
-- For stateful agents (database writes, file mutations): maintain an undo log or a pre-run snapshot. Replay or restore before resuming.
-- After rollback, run the regression suite (`eval-harness`) before re-enabling traffic.
-
-**Graduated resume:**
-- Resume with a shadow (read-only) run first; compare outputs to the expected baseline before allowing writes.
-- Increase concurrency incrementally; watch the `mean retries per task` metric for drift.
-
-## Boundary Note
-
-This skill covers **operating** long-lived agent workloads — monitoring, kill switches, rollback, and change management. It does not cover:
-
-- Loop **construction** and harness scaffolding → `autonomous-agent-harness`
-- Loop **quality gates** and in-session recovery patterns → `continuous-agent-loop`
-
-Use those skills to build the infrastructure; use this skill to operate it safely.
-
 ## Deployment Integrations
 
 This skill pairs with:

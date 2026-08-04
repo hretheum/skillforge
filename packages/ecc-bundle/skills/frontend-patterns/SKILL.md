@@ -6,20 +6,7 @@ origin: ECC
 
 # Frontend Development Patterns
 
-General-purpose frontend patterns for React, Next.js, and performant user interfaces. This skill covers composition, hooks, state, forms, animation, and error handling. For deeper coverage of specific sub-domains, prefer the specialised skills listed below — this skill routes you to them and fills in what they do not cover.
-
-## Skill Routing
-
-Before diving in, pick the most targeted skill for your task:
-
-| Task | Preferred skill |
-|------|----------------|
-| React-specific patterns, hooks, component design | `react-patterns` |
-| React rendering performance, memoisation, profiling | `react-performance` |
-| Accessibility auditing, ARIA, keyboard nav, WCAG | `frontend-a11y` |
-| Next.js routing, app router, RSC, data fetching | use `react-patterns` + Next.js docs |
-
-Use **this skill** when the task spans multiple concerns (e.g. a new page that needs component structure, state, and basic a11y) or when none of the specialised skills fully covers the need.
+Modern frontend patterns for React, Next.js, and performant user interfaces.
 
 ## When to Activate
 
@@ -667,9 +654,3 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 ```
 
 **Remember**: Modern frontend patterns enable maintainable, performant user interfaces. Choose patterns that fit your project complexity.
-
-## Related Skills
-
-- `react-patterns` — component design, hooks, composition in depth
-- `react-performance` — rendering optimisation, memoisation, profiling
-- `frontend-a11y` — accessibility: ARIA, keyboard, WCAG, screen readers

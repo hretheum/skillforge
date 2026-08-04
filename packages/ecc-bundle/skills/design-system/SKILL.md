@@ -4,21 +4,15 @@ description: Use this skill to generate or audit design systems, check visual co
 origin: ECC
 ---
 
-# Design System — Audit & Inspect Visual Systems
-
-## Scope Note
-
-This skill covers **auditing** an existing design system and **detecting** problems in it — consistency scoring, AI slop detection, and visual review. It also offers a generation mode (Mode 1) for bootstrapping a token set, but its distinctive value is the audit and quality-detection tooling.
-
-For **defining and emitting design system rules** (a codified ruleset that constrains how components should be built), use a rule-emission skill such as `create-design-system-rules` (full ECC install). For **Tailwind-specific token configuration**, use a Tailwind token skill such as `tailwind-design-system` (full ECC install).
+# Design System — Generate & Audit Visual Systems
 
 ## When to Use
 
+- Starting a new project that needs a design system
 - Auditing an existing codebase for visual consistency
 - Before a redesign — understand what you have
 - When the UI looks "off" but you can't pinpoint why
 - Reviewing PRs that touch styling
-- Detecting AI-generated design patterns that lack design intention
 
 ## How It Works
 

@@ -52,10 +52,9 @@ Produce a reusable `VOICE PROFILE` block that downstream skills can consume dire
 
 Keep the profile structured and short enough to reuse in session context. The point is not literary criticism. The point is operational reuse.
 
-## Default voice profile (example)
+## Affaan / ECC Defaults
 
-If the user has not provided source material and wants a starting point, use this
-example profile as a placeholder until real sources are available:
+If the user wants Affaan / ECC voice and live sources are thin, start here unless newer source material overrides it:
 
 - direct, compressed, concrete
 - specifics, mechanisms, receipts, and numbers beat adjectives

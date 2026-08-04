@@ -1,6 +1,6 @@
 ---
 name: workspace-surface-audit
-description: Inspect the live environment — repo, MCP servers, plugins, connected apps, and env-backed services — to surface what is actually available right now and recommend the highest-value ECC additions. Distinct from context-budget (which audits token/config overhead) and ecc-guide (which describes the ECC catalog); this skill reads the real machine state and recommends what to add or enable next.
+description: Audit the active repo, MCP servers, plugins, connectors, env surfaces, and harness setup, then recommend the highest-value ECC-native skills, hooks, agents, and operator workflows. Use when the user wants help setting up Codex or understanding what capabilities are actually available in their environment.
 origin: ECC
 ---
 
@@ -8,16 +8,11 @@ origin: ECC
 
 Read-only audit skill for answering the question "what can this workspace and machine actually do right now, and what should we add or enable next?"
 
-This is the ECC-native answer to setup-audit plugins. It reads live environment state — installed plugins, active MCP servers, connected apps, and env-backed service keys — not a static catalog. It does not modify files unless the user explicitly asks for follow-up implementation.
-
-**How this differs from related skills:**
-- `context-budget` — audits *token overhead* (CLAUDE.md size, loaded skills, config duplication); does not inspect MCPs or connected apps
-- `ecc-guide` — describes the ECC skill catalog and how to navigate it; does not inspect the live machine
-- `workspace-surface-audit` (this skill) — reads the actual live environment and recommends what to add, enable, or wrap in an ECC skill next
+This is the ECC-native answer to setup-audit plugins. It does not modify files unless the user explicitly asks for follow-up implementation.
 
 ## When to Use
 
-- User says "set up Claude Code", "recommend automations", "what plugins or MCPs should I use?", or "what am I missing?"
+- User says "set up Codex", "recommend automations", "what plugins or MCPs should I use?", or "what am I missing?"
 - Auditing a machine or repo before installing more skills, hooks, or connectors
 - Comparing official marketplace plugins against ECC-native coverage
 - Reviewing `.env`, `.mcp.json`, plugin settings, or connected-app surfaces to find missing workflow layers
@@ -39,8 +34,8 @@ Inspect only the files and settings needed to answer the question well:
 
 1. Repo surface
    - `package.json`, lockfiles, language markers, framework config, `README.md`
-   - `.mcp.json`, `.lsp.json`, `.claude/settings*.json`, `.codex/*`
-   - `AGENTS.md`, `CLAUDE.md`, install manifests, hook configs
+   - `.mcp.json`, `.lsp.json`, `.Codex/settings*.json`, `.codex/*`
+   - `AGENTS.md`, `AGENTS.md`, install manifests, hook configs
 2. Environment surface
    - `.env*` files in the active repo and obvious adjacent ECC workspaces
    - Surface only key names such as `STRIPE_API_KEY`, `TWILIO_AUTH_TOKEN`, `FAL_KEY`
@@ -71,8 +66,8 @@ If a surface exists only as a primitive, call that out. Example:
 
 Compare the workspace against:
 
-- official Claude plugins that overlap with setup, review, docs, design, or workflow quality
-- locally installed plugins in Claude or Codex
+- official Codex plugins that overlap with setup, review, docs, design, or workflow quality
+- locally installed plugins in Codex or Codex
 - the user's currently connected app surfaces
 
 Do not just list names. For each comparison, answer:

@@ -1,11 +1,24 @@
 ---
 name: benchmark-methodology
 description: >-
-  Use after competitive-platform-analysis has produced a tiered competitor set.
-  Scores each competitor across nine weighted dimensions (positioning, voice,
-  visual craft, offer packaging, evidence, enterprise-readiness, thought
-  leadership, pricing, client's strategic tension) with explicit 1–5 rubrics
-  and a tension-plot. Precedes competitive-report-structure.
+  Turn a scoped competitor set into comparable, defensible scores across nine
+  weighted dimensions. Use after competitive-platform-analysis has produced a
+  tiered competitor set, and before assembling the report with
+  competitive-report-structure. Reads the active client's competitive-context
+  resource for tension axes and weighting rationale; holds no client knowledge
+  of its own.
+license: SEE LICENSE IN LICENSE
+compatibility: >-
+  Requires a competitor set produced by competitive-platform-analysis and a
+  configured client with a competitive-context resource that defines the
+  client's strategic tension (the paired axes whose intersection marks the
+  client's target white-space). Second step in the three-skill competitive
+  pipeline.
+metadata:
+  skillforge.owner: platform
+  skillforge.registryKey: benchmark-methodology
+  skillforge.sourceKind: competitor-set
+  skillforge.resultKind: benchmark-scores
 ---
 
 # Benchmark Methodology
@@ -16,16 +29,18 @@ explicit 1–5 rubrics, then captured in a uniform profile card. Consistency is
 the point: scores are only useful if the same evidence would earn the same
 number for any competitor.
 
-## When to Activate
+**Source competencies** (pull these skills per dimension):
+`marketing-strategy-pmm` for positioning/packaging/battlecard dimensions
+(Dunford positioning, competitive intelligence); `brand-messaging-architecture`
+for verbal-distinctiveness scoring (Value Proposition Canvas, Moore positioning
+template, messaging house); `ui-ux-pro-max` + `web-design-guidelines` for
+visual-identity & site-craft scoring; `deep-research` to source and verify
+every evidence/credibility claim.
 
-- A scoped, tiered competitor set from competitive-platform-analysis is ready to score.
-- Need comparable, evidence-anchored scores across competitors — not gut-feel rankings.
-- Client's strategic tension (the paired axes defining their target white-space) has been established.
-- Preparing to produce profile cards for assembly in competitive-report-structure.
+## Client context (read first)
 
-## Client positioning brief (establish first)
-
-Before scoring, establish the client's positioning brief. It supplies:
+Before scoring, read the active client's `competitive-context` resource. It
+supplies:
 
 - **Strategic tension** — the two axes (e.g., memorability × hireability) whose
   intersection marks the client's target white-space. Dimension 9 is always
@@ -66,9 +81,9 @@ composite — see Bias controls). Sum = 100%.
    legible? Productized vs bespoke vs opaque.
 9. **[Client's strategic tension]** (5% as a flag; **score BOTH poles,
    report separately**) — Read the tension name and axis descriptions from the
-   client's positioning brief. Plot both; the gap is the insight. The client's
-   target quadrant is the single most important finding: who else is already
-   there?
+   client's competitive-context. Plot both; the gap is the insight. The client's
+   target quadrant (from competitive-context) is the single most important
+   finding: who else is already there?
 
 ## Scoring rubric (1–5, applies to dimensions 1–8)
 
@@ -88,34 +103,33 @@ specifics per dimension but keep the level meaning constant.
 
 ### Tension axes (dimension 9) — score each 1–5
 
-Read the axis labels and their 1/3/5 anchors from the client's positioning
-brief. Example anchors for a memorability × credibility tension:
+Read the axis labels and their 1/3/5 anchors from the client's
+competitive-context. The standard anchors for a memorability × hireability
+tension are:
 
 - **Memorability** — 1: forgotten instantly · 3: recognizable in context ·
-  5: unforgettable, talked-about, distinctively owned.
-- **Credibility** — 1: feels risky/amateur · 3: safe, competent,
+  5: unforgettable, talked-about, has a "cult".
+- **Hireability / credibility** — 1: feels risky/amateur · 3: safe, credible,
   unexciting · 5: enterprise-trusted, obvious safe choice.
 
 Plot competitors on the tension 2×2. The client's target quadrant is named in
-the positioning brief. Who else occupies that quadrant is the single most
+competitive-context. Who else occupies that quadrant is the single most
 important finding of the benchmark.
 
 ## How to collect the data
 
 For each competitor, work the dimensions in this order (cheapest signal first):
 
-1. **Competitor's own site** — positioning, voice, offer packaging, pricing
-   posture, named clients, manifesto/POV. Screenshot the homepage + one case
-   study.
+1. **Studio site** — positioning, voice, offer packaging, pricing posture, named
+   clients, manifesto/POV. Screenshot the homepage + one case study.
 2. **Case studies / work** — evidence depth, quantified outcomes, client names.
-   Distinguish *asserted* ("we delivered X") from *proven* (metrics, named,
+   Distinguish *asserted* ("we redesigned X") from *proven* (metrics, named,
    verifiable).
-3. **Review directories** — corroborate clients, project size, engagement model
-   → credibility & enterprise-readiness (e.g. Clutch.co or the niche equivalent).
+3. **Directory / reviews (Clutch.co etc.)** — corroborate clients, project size,
+   engagement model → credibility & enterprise-readiness.
 4. **LinkedIn** — team size/model, founder narrative, content cadence →
    thought leadership, model.
-5. **Portfolio / craft platforms** — craft register (use the showcase native to
-   the niche: design boards, showreels, published samples, etc.).
+5. **Portfolio platforms (Dribbble/Behance/Awwwards)** — visual craft register.
 6. **Content channels** — newsletter/talks/writing → thought-leadership depth.
 
 **What to record per dimension:** the score, one-line justification, and the
@@ -130,9 +144,8 @@ source link/screenshot that earned it. No score without evidence.
 - **Aesthetic affinity bias.** Reviewers may over-score studios whose aesthetic
   they share and under-score rivals' commercial strength. Score craft and
   credibility independently; a "boring" site may be winning bigger clients.
-- **Recency / flashiness bias.** Award-winning, showpiece work dazzles but may
-  lack commercial depth — verify with directories/clients before scoring
-  credibility.
+- **Recency / flashiness bias.** Awwwards-style sites dazzle but may lack
+  commercial depth — verify with Clutch/clients before scoring credibility.
 - **Survivorship.** The visible, well-marketed studios aren't the whole market;
   note strong-but-quiet operators found via directories/reviews.
 - **Calibrate across the set, not in isolation.** Before finalizing, re-read
@@ -145,8 +158,8 @@ Produce one card per profiled competitor — the atomic unit the report assemble
 from:
 
 ```
-## <Competitor name>
-- **Profile / Tier:** <positioning stance · specialization · size band> / <Direct | Adjacent | Aspirational>
+## <Studio name>
+- **Category / Tier:** <1–8> / <Direct | Adjacent | Aspirational>
 - **One-liner:** <how they position themselves, in their words>
 - **Model / size / geography:** <solo|micro|boutique> · <region> · <pricing/engagement model>
 - **Notable clients / evidence:** <named, with proven/asserted tag>
@@ -164,8 +177,8 @@ from:
 | Pricing transparency & engagement model | | | |
 
 ### Tension plot
-- **[Axis 1 from positioning brief]:** <1–5> — <why>
-- **[Axis 2 from positioning brief]:** <1–5> — <why>
+- **[Axis 1 from competitive-context]:** <1–5> — <why>
+- **[Axis 2 from competitive-context]:** <1–5> — <why>
 - **Quadrant:** <high/high | high-1/low-2 | low-1/high-2 | low/low>
 
 ### Read for [client]
@@ -175,16 +188,3 @@ from:
 ```
 
 Hand the completed cards plus the tension plot to `competitive-report-structure`.
-
-## Anti-Patterns
-
-- **Averaging the tension axes.** The two poles of the client's strategic tension must be scored and reported separately. Averaging destroys the insight — the gap between poles is the finding.
-- **Scoring without evidence.** Every score requires a one-line justification and a source link. A score without evidence is an opinion, not a benchmark.
-- **Creating a single composite score.** Report dimension scores individually. A weighted average hides the asymmetric strengths that matter for positioning.
-- **Applying generic rubric anchors without adapting.** The 1–5 anchors must be calibrated to the specific dimension and competitor set. The generic descriptions are a starting point, not a fixed standard.
-- **Running before the competitor set is scoped.** Use competitive-platform-analysis first to produce a tiered, pruned set. Scoring an unscoped list wastes effort on irrelevant competitors.
-
-## Related Skills
-
-- `competitive-platform-analysis` — the prerequisite; produces the tiered competitor set this skill scores.
-- `competitive-report-structure` — the next step; assembles the scored profile cards into a client-deliverable report.

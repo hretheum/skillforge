@@ -1,17 +1,17 @@
 ---
 name: agentic-os
-description: Build persistent multi-agent operating systems on Claude Code. Covers kernel architecture, specialist agents, slash commands, file-based memory, scheduled automation, and state management without external databases.
+description: Build persistent multi-agent operating systems on Codex. Covers kernel architecture, specialist agents, slash commands, file-based memory, scheduled automation, and state management without external databases.
 origin: ECC
 ---
 
 # Agentic OS
 
-Treat Claude Code as a persistent runtime / operating system rather than a chat session. This skill codifies the architecture used by production agentic setups: a kernel config that routes tasks to specialist agents, persistent file-based memory, scheduled automation, and a JSON/markdown data layer.
+Treat Codex as a persistent runtime / operating system rather than a chat session. This skill codifies the architecture used by production agentic setups: a kernel config that routes tasks to specialist agents, persistent file-based memory, scheduled automation, and a JSON/markdown data layer.
 
 ## When to Activate
 
-- Building a multi-agent workflow inside Claude Code
-- Setting up persistent Claude Code automation that survives session restarts
+- Building a multi-agent workflow inside Codex
+- Setting up persistent Codex automation that survives session restarts
 - Creating a "personal OS" or "agentic OS" for recurring tasks
 - User says "agentic OS", "personal OS", "multi-agent", "agent coordinator", "persistent agent"
 - Structuring long-running projects where context must survive across sessions
@@ -22,9 +22,9 @@ The Agentic OS has four layers. Each layer is a directory in your project root.
 
 ```
 project-root/
-├── CLAUDE.md          # Kernel: identity, routing rules, agent registry
+├── AGENTS.md          # Kernel: identity, routing rules, agent registry
 ├── agents/            # Specialist agent definitions (markdown prompts)
-├── .claude/commands/  # Slash commands: user-facing CLI
+├── .Codex/commands/  # Slash commands: user-facing CLI
 ├── scripts/           # Daemon scripts: scheduled or event-driven tasks
 └── data/              # State: JSON/markdown filesystem, no external DB
 ```
@@ -33,20 +33,20 @@ project-root/
 
 | Layer | Purpose | Persistence |
 |---|---|---|
-| Kernel (`CLAUDE.md`) | Identity, routing, model policies, agent registry | Git-tracked |
+| Kernel (`AGENTS.md`) | Identity, routing, model policies, agent registry | Git-tracked |
 | Agents (`agents/`) | Specialist identities with scoped tools and memory | Git-tracked |
-| Commands (`.claude/commands/`) | User-facing slash commands (`/daily-sync`, `/outreach`) | Git-tracked |
+| Commands (`.Codex/commands/`) | User-facing slash commands (`/daily-sync`, `/outreach`) | Git-tracked |
 | Scripts (`scripts/`) | Python/JS daemons triggered by cron or webhooks | Git-tracked |
 | State (`data/`) | Append-only logs, project state, decision records | Git-ignored or tracked |
 
 ## The Kernel
 
-`CLAUDE.md` is the kernel. It acts as the COO / orchestrator. Claude reads it at session start and uses it to route work.
+`AGENTS.md` is the kernel. It acts as the COO / orchestrator. Codex reads it at session start and uses it to route work.
 
 ### Kernel Structure
 
 ```markdown
-# CLAUDE.md - Agentic OS Kernel
+# AGENTS.md - Agentic OS Kernel
 
 ## Identity
 You are the COO of [project-name]. You route tasks to specialist agents.
@@ -81,7 +81,7 @@ The kernel should be **small and declarative**. Routing logic lives in plain mar
 
 ## Specialist Agents
 
-Each agent is a standalone markdown file in `agents/`. Claude loads the relevant agent file when routing a task.
+Each agent is a standalone markdown file in `agents/`. Codex loads the relevant agent file when routing a task.
 
 ### Agent Definition Format
 
@@ -101,7 +101,7 @@ You prefer simple solutions. You ask clarifying questions when requirements are 
 - Full filesystem access within project root
 - Git operations (status, diff, commit, branch)
 - Test runner access
-- MCP servers as configured in `.claude/mcp.json`
+- MCP servers as configured in `.Codex/mcp.json`
 
 ## Constraints
 - Always write tests for new features
@@ -123,11 +123,11 @@ Kernel routing:
 3. Kernel synthesizes both outputs into a unified response
 ```
 
-For parallel execution, use Claude Code's background task capability or shell scripts that invoke Claude Code with specific agent contexts.
+For parallel execution, use Codex's background task capability or shell scripts that invoke Codex with specific agent contexts.
 
 ## Commands and Daily Workflows
 
-Slash commands are markdown files in `.claude/commands/`. They define reusable workflows.
+Slash commands are markdown files in `.Codex/commands/`. They define reusable workflows.
 
 ### Command Structure
 
@@ -157,7 +157,7 @@ Run the morning briefing:
 
 ### Activating Commands
 
-Place command files in `.claude/commands/<command-name>.md`. Claude Code auto-discovers them. Users invoke them with `/<command-name>`.
+Place command files in `.Codex/commands/<command-name>.md`. Codex auto-discovers them. Users invoke them with `/<command-name>`.
 
 ## Persistent Memory
 
@@ -210,7 +210,7 @@ This creates a feedback loop that improves the system over time without code cha
 
 ## Scheduled Automation
 
-Agentic OS tasks run on a schedule using external cron, not Claude Code's built-in cron (which dies when the session ends).
+Agentic OS tasks run on a schedule using external cron, not Codex's built-in cron (which dies when the session ends).
 
 ### macOS: LaunchAgent
 
@@ -224,7 +224,7 @@ Agentic OS tasks run on a schedule using external cron, not Claude Code's built-
     <string>com.agentic.daily-sync</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/claude</string>
+        <string>/Codex</string>
         <string>--cwd</string>
         <string>/path/to/project</string>
         <string>--command</string>
@@ -252,7 +252,7 @@ Description=Agentic OS Daily Sync
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/claude --cwd /path/to/project --command /daily-sync
+ExecStart=/usr/local/bin/Codex --cwd /path/to/project --command /daily-sync
 ```
 
 ```ini
@@ -275,7 +275,7 @@ WantedBy=timers.target
 module.exports = {
   apps: [{
     name: 'agentic-daily-sync',
-    script: 'claude',
+    script: 'Codex',
     args: '--cwd /path/to/project --command /daily-sync',
     cron_restart: '0 8 * * *',
     autorestart: false
@@ -342,7 +342,7 @@ Split into specialist agents. The kernel handles routing.
 
 ```markdown
 # BAD - No memory between sessions
-Starting fresh every time Claude Code opens.
+Starting fresh every time Codex opens.
 ```
 
 Always read `data/` at session start and write back at session end.
@@ -350,7 +350,7 @@ Always read `data/` at session start and write back at session end.
 ### Hardcoded Credentials
 
 ```markdown
-# BAD - API keys in agent files or CLAUDE.md
+# BAD - API keys in agent files or AGENTS.md
 Your OpenAI API key is sk-xxxxxxxx
 ```
 
@@ -371,17 +371,17 @@ Use JSON/markdown files until you have multiple concurrent users or GBs of data.
 if (intent.includes('deploy')) { agent = opsAgent; }
 ```
 
-Keep routing declarative in `CLAUDE.md` markdown tables. It is inspectable, editable, and debuggable.
+Keep routing declarative in `AGENTS.md` markdown tables. It is inspectable, editable, and debuggable.
 
 ## Best Practices
 
-- [ ] `CLAUDE.md` is under 200 lines and fits in context window
+- [ ] `AGENTS.md` is under 200 lines and fits in context window
 - [ ] Each agent file is under 100 lines and focused on one domain
 - [ ] `data/` is git-ignored for sensitive logs, git-tracked for decisions and specs
 - [ ] Commands use imperative names: `/daily-sync`, not `/run-daily-sync`
 - [ ] Logs are append-only; never edit past daily logs
 - [ ] Every agent has a `Memory Scope` section defining what files it reads
 - [ ] Reflections are written at the end of every session
-- [ ] Scheduled tasks use external cron (LaunchAgent, systemd, pm2), not Claude Code's session cron
+- [ ] Scheduled tasks use external cron (LaunchAgent, systemd, pm2), not Codex's session cron
 - [ ] Cost tracking: log API spend per session in `data/logs/<date>-costs.json`
-- [ ] One project = one Agentic OS. Do not share a single `CLAUDE.md` across unrelated projects.
+- [ ] One project = one Agentic OS. Do not share a single `AGENTS.md` across unrelated projects.

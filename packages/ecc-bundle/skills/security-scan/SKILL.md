@@ -1,26 +1,26 @@
 ---
 name: security-scan
-description: Scan your Claude Code configuration (.claude/ directory) for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Checks CLAUDE.md, settings.json, MCP servers, hooks, and agent definitions.
+description: Scan your Codex configuration (.Codex/ directory) for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Checks AGENTS.md, settings.json, MCP servers, hooks, and agent definitions.
 origin: ECC
 ---
 
 # Security Scan Skill
 
-Audit your Claude Code configuration for security issues using [AgentShield](https://github.com/affaan-m/agentshield).
+Audit your Codex configuration for security issues using [AgentShield](https://github.com/affaan-m/agentshield).
 
 ## When to Activate
 
-- Setting up a new Claude Code project
-- After modifying `.claude/settings.json`, `CLAUDE.md`, or MCP configs
+- Setting up a new Codex project
+- After modifying `.Codex/settings.json`, `AGENTS.md`, or MCP configs
 - Before committing configuration changes
-- When onboarding to a new repository with existing Claude Code configs
+- When onboarding to a new repository with existing Codex configs
 - Periodic security hygiene checks
 
 ## What It Scans
 
 | File | Checks |
 |------|--------|
-| `CLAUDE.md` | Hardcoded secrets, auto-run instructions, prompt injection patterns |
+| `AGENTS.md` | Hardcoded secrets, auto-run instructions, prompt injection patterns |
 | `settings.json` | Overly permissive allow lists, missing deny lists, dangerous bypass flags |
 | `mcp.json` | Risky MCP servers, hardcoded env secrets, npx supply chain risks |
 | `hooks/` | Command injection via interpolation, data exfiltration, silent error suppression |
@@ -45,14 +45,14 @@ npx ecc-agentshield scan .
 
 ### Basic Scan
 
-Run against the current project's `.claude/` directory:
+Run against the current project's `.Codex/` directory:
 
 ```bash
 # Scan current project
 npx ecc-agentshield scan
 
 # Scan a specific path
-npx ecc-agentshield scan --path /path/to/.claude
+npx ecc-agentshield scan --path /path/to/.Codex
 
 # Scan with minimum severity filter
 npx ecc-agentshield scan --min-severity medium
@@ -87,7 +87,7 @@ This will:
 - Tighten wildcard permissions to scoped alternatives
 - Never modify manual-only suggestions
 
-### Opus 4.8 Deep Analysis
+### Opus 4.6 Deep Analysis
 
 Run the adversarial three-agent pipeline for deeper analysis:
 
@@ -104,7 +104,7 @@ This runs:
 
 ### Initialize Secure Config
 
-Scaffold a new secure `.claude/` configuration from scratch:
+Scaffold a new secure `.Codex/` configuration from scratch:
 
 ```bash
 npx ecc-agentshield init
@@ -112,7 +112,7 @@ npx ecc-agentshield init
 
 Creates:
 - `settings.json` with scoped permissions and deny list
-- `CLAUDE.md` with security best practices
+- `AGENTS.md` with security best practices
 - `mcp.json` placeholder
 
 ### GitHub Action
@@ -146,7 +146,7 @@ Add to your CI pipeline:
 - Shell-running MCP servers
 
 ### High Findings (fix before production)
-- Auto-run instructions in CLAUDE.md (prompt injection vector)
+- Auto-run instructions in AGENTS.md (prompt injection vector)
 - Missing deny lists in permissions
 - Agents with unnecessary Bash access
 
