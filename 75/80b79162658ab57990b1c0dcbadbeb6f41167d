@@ -1,0 +1,21 @@
+README.md
+  s_7796623e0892b8::t_32043756a56c84 69-93
+docs/README.pl.md
+  s_7796623e0892b8::t_d1464db7add9ed 71-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "7580b79162658ab57990b1c0dcbadbeb6f41167d",
+  "prompts": {},
+  "sessions": {
+    "s_7796623e0892b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "935ba10a-ca5d-4c2b-a28c-4dcb9f9fd44e",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
