@@ -8,7 +8,7 @@
 //
 // Clean-room: this file names no client. All client-specific data arrives through
 // `references.competitiveContext` — a reference the loader resolves from the active
-// client's config. The SKILL.md lives in packages/ecc-bundle/skills/ — the canonical
+// client's config. The SKILL.md lives in packages/plugins/skillforge-skills/skills/ — the canonical
 // location after migration to the @skillforge-core/ecc-bundle npm package.
 
 import { readFileSync } from 'node:fs';
@@ -34,7 +34,7 @@ export function composeInstruction({ references, request = null } = {}) {
   // Read the SKILL.md at call time (not module load) so importing this file never fails in
   // environments where skills/ is absent (e.g. a test sandbox that copies only src/).
   const instructions = readFileSync(
-    resolve(__dir, '../../../packages/ecc-bundle/skills/competitive-platform-analysis/SKILL.md'),
+    resolve(__dir, '../../../packages/plugins/skillforge-skills/skills/competitive-platform-analysis/SKILL.md'),
     'utf8',
   );
   const ref = references?.competitiveContext;
@@ -44,7 +44,7 @@ export function composeInstruction({ references, request = null } = {}) {
     // and signal downstream with context:null that the context is to be COLLECTED, not read. A
     // reference that existed but is malformed fails earlier in resolveRefs, so it never lands here.
     const interview = readFileSync(
-      resolve(__dir, '../../../packages/ecc-bundle/skills/competitive-platform-analysis/INTERVIEW.md'),
+      resolve(__dir, '../../../packages/plugins/skillforge-skills/skills/competitive-platform-analysis/INTERVIEW.md'),
       'utf8',
     );
     return { instructions: `${instructions}\n\n${interview}`, context: null, request };

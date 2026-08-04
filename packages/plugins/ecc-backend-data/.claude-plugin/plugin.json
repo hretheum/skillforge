@@ -1,0 +1,9 @@
+{
+  "name": "ecc-backend-data",
+  "version": "0.3.0",
+  "description": "Backend, bazy danych, wzorce językowe server-side (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}

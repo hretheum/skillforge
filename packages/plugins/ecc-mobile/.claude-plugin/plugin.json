@@ -1,0 +1,9 @@
+{
+  "name": "ecc-mobile",
+  "version": "0.3.0",
+  "description": "Mobile: Swift/iOS, Kotlin/Android, Flutter, multiplatform (ECC)",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}

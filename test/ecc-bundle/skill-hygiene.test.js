@@ -8,13 +8,26 @@
 
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const SKILLS = join(import.meta.dirname, '../../packages/ecc-bundle/skills');
+// Skills live under packages/plugins/<plugin>/skills/<name> since the
+// thematic plugin split; resolve each name across all plugin packages.
+const PLUGINS_ROOT = join(import.meta.dirname, '../../packages/plugins');
+const SKILL_DIRS = new Map();
+for (const plugin of readdirSync(PLUGINS_ROOT)) {
+  const skillsDir = join(PLUGINS_ROOT, plugin, 'skills');
+  if (!existsSync(skillsDir)) continue;
+  for (const name of readdirSync(skillsDir)) {
+    SKILL_DIRS.set(name, join(skillsDir, name));
+  }
+}
+
+const SKILLS = PLUGINS_ROOT; // katalog-strażnik dla testu nieistnienia motion-ui
 
 function skill(name) {
-  return join(SKILLS, name, 'SKILL.md');
+  const dir = SKILL_DIRS.get(name);
+  return dir ? join(dir, 'SKILL.md') : join(PLUGINS_ROOT, name, 'SKILL.md');
 }
 
 function read(name) {
@@ -28,7 +41,7 @@ function read(name) {
 describe('CONCRETE', () => {
   test('1 — motion-ui dir does NOT exist (merged into motion-patterns)', () => {
     assert.ok(
-      !existsSync(join(SKILLS, 'motion-ui')),
+      !SKILL_DIRS.has('motion-ui'),
       'motion-ui directory should have been deleted after merge into motion-patterns',
     );
   });

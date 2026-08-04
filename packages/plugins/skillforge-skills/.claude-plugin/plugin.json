@@ -1,0 +1,9 @@
+{
+  "name": "skillforge-skills",
+  "version": "0.3.0",
+  "description": "Skille własne skillforge: brand discovery, analiza konkurencji, metodyka benchmarków",
+  "author": {
+    "name": "hretheum",
+    "url": "https://github.com/hretheum"
+  }
+}
