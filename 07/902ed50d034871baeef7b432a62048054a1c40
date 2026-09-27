@@ -1,0 +1,19 @@
+brand-identity/state.json
+  s_21802ec5c4d311::t_f25d9c133ed3f2 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "07902ed50d034871baeef7b432a62048054a1c40",
+  "prompts": {},
+  "sessions": {
+    "s_21802ec5c4d311": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cfbfaf62-ff96-4839-83fb-af2372767d8e",
+        "model": "unknown"
+      },
+      "human_author": "Eryk Orłowski <eryk@talentcanvas.tech>"
+    }
+  }
+}
