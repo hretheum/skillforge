@@ -1,7 +1,7 @@
 {
   "session": "studio-brand-2026-06",
-  "vaultPath": "/Users/eorlowski/dev/skillforge/brand-identity",
-  "statePath": "/Users/eorlowski/dev/skillforge/brand-identity/state.json",
+  "vaultPath": "/Users/eorlowski/dev/prv/ai-tools/skillforge/brand-identity",
+  "statePath": "/Users/eorlowski/dev/prv/ai-tools/skillforge/brand-identity/state.json",
   "completedModules": [],
   "inProgressModule": "10_purpose-why.md",
   "nextModule": "20_positioning.md",
